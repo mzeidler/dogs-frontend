@@ -1,0 +1,12 @@
+.active {
+    text-decoration: underline;
+}
+
+.mymargin {
+    margin-right: 15px;
+}
+
+.flagmargin {
+    vertical-align: middle;
+    margin-right: 15px;
+}
