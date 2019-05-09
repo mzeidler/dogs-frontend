@@ -11,23 +11,4 @@ export class AppComponent {
 
   constructor(private t: TranslationService) { }
 
-  setLang(lang: string) {
-    this.t.setLang(lang);
-  }
-
-  en(): boolean {
-    let lang = localStorage.getItem('lang');
-    return lang == 'En';
-  }
-
-  hr(): boolean {
-    let lang = localStorage.getItem('lang');
-    return lang == 'Hr';
-  }
-
-  de(): boolean {
-    let lang = localStorage.getItem('lang');
-    return lang == 'De';
-  }
-
 }
