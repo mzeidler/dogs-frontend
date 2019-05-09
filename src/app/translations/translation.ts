@@ -1,6 +1,7 @@
 export interface Translation {
     exampleText: string;
     
+    // buttons
     home: string;
     adopt: string;
     volunteer: string;
@@ -9,21 +10,32 @@ export interface Translation {
     gallery: string;
     user: string;
     admin: string;
+    login: string;
+    logout:string;
 }
 
 export class En implements Translation {
+    
+    exampleText = "Text in english"
+
+    // buttons
     adopt = "Adopt";
     volunteer = "Volunteer";
-    donate = "Donte";
+    donate = "Donate";
     contact = "Contact";
     gallery = "Gallery";
     user = "User";
     admin = "Admin";
     home = "Home";
-    exampleText = "Text in english"
+    login = "Login";
+    logout = "Logout"
 }
 
 export class De implements Translation {
+    
+    exampleText = "Text auf deutsch"
+
+    // buttons
     adopt = "Zuhause";
     volunteer = "Freiwillig";
     donate = "Spenden";
@@ -32,10 +44,15 @@ export class De implements Translation {
     user = "Benutzer";
     admin = "Administration";
     home = "Start";
-    exampleText = "Text auf deutsch"
+    login = "Anmelden";
+    logout = "Abmelden"
 }
 
 export class Hr implements Translation {
+    
+    exampleText = "Tekst na hrvatskom"
+
+    // buttons
     adopt = "Udomi";
     volunteer = "Volonteri";
     donate = "Doniraj";
@@ -44,5 +61,6 @@ export class Hr implements Translation {
     user = "Korisnik";
     admin = "Administracija";
     home = "Doma";
-    exampleText = "Tekst na hrvatskom"
+    login = "Prijava"
+    logout = "Odjava"
 }
