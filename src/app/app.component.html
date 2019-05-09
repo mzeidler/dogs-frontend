@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <nav>
+  <nav style="width: 100%">
 
       <img *ngIf="t.isLang('De')" class="flagmargin" width="20px" src="assets/de.png" (click)="t.setLang('Hr')">
       <img *ngIf="t.isLang('Hr')" class="flagmargin" width="20px" src="assets/hr.png" (click)="t.setLang('En')">
@@ -11,9 +11,8 @@
       <button class="mymargin" mat-raised-button color="accent" routerLink="/donate" routerLinkActive="active">{{t.get.donate}}</button>
       <button class="mymargin" mat-raised-button color="accent" routerLink="/contact" routerLinkActive="active">{{t.get.contact}}</button>
       <button class="mymargin" mat-raised-button color="accent" routerLink="/gallery" routerLinkActive="active">{{t.get.gallery}}</button> 
-      <button class="mymargin" mat-raised-button color="secondary" routerLink="/user" routerLinkActive="active">{{t.get.user}}</button> 
-      <button class="mymargin" mat-raised-button color="secondary" routerLink="/admin" routerLinkActive="active">{{t.get.admin}}</button> 
-      <button class="mymargin" mat-raised-button color="accent">Login</button>
+
+      <button style="float: right" mat-raised-button color="accent">Login</button>
   </nav>
 </mat-toolbar>
 
