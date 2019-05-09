@@ -24,8 +24,13 @@ export class TranslationService {
     localStorage.setItem("lang", lang);
   }
 
-  isLang(lang: string): boolean {
-    return localStorage.getItem("lang") === lang;
+  changeLang() {
+    let lang = localStorage.getItem("lang");
+    switch(lang) {
+      case 'De': this.setLang('Hr'); break;
+      case 'Hr': this.setLang('En'); break;
+      case 'En': this.setLang('De'); break;
+      default: this.setLang('De'); break;
+    }
   }
-
 }

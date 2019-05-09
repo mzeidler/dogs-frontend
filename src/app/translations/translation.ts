@@ -1,4 +1,5 @@
 export interface Translation {
+    lang_icon: string;
     exampleText: string;
 
     // buttons
@@ -19,7 +20,7 @@ export interface Translation {
 }
 
 export class En implements Translation {
-
+    lang_icon = "assets/en.png";
     exampleText = "Text in english"
 
     // buttons
@@ -41,7 +42,7 @@ export class En implements Translation {
 }
 
 export class De implements Translation {
-
+    lang_icon = "assets/de.png";
     exampleText = "Text auf deutsch"
 
     // buttons
@@ -62,7 +63,7 @@ export class De implements Translation {
 }
 
 export class Hr implements Translation {
-
+    lang_icon = "assets/hr.png";
     exampleText = "Tekst na hrvatskom"
 
     // buttons

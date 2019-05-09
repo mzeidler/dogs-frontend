@@ -1,9 +1,7 @@
 <mat-toolbar color="primary">
   <nav style="width: 100%">
 
-      <img *ngIf="t.isLang('De')" class="flagmargin" width="20px" src="assets/de.png" (click)="t.setLang('Hr')">
-      <img *ngIf="t.isLang('Hr')" class="flagmargin" width="20px" src="assets/hr.png" (click)="t.setLang('En')">
-      <img *ngIf="t.isLang('En')" class="flagmargin" width="20px" src="assets/en.png" (click)="t.setLang('De')">
+      <img class="flagmargin" width="20px" src="{{t.get.lang_icon}}" (click)="t.changeLang()">
 
       <button class="mymargin" mat-raised-button color="accent" routerLink="/home" routerLinkActive="active">{{t.get.home}}</button>
       <button class="mymargin" mat-raised-button color="accent" routerLink="/adopt" routerLinkActive="active">{{t.get.adopt}}</button>      
