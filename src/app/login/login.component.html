@@ -1,3 +1,18 @@
-<p>
-  login works!
-</p>
+<div mat-dialog-title>{{t.get.login}}</div>
+
+<div mat-dialog-content>
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="{{t.get.username}}" [(ngModel)]="data.username">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input type="password" matInput placeholder="{{t.get.password}}" [(ngModel)]="data.password">
+    </mat-form-field>
+  </p>
+</div>
+
+<div mat-dialog-actions style="float: right">
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

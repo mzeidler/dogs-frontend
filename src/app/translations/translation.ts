@@ -1,6 +1,6 @@
 export interface Translation {
     exampleText: string;
-    
+
     // buttons
     home: string;
     adopt: string;
@@ -11,11 +11,15 @@ export interface Translation {
     user: string;
     admin: string;
     login: string;
-    logout:string;
+    logout: string;
+
+    // login screen
+    username: string;
+    password: string;
 }
 
 export class En implements Translation {
-    
+
     exampleText = "Text in english"
 
     // buttons
@@ -29,10 +33,15 @@ export class En implements Translation {
     home = "Home";
     login = "Login";
     logout = "Logout"
+
+    // login screen
+    username = "username";
+    password = "password";
+
 }
 
 export class De implements Translation {
-    
+
     exampleText = "Text auf deutsch"
 
     // buttons
@@ -46,10 +55,14 @@ export class De implements Translation {
     home = "Start";
     login = "Anmelden";
     logout = "Abmelden"
+
+    // login screen
+    username = "benutzername";
+    password = "kennwort";
 }
 
 export class Hr implements Translation {
-    
+
     exampleText = "Tekst na hrvatskom"
 
     // buttons
@@ -63,4 +76,8 @@ export class Hr implements Translation {
     home = "Doma";
     login = "Prijava"
     logout = "Odjava"
+
+    // login screen
+    username = "korisničko ime";
+    password = "lozinka";
 }

@@ -12,7 +12,7 @@
       <button class="mymargin" mat-raised-button color="accent" routerLink="/contact" routerLinkActive="active">{{t.get.contact}}</button>
       <button class="mymargin" mat-raised-button color="accent" routerLink="/gallery" routerLinkActive="active">{{t.get.gallery}}</button> 
 
-      <button style="float: right" mat-raised-button color="accent">{{t.get.login}}</button>
+      <button style="float: right" mat-raised-button color="accent" (click)="login()">{{t.get.login}}</button>
   </nav>
 </mat-toolbar>
 
