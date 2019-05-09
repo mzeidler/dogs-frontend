@@ -11,9 +11,14 @@
       <button class="mymargin" mat-raised-button color="accent" routerLink="/donate" routerLinkActive="active">{{t.get.donate}}</button>
       <button class="mymargin" mat-raised-button color="accent" routerLink="/contact" routerLinkActive="active">{{t.get.contact}}</button>
       <button class="mymargin" mat-raised-button color="accent" routerLink="/gallery" routerLinkActive="active">{{t.get.gallery}}</button> 
-
-      <button style="float: right" mat-raised-button color="accent" (click)="login()">{{t.get.login}}</button>
+      
+      <button *ngIf="!rest.currentUserValue" style="float: right" mat-raised-button color="accent" (click)="login()">{{t.get.login}}</button>
+      <button *ngIf="rest.currentUserValue" style="float: right" mat-raised-button color="accent" (click)="logout()">{{t.get.logout}}</button>
   </nav>
 </mat-toolbar>
+
+<span class="mat-body" style="float: right" *ngIf="rest.currentUserValue">
+  {{rest.currentUserValue.firstName}} {{rest.currentUserValue.lastName}}
+</span>
 
 <router-outlet></router-outlet>

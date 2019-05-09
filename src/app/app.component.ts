@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { TranslationService } from './translations/translation.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
+import { RestService } from './service/rest.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +13,11 @@ import { LoginComponent } from './login/login.component';
 export class AppComponent {
   title = 'dogs-frontend';
 
-  constructor(private t: TranslationService, public dialog: MatDialog) { }
+  constructor(
+    private t: TranslationService, 
+    private rest: RestService,
+    private snackBar: MatSnackBar,
+    public dialog: MatDialog) { }
 
   login() {
 
@@ -24,10 +30,22 @@ export class AppComponent {
 
     dialogRef.afterClosed().subscribe(result => {    
       if (result) {
-        console.log("username: " + result.username);
+        this.rest.login(result.username, result.password).subscribe(hasAuthenticated => {
+          if (hasAuthenticated) {
+              //
+          } else {
+              this.snackBar.open("prijava nije bila uspješna",undefined, {
+                  duration: 2000
+              });
+          }
+      });
       }
     
     }); 
 
+  }
+
+  logout() {
+    this.rest.logout();
   }
 }

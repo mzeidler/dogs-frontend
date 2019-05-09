@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject, Subject } from 'rxjs';
 import { User } from '../model/user';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -16,7 +16,17 @@ export class RestService {
 
   private userUrl = `//${environment.resturl}:9002/api/user`;
 
-  constructor(private http: HttpClient) { }
+  private currentUserSubject: BehaviorSubject<User>;
+  public currentUser: Observable<User>;
+  
+  constructor(private http: HttpClient) { 
+    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentDogsUser')));
+    this.currentUser = this.currentUserSubject.asObservable();
+  }
+
+  public get currentUserValue(): User {
+    return this.currentUserSubject.value;
+}
 
   authenticateUser(user: User): Observable<User> {
     return this.http.post<User>(this.userUrl + "/authenticate", user, httpOptions).pipe(
@@ -31,4 +41,30 @@ export class RestService {
     };
   }
 
+  login(username: string, password: string): Observable<boolean> {
+
+    let user = <User>{};
+    user.username = username;
+    user.password = password;
+
+    let subject = new Subject<boolean>();
+    this.authenticateUser(user).subscribe(authenticatedUser => {
+        if (authenticatedUser) {
+            localStorage.setItem('currentDogsUser', JSON.stringify(authenticatedUser));
+            this.currentUserSubject.next(authenticatedUser);
+            subject.next(true);                
+        } else {
+            subject.next(false);
+        }
+
+        subject.complete();
+    });
+
+    return subject;
+}
+
+logout() {
+    localStorage.removeItem('currentDogsUser');
+    this.currentUserSubject.next(null);
+}
 }
