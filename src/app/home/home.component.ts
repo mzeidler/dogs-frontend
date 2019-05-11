@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
   }
 
   onFileChanged(event) {
-
     this.progress.percentage = 0;
     let currentFileUpload = event.target.files[0];
     this.rest.pushFileToStorage(currentFileUpload).subscribe(event => {
@@ -32,17 +31,8 @@ export class HomeComponent implements OnInit {
         this.progress.percentage = Math.round(100 * event.loaded / event.total);
       } else if (event instanceof HttpResponse) {
         let image: Image = JSON.parse(event.body as string);
-        
-        console.log('File is completely uploaded! event=' + JSON.stringify(event.body));
-        console.log("image=" + image);
-        console.log("image.id=" + image.id);
-
-        let i = <Image>{};
-        i.url = "http://localhost:9002/api/image/" + image.id;
-        this.images.push(i);
-        
-
-        //console.log("image.id=" + image["id"]);
+        image.url = this.rest.imageUrl + "/" + image.id;
+        this.images.push(image);
       }
     })
     this.progress.percentage = 0;

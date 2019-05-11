@@ -18,6 +18,8 @@ export class RestService {
 
   private uploadUrl = `//${environment.resturl}:9002/api/upload`;
 
+  public imageUrl = `//${environment.resturl}:9002/api/image`;
+
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
   
