@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
 
   images: Image[];
 
+  dogId = 1;
+
   progress: { percentage: number } = { percentage: 0 }
   
   constructor(private t: TranslationService, private rest: RestService) { 
@@ -26,7 +28,7 @@ export class HomeComponent implements OnInit {
   onFileChanged(event) {
     this.progress.percentage = 0;
     let currentFileUpload = event.target.files[0];
-    this.rest.pushFileToStorage(currentFileUpload).subscribe(event => {
+    this.rest.pushFileToStorage(currentFileUpload, this.dogId).subscribe(event => {
       if (event.type === HttpEventType.UploadProgress) {
         this.progress.percentage = Math.round(100 * event.loaded / event.total);
       } else if (event instanceof HttpResponse) {
