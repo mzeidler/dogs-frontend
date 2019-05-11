@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpEvent, HttpRequest } from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import { Observable, of, BehaviorSubject, Subject } from 'rxjs';
 import { User } from '../model/user';
@@ -15,6 +15,8 @@ const httpOptions = {
 export class RestService {
 
   private userUrl = `//${environment.resturl}:9002/api/user`;
+
+  private uploadUrl = `//${environment.resturl}:9002/api/upload`;
 
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
@@ -40,6 +42,20 @@ export class RestService {
       return of(result as T);
     };
   }
+
+  pushFileToStorage(file: File): Observable<HttpEvent<{}>> {
+    let formdata: FormData = new FormData();
+ 
+    formdata.append('file', file);
+ 
+    const req = new HttpRequest('POST', this.uploadUrl, formdata, {
+      reportProgress: true,
+      responseType: 'text'
+    });
+ 
+    return this.http.request(req);
+  }
+
 
   login(username: string, password: string): Observable<boolean> {
 

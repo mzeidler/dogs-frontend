@@ -1,7 +1,9 @@
+{{t.get.exampleText}}
+
+
 <p>
-  home works!
+<input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+<button mat-raised-button (click)="fileInput.click()">Upload</button>
 </p>
 
-<p>from translations</p>
-
-{{t.get.exampleText}}
+<img *ngFor="let image of images" src="{{image.url}}" width="200px">
