@@ -17,6 +17,12 @@ export interface Translation {
     // login screen
     username: string;
     password: string;
+
+    add_dog: string;
+    
+    close: string;
+    save: string;
+    cancel: string;
 }
 
 export class En implements Translation {
@@ -39,6 +45,11 @@ export class En implements Translation {
     username = "username";
     password = "password";
 
+    add_dog = "Add dog";
+
+    close = "Close";
+    save = "Save";
+    cancel = "Cancel";
 }
 
 export class De implements Translation {
@@ -60,6 +71,12 @@ export class De implements Translation {
     // login screen
     username = "benutzername";
     password = "kennwort";
+
+    add_dog = "Hund hinzufügen";
+
+    close = "Schliessen";
+    save = "Speichern";
+    cancel = "Abbrechen";
 }
 
 export class Hr implements Translation {
@@ -81,4 +98,10 @@ export class Hr implements Translation {
     // login screen
     username = "korisničko ime";
     password = "lozinka";
+
+    add_dog = "Dodaj psa";
+
+    close = "Zatvori";
+    save = "Spremi";
+    cancel = "Odustani";
 }
