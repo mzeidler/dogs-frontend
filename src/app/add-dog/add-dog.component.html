@@ -1,0 +1,60 @@
+<h1 mat-dialog-title>{{t.get.add_dog}}</h1>
+
+<div mat-dialog-content>
+
+  <mat-grid-list cols="8" rowHeight="70">
+
+    <mat-grid-tile [colspan]="3" [rowspan]="3">
+      <img src="assets/dog.jpg" border="1" width="200px">
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="3" [rowspan]="1">
+      <div>
+        <mat-form-field>
+          <input matInput [(ngModel)]="data.dog.name" placeholder="{{t.get.name}}">
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-radio-group style="margin-left: 15px" [(ngModel)]="data.dog.gender" aria-label="Select an option">
+        <mat-radio-button value="M">{{t.get.gender_m}}</mat-radio-button>&nbsp;
+        <mat-radio-button value="F">{{t.get.gender_f}}</mat-radio-button>
+      </mat-radio-group>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="3" [rowspan]="1">
+      <div>
+        <mat-form-field>
+          <input type="number" matInput [(ngModel)]="data.dog.weight" placeholder="{{t.get.weight}}">
+          <span matSuffix>kg</span>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-checkbox style="margin-left: 15px" [(ngModel)]="data.dog.nutered">{{t.get.nutered}}</mat-checkbox>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="3" [rowspan]="1">
+      <div>
+        <mat-form-field>
+          <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="data.day" placeholder="{{t.get.born}}">
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-checkbox style="margin-left: 15px" [(ngModel)]="data.dog.vaccinated">{{t.get.vaccinated}}</mat-checkbox>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+</div>
+
+<div mat-dialog-actions style="float: right">
+  <button mat-button (click)="onNoClick()">{{t.get.cancel}}</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>{{t.get.save}}</button>
+</div>

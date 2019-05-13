@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslationService } from '../translations/translation.service';
 import { RestService } from '../service/rest.service';
-import { restoreView } from '@angular/core/src/render3';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Image } from '../model/image';
+import { MatDialog } from '@angular/material';
+import { AddDogComponent } from '../add-dog/add-dog.component';
+import { Dog } from '../model/dog';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-home',
@@ -18,12 +21,35 @@ export class HomeComponent implements OnInit {
 
   progress: { percentage: number } = { percentage: 0 }
   
-  constructor(private t: TranslationService, private rest: RestService) { 
+  constructor(public dialog: MatDialog, private t: TranslationService, private rest: RestService) { 
     this.images = [];
   }
 
   ngOnInit() {
   }
+
+  addDog() {
+    
+    let dog = <Dog>{};
+
+    const dialogRef = this.dialog.open(AddDogComponent, {
+      width: '650px', data: { 
+        dog: {...dog},
+        day: undefined,
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        dog = result.dog;
+        if (result.day) {
+          dog.born = this.convertToString(result.day.toDate());
+          
+        }
+      }
+    });   
+  }
+
 
   onFileChanged(event) {
     this.progress.percentage = 0;
@@ -38,5 +64,13 @@ export class HomeComponent implements OnInit {
       }
     })
     this.progress.percentage = 0;
+  }
+
+
+  convertToString(date: Date): string {
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    return  year + "-" + (month < 10 ? "0" : "") + month + "-" + (day < 10 ? "0" : "") + day;
   }
 }

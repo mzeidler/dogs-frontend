@@ -22,6 +22,14 @@ import { MatInputModule } from '@angular/material/input';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { AddDogComponent } from './add-dog/add-dog.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, DateAdapter, NativeDateAdapter, MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatMomentDateModule, MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
 
 @NgModule({
   declarations: [
@@ -34,7 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
     GalleryComponent,
     LoginComponent,
     UserComponent,
-    AdminComponent
+    AdminComponent,
+    AddDogComponent
   ],
   imports: [
     BrowserModule,
@@ -48,12 +57,21 @@ import { HttpClientModule } from '@angular/common/http';
     MatBadgeModule,
     MatDialogModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatGridListModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatCheckboxModule,
+    MatMomentDateModule
   ],
   entryComponents: [
-    LoginComponent
+    LoginComponent,
+    AddDogComponent
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
