@@ -23,6 +23,16 @@ export interface Translation {
     close: string;
     save: string;
     cancel: string;
+
+    name: string;
+    gender: string;
+    gender_m: string;
+    gender_f: string;
+    weight: string;
+    born: string;
+    nutered: string;
+    vaccinated: string;
+    description: string;   
 }
 
 export class En implements Translation {
@@ -50,6 +60,16 @@ export class En implements Translation {
     close = "Close";
     save = "Save";
     cancel = "Cancel";
+
+    name = "name";
+    gender = "gender";
+    gender_m = "m";
+    gender_f = "f";
+    weight = "weight";
+    born = "born";
+    nutered = "nutered";
+    vaccinated = "vaccinated";
+    description = "description";    
 }
 
 export class De implements Translation {
@@ -77,6 +97,16 @@ export class De implements Translation {
     close = "Schliessen";
     save = "Speichern";
     cancel = "Abbrechen";
+
+    name = "name";
+    gender = "geschlecht";
+    gender_m = "m";
+    gender_f = "w";
+    weight = "gewicht";
+    born = "geboren";
+    nutered = "kastriert";
+    vaccinated = "geimpft";
+    description = "beschreibung";   
 }
 
 export class Hr implements Translation {
@@ -104,4 +134,14 @@ export class Hr implements Translation {
     close = "Zatvori";
     save = "Spremi";
     cancel = "Odustani";
+
+    name = "ime";
+    gender = "spol";
+    gender_m = "m";
+    gender_f = "ž";
+    weight = "težina";
+    born = "rođen";
+    nutered = "kastriran";
+    vaccinated = "cijepljen";
+    description = "opis";   
 }
