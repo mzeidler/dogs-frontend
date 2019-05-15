@@ -8,11 +8,24 @@ import { ContactComponent } from './contact/contact.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
+import { DogsResolverService } from './resolvers/dogs-resolver.service';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }, 
+  { 
+    path: '', 
+    component: AdoptComponent,
+    resolve: {
+      dogs: DogsResolverService
+    }
+  }, 
   { path: 'home', component: HomeComponent },
-  { path: 'adopt', component: AdoptComponent },
+  { 
+    path: 'adopt', 
+    component: AdoptComponent,
+    resolve: {
+      dogs: DogsResolverService
+    }
+  },
   { path: 'volunteer', component: VolunteerComponent },
   { path: 'donate', component: DonateComponent },
   { path: 'contact', component: ContactComponent },

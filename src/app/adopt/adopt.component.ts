@@ -7,6 +7,7 @@ import { AddDogComponent } from '../add-dog/add-dog.component';
 import { Dog } from '../model/dog';
 import * as moment from 'moment';
 import { Image } from '../model/image';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-adopt',
@@ -23,11 +24,12 @@ export class AdoptComponent implements OnInit {
 
   progress: { percentage: number } = { percentage: 0 } // TODO: remove
 
-  constructor(public dialog: MatDialog, private t: TranslationService, private rest: RestService) { 
+  constructor(public dialog: MatDialog, private t: TranslationService, private rest: RestService, private route: ActivatedRoute) { 
     this.images = []; // TODO: remove
   }
 
   ngOnInit() {
+    this.dogs = this.route.snapshot.data['dogs'];
   }
 
   getDogs(): void {

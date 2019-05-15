@@ -7,7 +7,14 @@
 
 <p *ngIf="rest.currentUserValue">
   <button mat-icon-button>
-      <mat-icon aria-label="Add" (click)="addDog()" matTooltip="{{t.get.add_dog}}">add_circle_outline</mat-icon>
+    <mat-icon aria-label="Add" (click)="addDog()" matTooltip="{{t.get.add_dog}}">add_circle_outline</mat-icon>
   </button>
+  <button mat-icon-button>
+    <mat-icon aria-label="Refresh" (click)="getDogs()" matTooltip="Refresh">autorenew</mat-icon>
+  </button>  
 </p>
 
+
+<ul>
+  <li *ngFor="let dog of dogs">{{dog.name}}</li>
+</ul>
