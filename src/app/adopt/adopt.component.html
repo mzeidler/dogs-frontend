@@ -1,3 +1,13 @@
-<p>
-  adopt works!
+<p *ngIf="rest.currentUserValue">
+  <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+  <button mat-raised-button (click)="fileInput.click()">Upload</button>
 </p>
+
+<img *ngFor="let image of images" src="{{image.url}}" width="200px" border="1">
+
+<p *ngIf="rest.currentUserValue">
+  <button mat-icon-button>
+      <mat-icon aria-label="Add" (click)="addDog()" matTooltip="{{t.get.add_dog}}">add_circle_outline</mat-icon>
+  </button>
+</p>
+
