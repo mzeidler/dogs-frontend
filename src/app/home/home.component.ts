@@ -15,17 +15,23 @@ import * as moment from 'moment';
 })
 export class HomeComponent implements OnInit {
 
-  images: Image[];
+  images: Image[]; // TODO: remove
 
-  dogId = 1;
+  dogId = 1; // TODO: remove
 
-  progress: { percentage: number } = { percentage: 0 }
+  dogs: Dog[];
+
+  progress: { percentage: number } = { percentage: 0 } // TODO: remove
   
   constructor(public dialog: MatDialog, private t: TranslationService, private rest: RestService) { 
-    this.images = [];
+    this.images = []; // TODO: remove
   }
 
   ngOnInit() {
+  }
+
+  getDogs(): void {
+    this.rest.getDogs().subscribe(dogs => this.dogs = dogs);
   }
 
   addDog() {
@@ -43,9 +49,12 @@ export class HomeComponent implements OnInit {
       if (result) {
         dog = result.dog;
         if (result.day) {
-          dog.born = this.convertToString(result.day.toDate());
-          
+          dog.born = this.convertToString(result.day.toDate());          
         }
+        this.rest.addDog(dog).subscribe(d => {
+          this.dogs.push(d);
+        });
+
       }
     });   
   }
