@@ -24,7 +24,8 @@
       <img *ngIf="dog.gender === 'M'" style="float:right" src="assets/male.png" matTooltip="{{t.get.male}}">
       <img *ngIf="dog.gender === 'F'" style="float:right" src="assets/female.png" matTooltip="{{t.get.female}}">
       <mat-icon *ngIf="!dog.gender" style="float:right" matTooltip="{{t.get.no_gender}}">help_outline</mat-icon>
-      <img mat-card-image src="assets/dog.jpg">
+
+      <img mat-card-image src="assets/dog.jpg" style="cursor: pointer" (click)="selectDog(dog)">
 
       <mat-card-content>
         <p>Neki tekst</p>

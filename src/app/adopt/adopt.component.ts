@@ -9,6 +9,7 @@ import * as moment from 'moment';
 import { Image } from '../model/image';
 import { ActivatedRoute } from '@angular/router';
 import { DeleteDogComponent } from '../delete-dog/delete-dog.component';
+import { ShowDogComponent } from '../show-dog/show-dog.component';
 
 @Component({
   selector: 'app-adopt',
@@ -55,6 +56,23 @@ export class AdoptComponent implements OnInit {
     }); 
   
   }
+
+  selectDog(dog: Dog) {
+
+    if (this.rest.currentUserValue) {
+
+    } else {
+
+      const dialogRef = this.dialog.open(ShowDogComponent, {
+        width: '650px', data: { 
+          dog: {...dog}
+        }
+      });  
+      
+    }
+    
+  }
+
 
   addDog() {
     

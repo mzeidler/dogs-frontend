@@ -33,6 +33,7 @@ import { MatMomentDateModule, MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material/card';
 import { DeleteDogComponent } from './delete-dog/delete-dog.component';
+import { ShowDogComponent } from './show-dog/show-dog.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { DeleteDogComponent } from './delete-dog/delete-dog.component';
     UserComponent,
     AdminComponent,
     AddDogComponent,
-    DeleteDogComponent
+    DeleteDogComponent,
+    ShowDogComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,8 @@ import { DeleteDogComponent } from './delete-dog/delete-dog.component';
   entryComponents: [
     LoginComponent,
     AddDogComponent,
-    DeleteDogComponent
+    DeleteDogComponent,
+    ShowDogComponent
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}
