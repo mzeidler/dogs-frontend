@@ -33,6 +33,10 @@ export interface Translation {
     nutered: string;
     vaccinated: string;
     description: string;   
+
+    male: string;
+    female: string;
+    no_gender: string;
 }
 
 export class En implements Translation {
@@ -70,6 +74,10 @@ export class En implements Translation {
     nutered = "nutered";
     vaccinated = "vaccinated";
     description = "description";    
+
+    male = "male";
+    female = "female";
+    no_gender = "gender unknown";
 }
 
 export class De implements Translation {
@@ -107,6 +115,11 @@ export class De implements Translation {
     nutered = "kastriert";
     vaccinated = "geimpft";
     description = "beschreibung";   
+
+    male = "männlich";
+    female = "weiblich";
+    no_gender = "geschlecht unbekannt";
+
 }
 
 export class Hr implements Translation {
@@ -144,4 +157,8 @@ export class Hr implements Translation {
     nutered = "kastriran";
     vaccinated = "cijepljen";
     description = "opis";   
+
+    male = "muški";
+    female = "ženka";
+    no_gender = "spol nepoznat";
 }
