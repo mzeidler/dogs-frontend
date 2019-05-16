@@ -32,6 +32,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatMomentDateModule, MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material/card';
+import { DeleteDogComponent } from './delete-dog/delete-dog.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {MatCardModule} from '@angular/material/card';
     LoginComponent,
     UserComponent,
     AdminComponent,
-    AddDogComponent
+    AddDogComponent,
+    DeleteDogComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ import {MatCardModule} from '@angular/material/card';
   ],
   entryComponents: [
     LoginComponent,
-    AddDogComponent
+    AddDogComponent,
+    DeleteDogComponent
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}

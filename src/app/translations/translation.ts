@@ -23,6 +23,8 @@ export interface Translation {
     close: string;
     save: string;
     cancel: string;
+    yes: string;
+    no: string;
 
     name: string;
     gender: string;
@@ -37,6 +39,9 @@ export interface Translation {
     male: string;
     female: string;
     no_gender: string;
+
+    delete: string;
+    delete_dog: string;
 }
 
 export class En implements Translation {
@@ -64,6 +69,8 @@ export class En implements Translation {
     close = "Close";
     save = "Save";
     cancel = "Cancel";
+    yes = "Yes";
+    no = "No";
 
     name = "name";
     gender = "gender";
@@ -78,6 +85,10 @@ export class En implements Translation {
     male = "male";
     female = "female";
     no_gender = "gender unknown";
+
+    delete = "delete";
+
+    delete_dog = "Do you want to remove this Dog?";
 }
 
 export class De implements Translation {
@@ -105,6 +116,8 @@ export class De implements Translation {
     close = "Schliessen";
     save = "Speichern";
     cancel = "Abbrechen";
+    yes = "Ja";
+    no = "Nein";
 
     name = "name";
     gender = "geschlecht";
@@ -120,6 +133,9 @@ export class De implements Translation {
     female = "weiblich";
     no_gender = "geschlecht unbekannt";
 
+    delete = "entfernen";
+
+    delete_dog = "Möchten Sie diesen Hund entfernen?";
 }
 
 export class Hr implements Translation {
@@ -147,6 +163,8 @@ export class Hr implements Translation {
     close = "Zatvori";
     save = "Spremi";
     cancel = "Odustani";
+    yes = "Da";
+    no = "Ne";
 
     name = "ime";
     gender = "spol";
@@ -161,4 +179,8 @@ export class Hr implements Translation {
     male = "muški";
     female = "ženka";
     no_gender = "spol nepoznat";
+
+    delete = "obriši";
+
+    delete_dog = "Da li želite obrisati ovog psa?";
 }

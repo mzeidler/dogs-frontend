@@ -8,6 +8,7 @@ import { Dog } from '../model/dog';
 import * as moment from 'moment';
 import { Image } from '../model/image';
 import { ActivatedRoute } from '@angular/router';
+import { DeleteDogComponent } from '../delete-dog/delete-dog.component';
 
 @Component({
   selector: 'app-adopt',
@@ -37,8 +38,22 @@ export class AdoptComponent implements OnInit {
   }
 
   deleteDog(dog: Dog) {
-    this.rest.deleteDog(dog);
-    this.dogs = this.dogs.filter(d => d.id != dog.id);    
+    
+    const dialogRef = this.dialog.open(DeleteDogComponent, {
+      width: '430px', data: { 
+        title: 'Obriši psa'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      if (result) {
+        this.rest.deleteDog(dog);
+        this.dogs = this.dogs.filter(d => d.id != dog.id);  
+      }
+
+    }); 
+  
   }
 
   addDog() {
