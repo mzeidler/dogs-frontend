@@ -36,6 +36,11 @@ export class AdoptComponent implements OnInit {
     this.rest.getDogs().subscribe(dogs => this.dogs = dogs);
   }
 
+  deleteDog(dog: Dog) {
+    this.rest.deleteDog(dog);
+    this.dogs = this.dogs.filter(d => d.id != dog.id);    
+  }
+
   addDog() {
     
     let dog = <Dog>{};

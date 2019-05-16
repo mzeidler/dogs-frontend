@@ -30,6 +30,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, DateAdapter, NativeDateAdapter, MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatMomentDateModule, MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -63,7 +66,9 @@ import { MatMomentDateModule, MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from 
     MatRadioModule,
     MatDatepickerModule,
     MatCheckboxModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    FlexLayoutModule,
+    MatCardModule
   ],
   entryComponents: [
     LoginComponent,
