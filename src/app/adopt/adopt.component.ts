@@ -61,6 +61,36 @@ export class AdoptComponent implements OnInit {
 
     if (this.rest.currentUserValue) {
 
+      const dialogRef = this.dialog.open(AddDogComponent, {
+        width: '650px', data: { 
+          dog: {...dog},
+          new: false,
+          day: moment(this.convertToDate(dog.born)),
+        }
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+    
+        if (result) {
+          dog.name = result.dog.name;
+
+          if (result.day) {
+            dog.born = this.convertToString(result.day.toDate());          
+          }
+
+          dog.description = result.dog.description;
+          dog.gender = result.dog.gender;
+          dog.nutered = result.dog.nutered;
+          dog.vaccinated = result.dog.vaccinated;
+          dog.weight = result.dog.weight;
+          
+          this.rest.addDog(dog).subscribe(d => {
+            // Dog updated
+          })
+        }
+  
+      }); 
+
     } else {
 
       const dialogRef = this.dialog.open(ShowDogComponent, {
@@ -68,7 +98,7 @@ export class AdoptComponent implements OnInit {
           dog: {...dog}
         }
       });  
-      
+
     }
     
   }
@@ -81,6 +111,7 @@ export class AdoptComponent implements OnInit {
     const dialogRef = this.dialog.open(AddDogComponent, {
       width: '650px', data: { 
         dog: {...dog},
+        new: true,
         day: undefined,
       }
     });
@@ -121,5 +152,9 @@ export class AdoptComponent implements OnInit {
     let month = date.getMonth() + 1;
     let day = date.getDate();
     return  year + "-" + (month < 10 ? "0" : "") + month + "-" + (day < 10 ? "0" : "") + day;
+  }
+
+  convertToDate(date: string): Date {
+    return new Date(date + "T00:00:00")
   }
 }

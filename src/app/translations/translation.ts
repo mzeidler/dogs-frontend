@@ -19,6 +19,7 @@ export interface Translation {
     password: string;
 
     add_dog: string;
+    edit_dog: string;
     
     close: string;
     save: string;
@@ -65,6 +66,7 @@ export class En implements Translation {
     password = "password";
 
     add_dog = "Add dog";
+    edit_dog = "Edit dog";
 
     close = "Close";
     save = "Save";
@@ -112,6 +114,7 @@ export class De implements Translation {
     password = "kennwort";
 
     add_dog = "Hund hinzufügen";
+    edit_dog = "Hund bearbeiten";
 
     close = "Schliessen";
     save = "Speichern";
@@ -159,6 +162,7 @@ export class Hr implements Translation {
     password = "lozinka";
 
     add_dog = "Dodaj psa";
+    edit_dog = "Uredi psa";
 
     close = "Zatvori";
     save = "Spremi";
