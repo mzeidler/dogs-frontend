@@ -48,7 +48,7 @@ export class AddDogComponent implements OnInit {
   }
 
   removePicture() {
-    
+
   }
 
   onFileChanged(event) {
@@ -67,7 +67,7 @@ export class AddDogComponent implements OnInit {
         let image: Image = JSON.parse(event.body as string);
         //image.url = this.rest.imageUrl + "/" + image.id;
         //this.images.push(image);
-        console.log("Image uploaded");
+        this.data.dog.images.push(image);
       }
     })
     this.progress.percentage = 0;
