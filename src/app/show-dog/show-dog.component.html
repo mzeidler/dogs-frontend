@@ -1,6 +1,18 @@
 <h1 mat-dialog-title>{{data.dog.name}}</h1>
 
-<p>...</p>
+<div *ngIf="selectedId > 0" align="center">
+  <img src="{{rest.imageUrl}}/{{selectedId}}" class="bigimage">
+
+</div>
+
+<div *ngIf="data.dog.images.length > 0"
+  style="display: flex; overflow-x: auto; border-width: 1px; border-color: grey; border-style: solid">
+  <div *ngFor="let image of data.dog.images; let i = index">
+    <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage" [ngClass]="{'myselected': image.id == selectedId}"
+      (click)="selectImage(image)">
+  </div>
+</div>
+
 
 <div mat-dialog-actions style="float: right">
   <button mat-button (click)="onNoClick()">{{t.get.close}}</button>
