@@ -18,16 +18,9 @@ import { ShowDogComponent } from '../show-dog/show-dog.component';
 })
 export class AdoptComponent implements OnInit {
 
-  images: Image[]; // TODO: remove
-
-  dogId = 1; // TODO: remove
-
   dogs: Dog[];
 
-  progress: { percentage: number } = { percentage: 0 } // TODO: remove
-
   constructor(public dialog: MatDialog, private t: TranslationService, private rest: RestService, private route: ActivatedRoute) { 
-    this.images = []; // TODO: remove
   }
 
   ngOnInit() {
@@ -129,23 +122,6 @@ export class AdoptComponent implements OnInit {
       }
     });   
   }
-
-
-  onFileChanged(event) {
-    this.progress.percentage = 0;
-    let currentFileUpload = event.target.files[0];
-    this.rest.pushFileToStorage(currentFileUpload, this.dogId).subscribe(event => {
-      if (event.type === HttpEventType.UploadProgress) {
-        this.progress.percentage = Math.round(100 * event.loaded / event.total);
-      } else if (event instanceof HttpResponse) {
-        let image: Image = JSON.parse(event.body as string);
-        image.url = this.rest.imageUrl + "/" + image.id;
-        this.images.push(image);
-      }
-    })
-    this.progress.percentage = 0;
-  }
-
 
   convertToString(date: Date): string {
     let year = date.getFullYear();
