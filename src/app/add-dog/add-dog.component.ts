@@ -35,6 +35,22 @@ export class AddDogComponent implements OnInit {
     this.selectedId = id;
   }
 
+  setVisibility() {
+
+  }
+
+  moveToLeft() {
+
+  }
+
+  moveToRight() {
+
+  }
+
+  removePicture() {
+    
+  }
+
   onFileChanged(event) {
     this.progress.percentage = 0;
     let currentFileUpload = event.target.files[0];

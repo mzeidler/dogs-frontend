@@ -54,16 +54,36 @@
 
   <!-- IMAGES -->
 
-  <div style="display: flex; overflow-x: auto; border-width: 1px; border-color: grey; border-style: solid;">
+  <div *ngIf="data.dog.images.length > 0" style="display: flex; overflow-x: auto; border-width: 1px; border-color: grey; border-style: solid">
     <div *ngFor="let image of data.dog.images; let i = index">
       <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage" [ngClass]="{'myselected': image.id == selectedId}" (click)="selectImage(image.id)">
     </div>
   </div>
 
-  <p>
-    <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
-    <button mat-raised-button (click)="fileInput.click()">Upload</button>
-  </p>
+
+  <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+
+  <button mat-icon-button>
+      <mat-icon (click)="fileInput.click()" matTooltip="{{t.get.picture_upload}}">add_circle_outline</mat-icon>
+  </button>
+
+  <button *ngIf="selectedId > 0" mat-icon-button>
+      <mat-icon (click)="setVisibility()" matTooltip="{{t.get.picture_default}}">visibility</mat-icon>
+  </button>
+
+  <button *ngIf="selectedId > 0" mat-icon-button>
+      <mat-icon (click)="removePicture()" matTooltip="{{t.get.picture_remove}}">delete_forever</mat-icon>
+  </button>
+
+  <button *ngIf="selectedId > 0" mat-icon-button>
+      <mat-icon (click)="moveToLeft()" matTooltip="{{t.get.picture_left}}">arrow_back</mat-icon>
+  </button>
+
+  <button *ngIf="selectedId > 0" mat-icon-button>
+      <mat-icon (click)="moveToRight()" matTooltip="{{t.get.picture_right}}">arrow_forward</mat-icon>
+  </button>
+
+
 
 
 </div>

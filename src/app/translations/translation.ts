@@ -51,6 +51,12 @@ export interface Translation {
 
     year: string;
     years: string;
+
+    picture_upload: string;
+    picture_remove: string;
+    picture_default: string;
+    picture_left: string;
+    picture_right: string;
 }
 
 export class En implements Translation {
@@ -107,6 +113,12 @@ export class En implements Translation {
 
     year = "Year";
     years = "Years";
+
+    picture_upload = "upload picture";
+    picture_remove = "remove picture";
+    picture_default = "show this picture on overview";
+    picture_left = "move this picture to the left";
+    picture_right = "move this picture to the right";
 }
 
 export class De implements Translation {
@@ -164,6 +176,11 @@ export class De implements Translation {
     year = "Jahr";
     years = "Jahre";
 
+    picture_upload = "Bild hinzufügen";
+    picture_remove = "Bild entfernen";
+    picture_default = "Dieses Bild in der Übersicht zeigen";
+    picture_left = "Nach links verschieben";
+    picture_right = "Nach rechts verschieben";
 }
 
 export class Hr implements Translation {
@@ -220,4 +237,10 @@ export class Hr implements Translation {
 
     year = "god.";
     years = "god.";
+
+    picture_upload = "dodaj sliku";
+    picture_remove = "obriši sliku";
+    picture_default = "prikaži ovu sliku na pregledu";
+    picture_left = "pomakni ulijevo";
+    picture_right = "pomakni udesno";
 }
