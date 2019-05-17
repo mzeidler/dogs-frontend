@@ -28,7 +28,7 @@
       <img mat-card-image src="assets/dog.jpg" style="cursor: pointer" (click)="selectDog(dog)">
 
       <mat-card-content>
-        <p>Neki tekst</p>
+        <p><b>{{t.get.age}}:</b>&nbsp;{{dog.born | agepipe }}</p>
       </mat-card-content>
 
     </mat-card>

@@ -34,7 +34,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material/card';
 import { DeleteDogComponent } from './delete-dog/delete-dog.component';
 import { ShowDogComponent } from './show-dog/show-dog.component';
-
+import { AgePipe } from './pipes/agepipe';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,8 @@ import { ShowDogComponent } from './show-dog/show-dog.component';
     AdminComponent,
     AddDogComponent,
     DeleteDogComponent,
-    ShowDogComponent
+    ShowDogComponent,
+    AgePipe
   ],
   imports: [
     BrowserModule,

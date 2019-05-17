@@ -43,6 +43,14 @@ export interface Translation {
 
     delete: string;
     delete_dog: string;
+
+    age: string;
+
+    month: string;
+    months: string;
+
+    year: string;
+    years: string;
 }
 
 export class En implements Translation {
@@ -91,6 +99,14 @@ export class En implements Translation {
     delete = "delete";
 
     delete_dog = "Do you want to remove this Dog?";
+
+    age = "Age";
+
+    month = "Month";
+    months = "Months";
+
+    year = "Year";
+    years = "Years";
 }
 
 export class De implements Translation {
@@ -139,6 +155,15 @@ export class De implements Translation {
     delete = "entfernen";
 
     delete_dog = "Möchten Sie diesen Hund entfernen?";
+
+    age = "Alter";
+
+    month = "Monat";
+    months = "Monate";
+
+    year = "Jahr";
+    years = "Jahre";
+
 }
 
 export class Hr implements Translation {
@@ -187,4 +212,12 @@ export class Hr implements Translation {
     delete = "obriši";
 
     delete_dog = "Da li želite obrisati ovog psa?";
+
+    age = "Dob";
+
+    month = "mj.";
+    months = "mj.";
+
+    year = "god.";
+    years = "god.";
 }
