@@ -1,3 +1,5 @@
+import { Image } from '../model/image';
+
 export class Dog {
     id: number;
     name: string;
@@ -7,4 +9,5 @@ export class Dog {
     nutered: boolean;
     vaccinated: boolean;
     description: string;
+    images: Image[];
 }
