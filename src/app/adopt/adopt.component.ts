@@ -67,7 +67,7 @@ export class AdoptComponent implements OnInit {
         if (result) {
           dog.name = result.dog.name;
 
-          if (result.day) {
+          if (result.day && !isNaN(result.day)) {
             dog.born = this.convertToString(result.day.toDate());          
           }
 
@@ -100,6 +100,7 @@ export class AdoptComponent implements OnInit {
   addDog() {
     
     let dog = <Dog>{};
+    dog.images = [];
 
     const dialogRef = this.dialog.open(AddDogComponent, {
       width: '650px', data: { 
