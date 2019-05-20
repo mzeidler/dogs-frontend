@@ -28,14 +28,16 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, DateAdapter, NativeDateAdapter, MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMomentDateModule, MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { DeleteDogComponent } from './delete-dog/delete-dog.component';
 import { ShowDogComponent } from './show-dog/show-dog.component';
 import { AgePipe } from './pipes/agepipe';
 import { ImageSort } from './pipes/imagesortpipe';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { ImageSort } from './pipes/imagesortpipe';
     MatCheckboxModule,
     MatMomentDateModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    MatTabsModule,
+    MatButtonToggleModule
   ],
   entryComponents: [
     LoginComponent,

@@ -119,6 +119,11 @@ export class En implements Translation {
     picture_default = "show this picture on overview";
     picture_left = "move this picture to the left";
     picture_right = "move this picture to the right";
+
+    tab_description = "Description";
+    tab_pictures = "Pictures";
+    tab_videos = "Videos";    
+
 }
 
 export class De implements Translation {
@@ -181,6 +186,10 @@ export class De implements Translation {
     picture_default = "Dieses Bild in der Übersicht zeigen";
     picture_left = "Nach links verschieben";
     picture_right = "Nach rechts verschieben";
+
+    tab_description = "Beschreibung";
+    tab_pictures = "Bilder";
+    tab_videos = "Video";   
 }
 
 export class Hr implements Translation {
@@ -243,4 +252,8 @@ export class Hr implements Translation {
     picture_default = "prikaži ovu sliku na pregledu";
     picture_left = "pomakni ulijevo";
     picture_right = "pomakni udesno";
+
+    tab_description = "Opis";
+    tab_pictures = "Slike";
+    tab_videos = "Video";  
 }

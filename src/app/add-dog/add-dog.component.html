@@ -2,6 +2,7 @@
 
 <div mat-dialog-content>
 
+  <!-- FORM -->
   <mat-grid-list cols="8" rowHeight="70">
 
     <mat-grid-tile [colspan]="3" [rowspan]="3">
@@ -52,42 +53,82 @@
 
   </mat-grid-list>
 
-  <!-- IMAGES -->
-
-  <div *ngIf="data.dog.images.length > 0" style="display: flex; overflow-x: auto; border-width: 1px; border-color: grey; border-style: solid">
-    <div *ngFor="let image of data.dog.images | imagesort; let i = index">
-      <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage" [ngClass]="{'myselected': image.id == selectedId}" (click)="selectImage(image.id)">
-    </div>
-  </div>
 
 
-  <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+  <!-- TABS -->
+  <mat-tab-group style="height: 280px">
 
-  <button mat-icon-button>
-      <mat-icon (click)="fileInput.click()" matTooltip="{{t.get.picture_upload}}">add_circle_outline</mat-icon>
-  </button>
+    <!-- DESCRIPTION TAB-->
+    <mat-tab label="{{t.get.tab_description}}">
+      <p></p>
 
-  <button *ngIf="selectedId > 0" mat-icon-button>
-      <mat-icon (click)="setVisibility()" matTooltip="{{t.get.picture_default}}">visibility</mat-icon>
-  </button>
+      <mat-button-toggle-group #group="matButtonToggleGroup">
 
-  <button *ngIf="selectedId > 0" mat-icon-button>
-      <mat-icon (click)="removePicture()" matTooltip="{{t.get.picture_remove}}">delete_forever</mat-icon>
-  </button>
+        <mat-button-toggle value="hr">
+          <img width="20px" src="assets/hr.png">
+        </mat-button-toggle>
 
-  <button *ngIf="selectedId > 0" mat-icon-button>
-      <mat-icon (click)="moveToLeft()" matTooltip="{{t.get.picture_left}}">arrow_back</mat-icon>
-  </button>
+        <mat-button-toggle value="de">
+          <img width="20px" src="assets/de.png">
+        </mat-button-toggle>
 
-  <button *ngIf="selectedId > 0" mat-icon-button>
-      <mat-icon (click)="moveToRight()" matTooltip="{{t.get.picture_right}}">arrow_forward</mat-icon>
-  </button>
+        <mat-button-toggle value="en">
+          <img width="20px" src="assets/en.png">
+        </mat-button-toggle>
+
+      </mat-button-toggle-group>
+
+      <div>Selected value: {{group.value}}</div>
+
+    </mat-tab>
 
 
+    <!-- PICTURES TAB -->
+    <mat-tab label="{{t.get.tab_pictures}}">
+      <p></p>
 
+      <div *ngIf="data.dog.images.length > 0"
+        style="display: flex; overflow-x: auto; border-width: 1px; border-color: grey; border-style: solid">
+        <div *ngFor="let image of data.dog.images | imagesort; let i = index">
+          <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage" [ngClass]="{'myselected': image.id == selectedId}"
+            (click)="selectImage(image.id)">
+        </div>
+      </div>
+
+      <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+
+      <button mat-icon-button>
+        <mat-icon (click)="fileInput.click()" matTooltip="{{t.get.picture_upload}}">add_circle_outline</mat-icon>
+      </button>
+
+      <button *ngIf="selectedId > 0" mat-icon-button>
+        <mat-icon (click)="setVisibility()" matTooltip="{{t.get.picture_default}}">visibility</mat-icon>
+      </button>
+
+      <button *ngIf="selectedId > 0" mat-icon-button>
+        <mat-icon (click)="removePicture()" matTooltip="{{t.get.picture_remove}}">delete_forever</mat-icon>
+      </button>
+
+      <button *ngIf="selectedId > 0" mat-icon-button>
+        <mat-icon (click)="moveToLeft()" matTooltip="{{t.get.picture_left}}">arrow_back</mat-icon>
+      </button>
+
+      <button *ngIf="selectedId > 0" mat-icon-button>
+        <mat-icon (click)="moveToRight()" matTooltip="{{t.get.picture_right}}">arrow_forward</mat-icon>
+      </button>
+
+    </mat-tab>
+
+    <!-- VIDEO TAB-->
+    <mat-tab label="{{t.get.tab_videos}}">
+      <p></p>
+
+      Under Construction
+
+    </mat-tab>
+  </mat-tab-group>
 
 </div>
-
 
 
 <div mat-dialog-actions style="float: right">
