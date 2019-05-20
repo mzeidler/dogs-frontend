@@ -114,5 +114,7 @@ export class RestService {
     return this.http.delete(this.dogUrl + "/delete/" + dog.id, httpOptions).subscribe();
   } 
 
-  
+  deleteImage(id: number) {
+    return this.http.delete(this.imageUrl + "/delete/" + id, httpOptions).subscribe();
+  } 
 }

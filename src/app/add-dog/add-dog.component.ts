@@ -48,7 +48,10 @@ export class AddDogComponent implements OnInit {
   }
 
   removePicture() {
-
+    if (this.selectedId) {
+      this.rest.deleteImage(this.selectedId);
+      this.data.dog.images = this.data.dog.images.filter(i => i.id != this.selectedId);  
+    }
   }
 
   onFileChanged(event) {

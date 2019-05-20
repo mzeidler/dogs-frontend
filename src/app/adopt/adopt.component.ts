@@ -10,6 +10,7 @@ import { Image } from '../model/image';
 import { ActivatedRoute } from '@angular/router';
 import { DeleteDogComponent } from '../delete-dog/delete-dog.component';
 import { ShowDogComponent } from '../show-dog/show-dog.component';
+import { DogsResolverService } from '../resolvers/dogs-resolver.service';
 
 @Component({
   selector: 'app-adopt',
@@ -78,8 +79,28 @@ export class AdoptComponent implements OnInit {
           dog.weight = result.dog.weight;
           
           this.rest.addDog(dog).subscribe(d => {
-            // Dog updated
+
+            // update dog images
+            this.dogs.forEach(d1 => {
+              if (d1.id == d.id) {
+                d1.images = d.images;
+              }
+            });
+
           })
+        } else {
+
+          // reload dog (images)
+          this.rest.getDog(dog.id).subscribe(d => {
+
+            // update dog images
+            this.dogs.forEach(d1 => {
+              if (d1.id == d.id) {
+                d1.images = d.images;
+              }
+            });
+
+          });
         }
   
       }); 
