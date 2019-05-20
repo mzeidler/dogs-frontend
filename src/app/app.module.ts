@@ -35,6 +35,7 @@ import {MatCardModule} from '@angular/material/card';
 import { DeleteDogComponent } from './delete-dog/delete-dog.component';
 import { ShowDogComponent } from './show-dog/show-dog.component';
 import { AgePipe } from './pipes/agepipe';
+import { ImageSort } from './pipes/imagesortpipe';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { AgePipe } from './pipes/agepipe';
     AddDogComponent,
     DeleteDogComponent,
     ShowDogComponent,
-    AgePipe
+    AgePipe,
+    ImageSort
   ],
   imports: [
     BrowserModule,

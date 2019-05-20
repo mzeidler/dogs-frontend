@@ -63,7 +63,9 @@ export class AddDogComponent implements OnInit {
       dogId = this.data.dog.id;
     }
 
-    this.rest.pushFileToStorage(currentFileUpload, dogId).subscribe(event => {
+    let sortid = Math.max(...this.data.dog.images.map(o => o.sortid), 0) + 1;
+
+    this.rest.pushFileToStorage(currentFileUpload, dogId, sortid).subscribe(event => {
       if (event.type === HttpEventType.UploadProgress) {
         this.progress.percentage = Math.round(100 * event.loaded / event.total);
       } else if (event instanceof HttpResponse) {
@@ -71,6 +73,11 @@ export class AddDogComponent implements OnInit {
         //image.url = this.rest.imageUrl + "/" + image.id;
         //this.images.push(image);
         this.data.dog.images.push(image);
+
+        this.data.dog.images.sort((a: Image, b: Image) => {
+          return b.sortid - a.sortid;
+        });
+
       }
     })
     this.progress.percentage = 0;

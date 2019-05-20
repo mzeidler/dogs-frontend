@@ -50,12 +50,12 @@ export class RestService {
     };
   }
 
-  pushFileToStorage(file: File, dogId: number): Observable<HttpEvent<{}>> {
+  pushFileToStorage(file: File, dogId: number, sortid: number): Observable<HttpEvent<{}>> {
     let formdata: FormData = new FormData();
 
     formdata.append('file', file);
 
-    const req = new HttpRequest('POST', this.uploadUrl + "/" + dogId, formdata, {
+    const req = new HttpRequest('POST', this.uploadUrl + "/" + dogId + "/" + sortid, formdata, {
       reportProgress: true,
       responseType: 'text'
     });

@@ -1,5 +1,6 @@
 export class Image {
     id: number;
     name: string;
-    size: number;  
+    size: number;
+    sortid: number;
 }

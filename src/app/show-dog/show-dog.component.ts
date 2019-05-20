@@ -17,6 +17,11 @@ export class ShowDogComponent implements OnInit {
 
   ngOnInit() {
     if (this.data.dog.images && this.data.dog.images.length > 0) {
+
+      this.data.dog.images.sort((a: Image, b: Image) => {
+        return b.sortid - a.sortid;
+      });
+
       this.selectImage(this.data.dog.images[0]);
     }
   }
