@@ -3,15 +3,15 @@
 
       <img class="flagmargin" width="20px" src="{{t.get.lang_icon}}" (click)="t.changeLang()">
 
-      <button class="mymargin" mat-button routerLink="/home" routerLinkActive="active">{{t.get.home}}</button>
-      <button class="mymargin" mat-button routerLink="/adopt" routerLinkActive="active">{{t.get.adopt}}</button>      
-      <button class="mymargin" mat-button routerLink="/volunteer" routerLinkActive="active">{{t.get.volunteer}}</button>
-      <button class="mymargin" mat-button routerLink="/donate" routerLinkActive="active">{{t.get.donate}}</button>
-      <button class="mymargin" mat-button routerLink="/contact" routerLinkActive="active">{{t.get.contact}}</button>
-      <button class="mymargin" mat-button routerLink="/gallery" routerLinkActive="active">{{t.get.gallery}}</button> 
+      <button class="mymargin" mat-button routerLink="/home" routerLinkActive="active"><b>{{t.get.home}}</b></button>
+      <button class="mymargin" mat-button routerLink="/adopt" routerLinkActive="active"><b>{{t.get.adopt}}</b></button>      
+      <button class="mymargin" mat-button routerLink="/volunteer" routerLinkActive="active"><b>{{t.get.volunteer}}</b></button>
+      <button class="mymargin" mat-button routerLink="/donate" routerLinkActive="active"><b>{{t.get.donate}}</b></button>
+      <button class="mymargin" mat-button routerLink="/contact" routerLinkActive="active"><b>{{t.get.contact}}</b></button>
+      <button class="mymargin" mat-button routerLink="/gallery" routerLinkActive="active"><b>{{t.get.gallery}}</b></button> 
       
-      <button *ngIf="!rest.currentUserValue" style="float: right" mat-button (click)="login()">{{t.get.login}}</button>
-      <button *ngIf="rest.currentUserValue" style="float: right" mat-button (click)="logout()">{{t.get.logout}}</button>
+      <button *ngIf="!rest.currentUserValue" style="float: right" mat-button (click)="login()"><b>{{t.get.login}}</b></button>
+      <button *ngIf="rest.currentUserValue" style="float: right" mat-button (click)="logout()"><b>{{t.get.logout}}</b></button>
   </nav>
 
 

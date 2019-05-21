@@ -3,3 +3,7 @@
 .mat-grid-tile .mat-figure {
     justify-content: flex-start !important ;
 }
+
+body {
+    background-color: blanchedalmond;
+}
