@@ -77,6 +77,7 @@ export class AdoptComponent implements OnInit {
           dog.nutered = result.dog.nutered;
           dog.vaccinated = result.dog.vaccinated;
           dog.weight = result.dog.weight;
+          dog.titleimage = result.dog.titleimage;
           
           this.rest.addDog(dog).subscribe(d => {
 

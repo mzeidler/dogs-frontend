@@ -52,8 +52,7 @@ export class AddDogComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
 
       if (result) {
-        // TODO: Under Construction
-        console.log("MARKOTEST:" + result.croppedImage);
+        this.data.dog.titleimage = result.croppedImage;
       }
 
     });

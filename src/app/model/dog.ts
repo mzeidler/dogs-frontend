@@ -10,4 +10,5 @@ export class Dog {
     vaccinated: boolean;
     description: string;
     images: Image[];
+    titleimage: string;
 }
