@@ -1,5 +1,8 @@
-<h1 mat-dialog-title>Crop image</h1>
+<h1 mat-dialog-title>{{t.get.crop_image_title}}</h1>
 
+<div align="center">
+<img src="{{rest.imageUrl}}/{{data.image.id}}" class="cropimage">
+</div>
 
 <div mat-dialog-actions style="float: right">
   <button mat-button (click)="onNoClick()">{{t.get.cancel}}</button>

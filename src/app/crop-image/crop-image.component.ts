@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { TranslationService } from '../translations/translation.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DeleteDogComponent } from '../delete-dog/delete-dog.component';
+import { RestService } from '../service/rest.service';
 
 @Component({
   selector: 'app-crop-image',
@@ -10,7 +11,7 @@ import { DeleteDogComponent } from '../delete-dog/delete-dog.component';
 })
 export class CropImageComponent implements OnInit {
 
-  constructor(public t: TranslationService, public dialogRef: MatDialogRef<CropImageComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(public t: TranslationService, public rest: RestService, public dialogRef: MatDialogRef<CropImageComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }

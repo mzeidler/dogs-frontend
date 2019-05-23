@@ -61,6 +61,8 @@ export interface Translation {
     tab_description: string;
     tab_pictures: string;
     tab_videos: string; 
+
+    crop_image_title: string;
 }
 
 export class En implements Translation {
@@ -128,6 +130,7 @@ export class En implements Translation {
     tab_pictures = "Pictures";
     tab_videos = "Videos";    
 
+    crop_image_title = "Title picture";
 }
 
 export class De implements Translation {
@@ -194,6 +197,8 @@ export class De implements Translation {
     tab_description = "Beschreibung";
     tab_pictures = "Bilder";
     tab_videos = "Video";   
+
+    crop_image_title = "Titelbild";
 }
 
 export class Hr implements Translation {
@@ -260,4 +265,6 @@ export class Hr implements Translation {
     tab_description = "Opis";
     tab_pictures = "Slike";
     tab_videos = "Video";  
+
+    crop_image_title = "Odabir naslovne slike";
 }

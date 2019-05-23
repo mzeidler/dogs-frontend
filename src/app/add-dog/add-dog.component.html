@@ -91,7 +91,7 @@
         style="display: flex; overflow-x: auto; border-width: 1px; border-color: grey; border-style: solid">
         <div *ngFor="let image of data.dog.images | imagesort; let i = index">
           <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage" [ngClass]="{'myselected': image.id == selectedId}"
-            (click)="selectImage(image.id)">
+            (click)="selectImage(image)">
         </div>
       </div>
 

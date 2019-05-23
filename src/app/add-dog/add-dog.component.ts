@@ -21,10 +21,11 @@ import { CropImageComponent } from '../crop-image/crop-image.component';
 export class AddDogComponent implements OnInit {
 
   selectedId = 0;
+  selectedImage: Image;
 
   progress: { percentage: number } = { percentage: 0 }
 
-  constructor(public dialog: MatDialog, private rest: RestService, public t: TranslationService, public dialogRef: MatDialogRef<AddDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(public dialog: MatDialog, public rest: RestService, public t: TranslationService, public dialogRef: MatDialogRef<AddDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }
@@ -33,15 +34,16 @@ export class AddDogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  selectImage(id) {
-    this.selectedId = id;
+  selectImage(image: Image) {
+    this.selectedId = image.id;
+    this.selectedImage = image;
   }
 
   setVisibility() {
     // open crop dialog
     const dialogRef = this.dialog.open(CropImageComponent, {
-      width: '430px', data: { 
-        title: 'Crop Image'
+      data: { 
+        image: this.selectedImage
       }
     });
 
