@@ -13,34 +13,24 @@ import { ImageCroppedEvent } from 'ngx-image-cropper';
 export class CropImageComponent implements OnInit {
 
   imageChangedEvent: any = '';
-  croppedImage: any = '';
   showCropper = false;
 
   constructor(public t: TranslationService, public rest: RestService, public dialogRef: MatDialogRef<CropImageComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    this.imageChangedEvent = this.data.uploadedImage;
   }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
-  fileChangeEvent(event: any): void {
-    this.imageChangedEvent = event;
-  }
-
   imageCropped(event: ImageCroppedEvent) {
-    this.croppedImage = event.base64;
-    this.data.titleimage = this.croppedImage;
+    this.data.croppedImage = event.base64;
   }
 
   imageLoaded() {
     this.showCropper = true;
   }
 
-  cropperReady() {
-  }
-
-  loadImageFailed() {
-  }
 }

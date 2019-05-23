@@ -39,13 +39,13 @@ export class AddDogComponent implements OnInit {
     this.selectedImage = image;
   }
 
-  setTitleImage() {
+  setTitleImage(event: any):void {
 
     const dialogRef = this.dialog.open(CropImageComponent, {
       minHeight: '150px',
       minWidth: '250px',
       data: { 
-        titleimage: undefined,
+        uploadedImage: event,
       }
     });
 
@@ -53,7 +53,7 @@ export class AddDogComponent implements OnInit {
 
       if (result) {
         // TODO: Under Construction
-        console.log("MARKOTEST:" + result.titleimage);
+        console.log("MARKOTEST:" + result.croppedImage);
       }
 
     });

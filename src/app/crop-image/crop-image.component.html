@@ -1,13 +1,5 @@
 <h1 mat-dialog-title>{{t.get.crop_image_title}}</h1>
 
-<input style="display: none" type="file" (change)="fileChangeEvent($event)" #fileInput/>
-
-<div>
-<button *ngIf="!imageChangedEvent" mat-raised-button (click)="fileInput.click()">
-  {{t.get.crop_image_upload}}
-</button>
-</div>
-
 <image-cropper
   [imageChangedEvent]="imageChangedEvent"
   [maintainAspectRatio]="true"
@@ -20,12 +12,10 @@
   outputType="base64"
   (imageCropped)="imageCropped($event)"
   (imageLoaded)="imageLoaded()"
-  (cropperReady)="cropperReady()"
-  (loadImageFailed)="loadImageFailed()"
   [style.display]="showCropper ? null : 'none'">
 </image-cropper>
 
-<div *ngIf="imageChangedEvent" mat-dialog-actions style="float: right">
+<div mat-dialog-actions style="float: right">
   <button mat-button (click)="onNoClick()">{{t.get.cancel}}</button>
   <button mat-button [mat-dialog-close]="data" cdkFocusInitial>{{t.get.save}}</button>
 </div>
