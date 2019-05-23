@@ -13,7 +13,7 @@ export class ShowDogComponent implements OnInit {
 
   selectedId = 0;
 
-  constructor(private rest: RestService, private t: TranslationService, public dialogRef: MatDialogRef<ShowDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private rest: RestService, public t: TranslationService, public dialogRef: MatDialogRef<ShowDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
     if (this.data.dog.images && this.data.dog.images.length > 0) {
