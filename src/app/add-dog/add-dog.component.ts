@@ -46,6 +46,7 @@ export class AddDogComponent implements OnInit {
       minWidth: '250px',
       data: { 
         uploadedImage: event,
+        croppedImage: undefined
       }
     });
 

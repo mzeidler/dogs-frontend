@@ -9,7 +9,7 @@
 
     <mat-grid-tile [colspan]="3" [rowspan]="3">
         <input style="display: none" type="file" (change)="setTitleImage($event)" #fileInput1/>
-      <img src="assets/dog.jpg" border="1" width="210px" (click)="fileInput1.click()" style="cursor: pointer">
+      <img src="{{data.dog.titleimage ? data.dog.titleimage : 'assets/dog2.jpg'}}" border="1" (click)="fileInput1.click()" style="cursor: pointer">
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="3" [rowspan]="1">
