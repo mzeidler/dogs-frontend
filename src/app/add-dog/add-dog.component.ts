@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
 import { TranslationService } from '../translations/translation.service';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
@@ -7,6 +7,7 @@ import { RestService } from '../service/rest.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Image } from '../model/image';
 import { SelectionModel } from '@angular/cdk/collections';
+import { CropImageComponent } from '../crop-image/crop-image.component';
 
 @Component({
   selector: 'app-add-dog',
@@ -23,7 +24,7 @@ export class AddDogComponent implements OnInit {
 
   progress: { percentage: number } = { percentage: 0 }
 
-  constructor(private rest: RestService, private t: TranslationService, public dialogRef: MatDialogRef<AddDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(public dialog: MatDialog, private rest: RestService, public t: TranslationService, public dialogRef: MatDialogRef<AddDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }
@@ -37,6 +38,20 @@ export class AddDogComponent implements OnInit {
   }
 
   setVisibility() {
+    // open crop dialog
+    const dialogRef = this.dialog.open(CropImageComponent, {
+      width: '430px', data: { 
+        title: 'Crop Image'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      if (result) {
+        // 
+      }
+
+    });
 
   }
 

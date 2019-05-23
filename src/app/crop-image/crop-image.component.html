@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Crop image</h1>
+
+
+<div mat-dialog-actions style="float: right">
+  <button mat-button (click)="onNoClick()">{{t.get.cancel}}</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>{{t.get.save}}</button>
+</div>

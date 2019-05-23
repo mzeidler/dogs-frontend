@@ -38,6 +38,7 @@ import { AgePipe } from './pipes/agepipe';
 import { ImageSort } from './pipes/imagesortpipe';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { CropImageComponent } from './crop-image/crop-image.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     DeleteDogComponent,
     ShowDogComponent,
     AgePipe,
-    ImageSort
+    ImageSort,
+    CropImageComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +87,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     LoginComponent,
     AddDogComponent,
     DeleteDogComponent,
-    ShowDogComponent
+    ShowDogComponent,
+    CropImageComponent
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}
