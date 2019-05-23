@@ -21,7 +21,7 @@ export class AdoptComponent implements OnInit {
 
   dogs: Dog[];
 
-  constructor(public dialog: MatDialog, private t: TranslationService, private rest: RestService, private route: ActivatedRoute) { 
+  constructor(public dialog: MatDialog, public t: TranslationService, public rest: RestService, private route: ActivatedRoute) { 
   }
 
   ngOnInit() {

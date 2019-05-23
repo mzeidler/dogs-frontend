@@ -57,6 +57,10 @@ export interface Translation {
     picture_default: string;
     picture_left: string;
     picture_right: string;
+
+    tab_description: string;
+    tab_pictures: string;
+    tab_videos: string; 
 }
 
 export class En implements Translation {

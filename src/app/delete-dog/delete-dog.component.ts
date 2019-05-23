@@ -9,7 +9,7 @@ import { TranslationService } from '../translations/translation.service';
 })
 export class DeleteDogComponent implements OnInit {
 
-  constructor(private t: TranslationService, public dialogRef: MatDialogRef<DeleteDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(public t: TranslationService, public dialogRef: MatDialogRef<DeleteDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }

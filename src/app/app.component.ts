@@ -14,8 +14,8 @@ export class AppComponent {
   title = 'dogs-frontend';
 
   constructor(
-    private t: TranslationService, 
-    private rest: RestService,
+    public t: TranslationService, 
+    public rest: RestService,
     private snackBar: MatSnackBar,
     public dialog: MatDialog) { }
 
