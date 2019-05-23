@@ -39,18 +39,21 @@ export class AddDogComponent implements OnInit {
     this.selectedImage = image;
   }
 
-  setVisibility() {
-    // open crop dialog
+  setTitleImage() {
+
     const dialogRef = this.dialog.open(CropImageComponent, {
+      minHeight: '150px',
+      minWidth: '250px',
       data: { 
-        image: this.selectedImage
+        titleimage: undefined,
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
 
       if (result) {
-        // 
+        // TODO: Under Construction
+        console.log("MARKOTEST:" + result.titleimage);
       }
 
     });

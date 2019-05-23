@@ -6,7 +6,7 @@
   <mat-grid-list cols="8" rowHeight="70">
 
     <mat-grid-tile [colspan]="3" [rowspan]="3">
-      <img src="assets/dog.jpg" border="1" width="200px">
+      <img src="assets/dog.jpg" border="1" width="210px" (click)="setTitleImage()" style="cursor: pointer">
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="3" [rowspan]="1">
@@ -99,10 +99,6 @@
 
       <button mat-icon-button>
         <mat-icon (click)="fileInput.click()" matTooltip="{{t.get.picture_upload}}">add_circle_outline</mat-icon>
-      </button>
-
-      <button *ngIf="selectedId > 0" mat-icon-button>
-        <mat-icon (click)="setVisibility()" matTooltip="{{t.get.picture_default}}">visibility</mat-icon>
       </button>
 
       <button *ngIf="selectedId > 0" mat-icon-button>
