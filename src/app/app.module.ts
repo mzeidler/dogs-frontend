@@ -39,6 +39,7 @@ import { ImageSort } from './pipes/imagesortpipe';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CropImageComponent } from './crop-image/crop-image.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { CropImageComponent } from './crop-image/crop-image.component';
     FlexLayoutModule,
     MatCardModule,
     MatTabsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    ImageCropperModule
   ],
   entryComponents: [
     LoginComponent,
