@@ -3,4 +3,6 @@ export class Image {
     name: string;
     size: number;
     sortid: number;
+    height: number;
+    width: number;
 }
