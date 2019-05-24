@@ -18,7 +18,10 @@ export class TranslationService {
       case 'De': this.get = new De(); break;
       case 'Hr': this.get = new Hr(); break;
       case 'En': this.get = new En(); break;
-      default: this.get = new De(); break;
+      default: 
+        lang = 'De';
+        this.get = new De(); 
+        break;
     }
 
     localStorage.setItem("lang", lang);
