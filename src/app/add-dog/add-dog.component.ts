@@ -8,6 +8,7 @@ import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Image } from '../model/image';
 import { SelectionModel } from '@angular/cdk/collections';
 import { CropImageComponent } from '../crop-image/crop-image.component';
+import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
 @Component({
   selector: 'app-add-dog',
@@ -22,6 +23,7 @@ export class AddDogComponent implements OnInit {
 
   selectedId = 0;
   selectedImage: Image;
+  public Editor = DecoupledEditor;
 
   progress: { percentage: number } = { percentage: 0 }
 
@@ -131,5 +133,17 @@ export class AddDogComponent implements OnInit {
     this.data.dog.images.sort((a: Image, b: Image) => {
       return b.sortid - a.sortid;
     });
+  }
+
+  public onReady(editor) {
+
+    editor.editing.view.change( writer => {
+      writer.setAttribute( 'spellcheck', 'false', editor.editing.view.document.getRoot() );
+    } );
+
+    editor.ui.getEditableElement().parentElement.insertBefore(
+        editor.ui.view.toolbar.element,
+        editor.ui.getEditableElement()
+    );
   }
 }

@@ -56,7 +56,7 @@ export class AdoptComponent implements OnInit {
     if (this.rest.currentUserValue) {
 
       const dialogRef = this.dialog.open(AddDogComponent, {
-        width: '720px', data: { 
+        width: '950px', data: { 
           dog: {...dog},
           new: false,
           day: moment(this.convertToDate(dog.born)),
@@ -78,6 +78,9 @@ export class AdoptComponent implements OnInit {
           dog.vaccinated = result.dog.vaccinated;
           dog.weight = result.dog.weight;
           dog.titleimage = result.dog.titleimage;
+          dog.de = result.dog.de;
+          dog.en = result.dog.en;
+          dog.hr = result.dog.hr;
           
           this.rest.addDog(dog).subscribe(d => {
 
@@ -125,7 +128,7 @@ export class AdoptComponent implements OnInit {
     dog.images = [];
 
     const dialogRef = this.dialog.open(AddDogComponent, {
-      width: '720px', data: { 
+      width: '950px', data: { 
         dog: {...dog},
         new: true,
         day: undefined,

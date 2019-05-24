@@ -11,4 +11,8 @@ export class Dog {
     description: string;
     images: Image[];
     titleimage: string;
+
+    de: string;
+    en: string;
+    hr: string;
 }

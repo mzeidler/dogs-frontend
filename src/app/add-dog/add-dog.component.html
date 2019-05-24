@@ -2,14 +2,15 @@
 
 
 
-<div mat-dialog-content>
+<div mat-dialog-content style="height: 100%">
 
   <!-- FORM -->
   <mat-grid-list cols="8" rowHeight="70">
 
     <mat-grid-tile [colspan]="3" [rowspan]="3">
-        <input style="display: none" type="file" (change)="setTitleImage($event)" #fileInput1/>
-      <img src="{{data.dog.titleimage ? data.dog.titleimage : 'assets/dog2.jpg'}}" border="1" (click)="fileInput1.click()" style="cursor: pointer">
+      <input style="display: none" type="file" (change)="setTitleImage($event)" #fileInput1 />
+      <img src="{{data.dog.titleimage ? data.dog.titleimage : 'assets/dog2.jpg'}}" border="1"
+        (click)="fileInput1.click()" style="cursor: pointer">
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="3" [rowspan]="1">
@@ -62,29 +63,36 @@
   <mat-tab-group style="height: 290px">
 
     <!-- DESCRIPTION TAB-->
-    <mat-tab label="{{t.get.tab_description}}">
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        {{t.get.tab_description}}
+        <img width="20px" src="assets/de.png" style="margin-left: 10px">
+      </ng-template>
+
       <p></p>
-
-      <mat-button-toggle-group #group="matButtonToggleGroup">
-
-        <mat-button-toggle value="hr">
-          <img width="20px" src="assets/hr.png">
-        </mat-button-toggle>
-
-        <mat-button-toggle value="de">
-          <img width="20px" src="assets/de.png">
-        </mat-button-toggle>
-
-        <mat-button-toggle value="en">
-          <img width="20px" src="assets/en.png">
-        </mat-button-toggle>
-
-      </mat-button-toggle-group>
-
-      <div>Selected value: {{group.value}}</div>
-
+      <ckeditor class="mat-body" [(ngModel)]="data.dog.de" [editor]="Editor" (ready)="onReady($event)"></ckeditor>
     </mat-tab>
 
+    <mat-tab>
+      <ng-template mat-tab-label>
+        {{t.get.tab_description}}
+        <img width="20px" src="assets/hr.png" style="margin-left: 10px">
+      </ng-template>
+
+      <p></p>
+      <ckeditor class="mat-body" [(ngModel)]="data.dog.hr" [editor]="Editor" (ready)="onReady($event)"></ckeditor>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        {{t.get.tab_description}}
+        <img width="20px" src="assets/en.png" style="margin-left: 10px">
+      </ng-template>
+
+      <p></p>
+      <ckeditor class="mat-body" [(ngModel)]="data.dog.en" [editor]="Editor" (ready)="onReady($event)"></ckeditor>
+    </mat-tab>
 
     <!-- PICTURES TAB -->
     <mat-tab label="{{t.get.tab_pictures}}">
