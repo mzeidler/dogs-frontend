@@ -40,6 +40,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CropImageComponent } from './crop-image/crop-image.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     MatCardModule,
     MatTabsModule,
     MatButtonToggleModule,
-    ImageCropperModule
+    ImageCropperModule,
+    CKEditorModule
   ],
   entryComponents: [
     LoginComponent,
