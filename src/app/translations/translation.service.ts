@@ -13,6 +13,21 @@ export class TranslationService {
     this.setLang(localStorage.getItem("lang"));
   }
 
+  de(): boolean {
+    let lang = localStorage.getItem("lang");
+    return lang && lang == 'De';
+  }
+
+  en(): boolean {
+    let lang = localStorage.getItem("lang");
+    return lang && lang == 'En';
+  }
+
+  hr(): boolean {
+    let lang = localStorage.getItem("lang");
+    return lang && lang == 'Hr';
+  }
+
   setLang(lang: string) {
     switch(lang) {
       case 'De': this.get = new De(); break;
