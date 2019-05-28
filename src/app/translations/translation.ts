@@ -35,6 +35,7 @@ export interface Translation {
     born: string;
     nutered: string;
     vaccinated: string;
+    antiparasite: string;
     description: string;   
 
     male: string;
@@ -64,6 +65,11 @@ export interface Translation {
 
     crop_image_title: string;
     crop_image_upload: string;
+
+    size: string;
+    size_l: string;
+    size_m: string;
+    size_s: string;
 }
 
 export class En implements Translation {
@@ -103,6 +109,7 @@ export class En implements Translation {
     born = "born";
     nutered = "nutered";
     vaccinated = "vaccinated";
+    antiparasite = "anti parasite";
     description = "description";    
 
     male = "male";
@@ -133,6 +140,11 @@ export class En implements Translation {
 
     crop_image_title = "Title picture";
     crop_image_upload = "Upload picture";
+
+    size = "size";
+    size_l = "large";
+    size_m = "middle";
+    size_s = "small";
 }
 
 export class De implements Translation {
@@ -172,6 +184,7 @@ export class De implements Translation {
     born = "geboren";
     nutered = "kastriert";
     vaccinated = "geimpft";
+    antiparasite = "entwurmt";
     description = "beschreibung";   
 
     male = "männlich";
@@ -202,6 +215,11 @@ export class De implements Translation {
 
     crop_image_title = "Titelbild";
     crop_image_upload = "Bild hochladen";
+
+    size = "Größe";
+    size_l = "groß";
+    size_m = "mittel";
+    size_s = "klein";
 }
 
 export class Hr implements Translation {
@@ -241,6 +259,7 @@ export class Hr implements Translation {
     born = "rođen";
     nutered = "kastriran";
     vaccinated = "cijepljen";
+    antiparasite = "protiv parazita";
     description = "opis";   
 
     male = "muški";
@@ -271,4 +290,9 @@ export class Hr implements Translation {
 
     crop_image_title = "Odabir naslovne slike";
     crop_image_upload = "Odaberi sliku";
+
+    size = "veličina";
+    size_l = "veliki";
+    size_m = "srednji";
+    size_s = "mali";
 }

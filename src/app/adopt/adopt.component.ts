@@ -81,6 +81,8 @@ export class AdoptComponent implements OnInit {
           dog.de = result.dog.de;
           dog.en = result.dog.en;
           dog.hr = result.dog.hr;
+          dog.size = result.dog.size;
+          dog.antiparasite = result.dog.antiparasite;
           
           this.rest.addDog(dog).subscribe(d => {
 
