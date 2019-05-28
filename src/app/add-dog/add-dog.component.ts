@@ -10,6 +10,11 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { CropImageComponent } from '../crop-image/crop-image.component';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
+export interface Size {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-add-dog',
   templateUrl: './add-dog.component.html',
@@ -24,6 +29,12 @@ export class AddDogComponent implements OnInit {
   selectedId = 0;
   selectedImage: Image;
   public Editor = DecoupledEditor;
+
+  sizes: Size[] = [
+    {value: 'L', viewValue: this.t.get.size_l },
+    {value: 'M', viewValue: this.t.get.size_m },
+    {value: 'S', viewValue: this.t.get.size_s }
+  ];
 
   progress: { percentage: number } = { percentage: 0 }
 
