@@ -114,7 +114,11 @@ export class AdoptComponent implements OnInit {
     } else {
 
       const dialogRef = this.dialog.open(ShowDogComponent, {
-        width: '80%', data: { 
+        width: '100vw',
+        maxWidth: '100vw',
+        height: '100vh', 
+        maxHeight: '100vh',
+        data: { 
           dog: {...dog}
         }
       });  
