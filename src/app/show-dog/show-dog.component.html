@@ -80,4 +80,10 @@
       </mat-grid-list>
 
   </div>
+
+  <!-- DESCRIPTION -->
+  
+  <div *ngIf="t.de()" class="mat-body dogdesc" [innerHTML]="data.dog.de"></div>
+  <div *ngIf="t.hr()" class="mat-body dogdesc" [innerHTML]="data.dog.hr"></div>
+  <div *ngIf="t.en()" class="mat-body dogdesc" [innerHTML]="data.dog.en"></div>
 </div>
