@@ -101,16 +101,16 @@ export class En implements Translation {
     yes = "Yes";
     no = "No";
 
-    name = "name";
-    gender = "gender";
+    name = "Name";
+    gender = "Gender";
     gender_m = "m";
     gender_f = "f";
-    weight = "weight";
-    born = "born";
-    nutered = "nutered";
-    vaccinated = "vaccinated";
-    antiparasite = "anti parasite";
-    description = "description";    
+    weight = "Weight";
+    born = "Born";
+    nutered = "Nutered";
+    vaccinated = "Vaccinated";
+    antiparasite = "Anti parasite";
+    description = "Description";    
 
     male = "male";
     female = "female";
@@ -141,7 +141,7 @@ export class En implements Translation {
     crop_image_title = "Title picture";
     crop_image_upload = "Upload picture";
 
-    size = "size";
+    size = "Size";
     size_l = "large";
     size_m = "middle";
     size_s = "small";
@@ -176,16 +176,16 @@ export class De implements Translation {
     yes = "Ja";
     no = "Nein";
 
-    name = "name";
-    gender = "geschlecht";
+    name = "Name";
+    gender = "Geschlecht";
     gender_m = "m";
     gender_f = "w";
-    weight = "gewicht";
-    born = "geboren";
-    nutered = "kastriert";
-    vaccinated = "geimpft";
-    antiparasite = "entwurmt";
-    description = "beschreibung";   
+    weight = "Gewicht";
+    born = "Geboren";
+    nutered = "Kastriert";
+    vaccinated = "Geimpft";
+    antiparasite = "Entwurmt";
+    description = "Beschreibung";   
 
     male = "männlich";
     female = "weiblich";
@@ -216,7 +216,7 @@ export class De implements Translation {
     crop_image_title = "Titelbild";
     crop_image_upload = "Bild hochladen";
 
-    size = "größe";
+    size = "Größe";
     size_l = "groß";
     size_m = "mittel";
     size_s = "klein";
@@ -251,16 +251,16 @@ export class Hr implements Translation {
     yes = "Da";
     no = "Ne";
 
-    name = "ime";
-    gender = "spol";
+    name = "Ime";
+    gender = "Spol";
     gender_m = "m";
     gender_f = "ž";
-    weight = "težina";
-    born = "rođen";
-    nutered = "kastriran";
-    vaccinated = "cijepljen";
-    antiparasite = "protiv parazita";
-    description = "opis";   
+    weight = "Težina";
+    born = "Rođen";
+    nutered = "Kastriran";
+    vaccinated = "Cijepljen";
+    antiparasite = "Protiv parazita";
+    description = "Opis";   
 
     male = "muški";
     female = "ženka";
@@ -291,7 +291,7 @@ export class Hr implements Translation {
     crop_image_title = "Odabir naslovne slike";
     crop_image_upload = "Odaberi sliku";
 
-    size = "veličina";
+    size = "Veličina";
     size_l = "veliki";
     size_m = "srednji";
     size_s = "mali";
