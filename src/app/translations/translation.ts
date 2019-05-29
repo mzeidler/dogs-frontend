@@ -216,7 +216,7 @@ export class De implements Translation {
     crop_image_title = "Titelbild";
     crop_image_upload = "Bild hochladen";
 
-    size = "Größe";
+    size = "größe";
     size_l = "groß";
     size_m = "mittel";
     size_s = "klein";

@@ -22,7 +22,11 @@
       <img mat-card-image src="{{dog.titleimage ? dog.titleimage : 'assets/dog2.jpg'}}" style="cursor: pointer" (click)="selectDog(dog)">
 
       <mat-card-content>
-        <p><b>{{t.get.age}}:</b>&nbsp;{{dog.born | agepipe }}</p>
+        <b>{{t.get.age}}:</b>&nbsp;{{dog.born | agepipe }}
+        <img *ngIf="dog.size === 'S'" style="float: right; margin-top: -5px" src="assets/dog_s.png" matTooltip="{{t.get.size}}: {{t.get.size_s}}">
+        <img *ngIf="dog.size === 'M'" style="float: right; margin-top: -15px" src="assets/dog_m.png" matTooltip="{{t.get.size}}: {{t.get.size_m}}">
+        <img *ngIf="dog.size === 'L'" style="float: right; margin-top: -17px" src="assets/dog_l.png" matTooltip="{{t.get.size}}: {{t.get.size_l}}">
+        
       </mat-card-content>
 
     </mat-card>
