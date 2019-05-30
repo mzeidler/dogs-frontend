@@ -70,6 +70,12 @@ export interface Translation {
     size_l: string;
     size_m: string;
     size_s: string;
+
+    msg_info: string;
+    msg_email: string;
+    msg_text: string;
+    msg_send: string;
+
 }
 
 export class En implements Translation {
@@ -145,6 +151,11 @@ export class En implements Translation {
     size_l = "large";
     size_m = "middle";
     size_s = "small";
+
+    msg_info = "Send a message about this dog";
+    msg_email = "Email";
+    msg_text = "Message";
+    msg_send = "Send message";
 }
 
 export class De implements Translation {
@@ -220,6 +231,11 @@ export class De implements Translation {
     size_l = "groß";
     size_m = "mittel";
     size_s = "klein";
+
+    msg_info = "Anfrage/Nachricht";
+    msg_email = "Email";
+    msg_text = "Nachricht";
+    msg_send = "Nachricht senden";    
 }
 
 export class Hr implements Translation {
@@ -295,4 +311,9 @@ export class Hr implements Translation {
     size_l = "veliki";
     size_m = "srednji";
     size_s = "mali";
+
+    msg_info = "Pošalji poruku u vezi ovog psa";
+    msg_email = "Email";
+    msg_text = "Poruka";
+    msg_send = "Pošalji poruku"; 
 }

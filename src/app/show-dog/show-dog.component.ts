@@ -11,6 +11,9 @@ import { Image } from '../model/image';
 })
 export class ShowDogComponent implements OnInit {
 
+  msg_email: string;
+  msg_text: string;
+
   selectedId = 0;
 
   constructor(private rest: RestService, public t: TranslationService, public dialogRef: MatDialogRef<ShowDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
@@ -32,6 +35,10 @@ export class ShowDogComponent implements OnInit {
   
   selectImage(image: Image) {
     this.selectedId = image.id;
+  }
+
+  sendMessage() {
+    console.log("message: " + this.msg_text);
   }
 
 }
