@@ -1,7 +1,6 @@
 <div class="mat-body contact">
 
-  <h1>{{t.get.contact_us}}</h1>
-
+  <h2>{{t.get.contact_us}}</h2>
 
   <mat-grid-list cols="2" rowHeight="25">
 
@@ -22,25 +21,39 @@
 
   </mat-grid-list>
 
-  <mat-card>
+  <h2>{{t.get.contact_message}}</h2>
+  <mat-grid-list cols="2" rowHeight="25">
 
-      <mat-form-field style="width: 100%">
-          <input matInput [(ngModel)]="msg_name" placeholder="{{t.get.msg_name}}">
-      </mat-form-field>
+    <mat-grid-tile><b>{{t.get.msg_name}}</b></mat-grid-tile>
+    <mat-grid-tile>
+      <input [(ngModel)]="msg_name" style="width:100%">
+    </mat-grid-tile>
 
-      <mat-form-field style="width: 100%">
-          <input matInput [(ngModel)]="msg_tel" placeholder="{{t.get.msg_tel}}">
-      </mat-form-field>
+    <mat-grid-tile><b>{{t.get.msg_tel}}</b></mat-grid-tile>
+    <mat-grid-tile>
+      <input [(ngModel)]="msg_tel" style="width:100%">
+    </mat-grid-tile>
 
-      <mat-form-field style="width: 100%">
-        <input matInput [(ngModel)]="msg_email" placeholder="{{t.get.msg_email}}">
-      </mat-form-field>
+    <mat-grid-tile><b>{{t.get.msg_email}}</b></mat-grid-tile>
+    <mat-grid-tile>
+      <input [(ngModel)]="msg_email" style="width:100%">
+    </mat-grid-tile>
 
-      <mat-form-field style="width: 100%">
-        <textarea matInput [(ngModel)]="msg_text" placeholder="{{t.get.msg_text}}"></textarea>
-      </mat-form-field>
+    <mat-grid-tile [rowspan]="3"><b>{{t.get.msg_text}}</b></mat-grid-tile>
+    <mat-grid-tile [rowspan]="3">
+      <textarea [(ngModel)]="msg_text" style="width:100%; height: 90%"></textarea>
+    </mat-grid-tile>
 
-      <button mat-raised-button (click)="sendMessage()">{{t.get.msg_send}}</button>
+    <mat-grid-tile [rowspan]="2">
 
-    </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [rowspan]="2">
+        <button mat-raised-button (click)="sendMessage()">{{t.get.msg_send}}</button>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+  
+
 </div>
