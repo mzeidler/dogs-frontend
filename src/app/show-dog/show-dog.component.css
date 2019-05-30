@@ -27,7 +27,14 @@
     border-color: black; 
     border-style: dashed;
     cursor: pointer;
+}
 
+.gallery {
+    display: flex; 
+    overflow-x: auto; 
+    border-width: 1px; 
+    border-color: grey; 
+    border-style: solid;
 }
 
 .dogdata {

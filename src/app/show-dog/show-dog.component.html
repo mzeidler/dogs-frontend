@@ -1,15 +1,14 @@
 
 <!-- 1. LEFT -->
-<div class="split left">
+<div class="split left" fxLayout="column" fxLayoutAlign="stretch" >
 
   <!-- 1.1. Image-->
-  <div *ngIf="selectedId > 0" align="center">
+  <div *ngIf="selectedId > 0" fxFlex fxLayoutAlign="center center">
     <img src="{{rest.imageUrl}}/{{selectedId}}" class="bigimage imgshadow">
   </div>
 
   <!-- 1.2. Gallery -->
-  <div *ngIf="data.dog.images.length > 0"
-    style="display: flex; overflow-x: auto; border-width: 1px; border-color: grey; border-style: solid">
+  <div *ngIf="data.dog.images.length > 0" class="gallery">
     <div *ngFor="let image of data.dog.images | imagesort; let i = index">
       <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage imgshadow" [ngClass]="{'myselected imgshadow': image.id == selectedId}"
         (click)="selectImage(image)">
