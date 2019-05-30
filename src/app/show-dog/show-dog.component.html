@@ -8,12 +8,10 @@
     </div>
 
     <!-- 1.2. Gallery -->
-    <div>
-      <div *ngIf="data.dog.images.length > 0" class="gallery">
-        <div *ngFor="let image of data.dog.images | imagesort; let i = index">
-          <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage imgshadow"
-            [ngClass]="{'myselected imgshadow': image.id == selectedId}" (click)="selectImage(image)">
-        </div>
+    <div *ngIf="data.dog.images.length > 0" class="gallery">
+      <div *ngFor="let image of data.dog.images | imagesort; let i = index">
+        <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage imgshadow"
+          [ngClass]="{'myselected imgshadow': image.id == selectedId}" (click)="selectImage(image)">
       </div>
     </div>
 
