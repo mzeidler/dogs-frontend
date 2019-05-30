@@ -1,9 +1,13 @@
+
+<!-- 1. LEFT -->
 <div class="left">
 
+  <!-- 1.1. Image-->
   <div *ngIf="selectedId > 0" align="center">
     <img src="{{rest.imageUrl}}/{{selectedId}}" class="bigimage">
   </div>
 
+  <!-- 1.2. Gallery -->
   <div *ngIf="data.dog.images.length > 0"
     style="display: flex; overflow-x: auto; border-width: 1px; border-color: grey; border-style: solid">
     <div *ngFor="let image of data.dog.images | imagesort; let i = index">
@@ -14,12 +18,15 @@
 
 </div>
 
+<!-- 2. RIGHT -->
 <div class="right">
 
+  <!-- 2.1. CLOSE BUTTON -->
   <button mat-icon-button (click)="onNoClick()" style="float: right; margin-right: 20px">
     <mat-icon>close</mat-icon>
   </button>
 
+  <!-- 2.2. DOG DATA -->
   <div class="mat-body dogdata">
       <mat-grid-list cols="2" rowHeight="30">
 
@@ -81,9 +88,12 @@
 
   </div>
 
-  <!-- DESCRIPTION -->
-  
+  <!-- 2.3. DOG DESCRIPTION -->
   <div *ngIf="t.de()" class="mat-body dogdesc" [innerHTML]="data.dog.de"></div>
   <div *ngIf="t.hr()" class="mat-body dogdesc" [innerHTML]="data.dog.hr"></div>
   <div *ngIf="t.en()" class="mat-body dogdesc" [innerHTML]="data.dog.en"></div>
+
+
+  <!-- 2.4. MESSAGES -->
+
 </div>
