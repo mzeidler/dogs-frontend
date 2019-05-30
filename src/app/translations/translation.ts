@@ -76,6 +76,8 @@ export interface Translation {
     msg_text: string;
     msg_send: string;
     msg_ok: string;
+
+    under_construction: string;
 }
 
 export class En implements Translation {
@@ -158,6 +160,8 @@ export class En implements Translation {
     msg_send = "Send message";
 
     msg_ok = "The Message has been sent. Thank you";
+
+    under_construction = "This page in under construction.";
 }
 
 export class De implements Translation {
@@ -166,7 +170,7 @@ export class De implements Translation {
 
     // buttons
     adopt = "Zuhause";
-    volunteer = "Freiwillig";
+    volunteer = "Freiwillige Helfer";
     donate = "Spenden";
     contact = "Kontakt";
     gallery = "Gallerie";
@@ -240,6 +244,8 @@ export class De implements Translation {
     msg_send = "Nachricht senden";    
 
     msg_ok = "Die Nachricht wurde abgeschickt. Danke";
+
+    under_construction = "Diese Seite befindet sich im Aufbau.";
 }
 
 export class Hr implements Translation {
@@ -321,4 +327,6 @@ export class Hr implements Translation {
     msg_text = "Poruka";
     msg_send = "Pošalji poruku"; 
     msg_ok = "Poruka je poslana. Hvala";
+
+    under_construction = "Ova stranica je u izradi.";
 }
