@@ -1,98 +1,129 @@
+<div style="height: 100%" fxLayout="row" fxLayoutAlign="stretch">
 
-<!-- 1. LEFT -->
-<div class="split left" fxLayout="column" fxLayoutAlign="stretch" >
+  <!-- 1. LEFT -->
+  <div fxFlex fxLayout="column" fxLayoutAlign="space-around">
 
-  <!-- 1.1. Image-->
-  <div *ngIf="selectedId > 0" fxFlex fxLayoutAlign="center center">
-    <img src="{{rest.imageUrl}}/{{selectedId}}" class="bigimage imgshadow">
-  </div>
-
-  <!-- 1.2. Gallery -->
-  <div *ngIf="data.dog.images.length > 0" class="gallery">
-    <div *ngFor="let image of data.dog.images | imagesort; let i = index">
-      <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage imgshadow" [ngClass]="{'myselected imgshadow': image.id == selectedId}"
-        (click)="selectImage(image)">
+    <div fxFlex fxLayoutAlign="center center">
+      <div *ngIf="selectedId > 0">
+        <img src="{{rest.imageUrl}}/{{selectedId}}" class="bigimage imgshadow">
+      </div>
     </div>
+
+    <!-- 1.2. Gallery -->
+    <div>
+      <div *ngIf="data.dog.images.length > 0" class="gallery">
+        <div *ngFor="let image of data.dog.images | imagesort; let i = index">
+          <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage imgshadow"
+            [ngClass]="{'myselected imgshadow': image.id == selectedId}" (click)="selectImage(image)">
+        </div>
+      </div>
+    </div>
+
   </div>
 
-</div>
+  <!-- 2. RIGHT -->
+  <div fxFlex="20" fxLayout="column" fxLayoutAlign="space-around" class="imgshadow">
 
-<!-- 2. RIGHT -->
-<div class="split right imgshadow">
+    <!-- 2.1. CLOSE BUTTON -->
+    <div>
+      <button mat-icon-button (click)="onNoClick()" class="closeButton">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
 
-  <!-- 2.1. CLOSE BUTTON -->
-  <button mat-icon-button (click)="onNoClick()" style="float: right; margin-right: 20px">
-    <mat-icon>close</mat-icon>
-  </button>
-
-  <!-- 2.2. DOG DATA -->
-  <div class="mat-body dogdata">
+    <!-- 2.2. DOG DATA -->
+    <div class="mat-body dogdata">
       <mat-grid-list cols="2" rowHeight="30">
 
-          <mat-grid-tile [colspan]="1" [rowspan]="1"><p><b>{{t.get.name}}:</b></p></mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="1"><p><b>{{data.dog.name}}</b></p></mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p><b>{{t.get.name}}:</b></p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p><b>{{data.dog.name}}</b></p>
+        </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="1" [rowspan]="1"><p><b>{{t.get.gender}}:</b></p></mat-grid-tile>          
-          <mat-grid-tile [colspan]="1" [rowspan]="1">
-            <p *ngIf="data.dog.gender === 'F'">{{t.get.female}}</p>
-            <p *ngIf="data.dog.gender === 'M'">{{t.get.male}}</p>
-            <p *ngIf="!data.dog.gender">-</p>
-          </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p><b>{{t.get.gender}}:</b></p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p *ngIf="data.dog.gender === 'F'">{{t.get.female}}</p>
+          <p *ngIf="data.dog.gender === 'M'">{{t.get.male}}</p>
+          <p *ngIf="!data.dog.gender">-</p>
+        </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="1" [rowspan]="1"><p><b>{{t.get.size}}:</b></p></mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="1">
-              <p *ngIf="data.dog.size === 'S'">{{t.get.size_s}}</p>
-              <p *ngIf="data.dog.size === 'M'">{{t.get.size_m}}</p>
-              <p *ngIf="data.dog.size === 'L'">{{t.get.size_l}}</p>
-              <p *ngIf="!data.dog.size">-</p>
-          </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p><b>{{t.get.size}}:</b></p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p *ngIf="data.dog.size === 'S'">{{t.get.size_s}}</p>
+          <p *ngIf="data.dog.size === 'M'">{{t.get.size_m}}</p>
+          <p *ngIf="data.dog.size === 'L'">{{t.get.size_l}}</p>
+          <p *ngIf="!data.dog.size">-</p>
+        </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="1" [rowspan]="1"><p><b>{{t.get.weight}}:</b></p></mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="1">
-              <p *ngIf="data.dog.weight">{{data.dog.weight}} kg</p>
-              <p *ngIf="!data.dog.weight">-</p>            
-          </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p><b>{{t.get.weight}}:</b></p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p *ngIf="data.dog.weight">{{data.dog.weight}} kg</p>
+          <p *ngIf="!data.dog.weight">-</p>
+        </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="1" [rowspan]="1"><p><b>{{t.get.born}}:</b></p></mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="1">
-              <p *ngIf="data.dog.born">{{data.dog.born}}</p>
-              <p *ngIf="!data.dog.born">-</p>               
-          </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p><b>{{t.get.born}}:</b></p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p *ngIf="data.dog.born">{{data.dog.born}}</p>
+          <p *ngIf="!data.dog.born">-</p>
+        </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="1" [rowspan]="1"><p><b>{{t.get.age}}:</b></p></mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="1">
-              <p *ngIf="data.dog.born">{{data.dog.born | agepipe}}</p>
-              <p *ngIf="!data.dog.born">-</p>                
-          </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p><b>{{t.get.age}}:</b></p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p *ngIf="data.dog.born">{{data.dog.born | agepipe}}</p>
+          <p *ngIf="!data.dog.born">-</p>
+        </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="1" [rowspan]="1"><p><b>{{t.get.nutered}}:</b></p></mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="1">
-              <p *ngIf="data.dog.nutered">{{t.get.yes}}</p>
-              <p *ngIf="!data.dog.nutered">{{t.get.no}}</p>               
-          </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p><b>{{t.get.nutered}}:</b></p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p *ngIf="data.dog.nutered">{{t.get.yes}}</p>
+          <p *ngIf="!data.dog.nutered">{{t.get.no}}</p>
+        </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="1" [rowspan]="1"><p><b>{{t.get.vaccinated}}:</b></p></mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="1">
-              <p *ngIf="data.dog.vaccinated">{{t.get.yes}}</p>
-              <p *ngIf="!data.dog.vaccinated">{{t.get.no}}</p>                
-          </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p><b>{{t.get.vaccinated}}:</b></p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p *ngIf="data.dog.vaccinated">{{t.get.yes}}</p>
+          <p *ngIf="!data.dog.vaccinated">{{t.get.no}}</p>
+        </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="1" [rowspan]="1"><p><b>{{t.get.antiparasite}}:</b></p></mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="1">
-              <p *ngIf="data.dog.antiparasite">{{t.get.yes}}</p>
-              <p *ngIf="!data.dog.antiparasite">{{t.get.no}}</p>   
-          </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p><b>{{t.get.antiparasite}}:</b></p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <p *ngIf="data.dog.antiparasite">{{t.get.yes}}</p>
+          <p *ngIf="!data.dog.antiparasite">{{t.get.no}}</p>
+        </mat-grid-tile>
 
       </mat-grid-list>
+    </div>
+
+    <!-- 2.3. DOG DESCRIPTION -->
+    <div class="mat-body dogdesc" fxFlex>
+      <div *ngIf="t.de()" [innerHTML]="data.dog.de"></div>
+      <div *ngIf="t.hr()" [innerHTML]="data.dog.hr"></div>
+      <div *ngIf="t.en()" [innerHTML]="data.dog.en"></div>
+    </div>
+
+    <!-- 2.4. MESSAGES -->
+    <div>
+      Messages
+    </div>
 
   </div>
-
-  <!-- 2.3. DOG DESCRIPTION -->
-  <div *ngIf="t.de()" class="mat-body dogdesc" [innerHTML]="data.dog.de"></div>
-  <div *ngIf="t.hr()" class="mat-body dogdesc" [innerHTML]="data.dog.hr"></div>
-  <div *ngIf="t.en()" class="mat-body dogdesc" [innerHTML]="data.dog.en"></div>
-
-
-  <!-- 2.4. MESSAGES -->
 
 </div>

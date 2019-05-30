@@ -1,5 +1,36 @@
+
+.closeButton {
+    float: right; 
+    margin-right: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.dogdata {
+    margin-left: 30px;
+    margin-top: 0px;
+    font-size: medium;
+}
+
+.dogdesc {
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-right: 10px;    
+    font-size: medium;
+    overflow: auto;
+}
+
 .imgshadow {
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+
+.gallery {
+    display: flex; 
+    overflow-x: auto; 
+    border-width: 1px 0px 0px 0px; 
+    border-color: lightgray;
+    border-style: solid;
 }
 
 .myimage {
@@ -12,14 +43,6 @@
     
 }
 
-.bigimage {
-    max-height: 500px;
-    margin: 5px;
-    border-width: 1px; 
-    border-color: black; 
-    border-style: solid;
-}
-
 .myselected {
     height: 150px;
     margin: 5px;
@@ -29,47 +52,14 @@
     cursor: pointer;
 }
 
-.gallery {
-    display: flex; 
-    overflow-x: auto; 
-    border-width: 1px 0px 0px 0px; 
-    border-color: lightgray;
+.bigimage {
+    max-height: 500px;
+    margin: 5px;
+    border-width: 1px; 
+    border-color: black; 
     border-style: solid;
 }
 
-.dogdata {
-    margin-left: 30px;
-    margin-top: 70px;
-    font-size: medium;
-}
-
-.dogdesc {
-    margin-left: 30px;
-    margin-top: 30px;
-    margin-right: 10px;    
-    font-size: medium;
-}
 
 
-/* Split the screen in half */
-.split {
-    height: 100%;
-    width: 20%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-  
-/* Control the left side */
-.left {
-    width: 80%;
-    left: 0;    
-}
-  
-/* Control the right side */
-.right {
-    width: 20%;
-    right: 0;
-}
+
