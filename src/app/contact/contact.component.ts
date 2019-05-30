@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslationService } from '../translations/translation.service';
+import { RestService } from '../service/rest.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,7 +9,7 @@ import { TranslationService } from '../translations/translation.service';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(public t: TranslationService) { }
+  constructor(public t: TranslationService, public rest: RestService) { }
 
   ngOnInit() {
   }

@@ -78,6 +78,9 @@ export interface Translation {
     msg_ok: string;
 
     under_construction: string;
+    contact_us: string;
+    contact_person: string;
+    contact_address: string;
 }
 
 export class En implements Translation {
@@ -162,6 +165,9 @@ export class En implements Translation {
     msg_ok = "The Message has been sent. Thank you";
 
     under_construction = "This page in under construction.";
+    contact_us = "Contact us";
+    contact_person = "Contact person";
+    contact_address = "Address";
 }
 
 export class De implements Translation {
@@ -246,6 +252,10 @@ export class De implements Translation {
     msg_ok = "Die Nachricht wurde abgeschickt. Danke";
 
     under_construction = "Diese Seite befindet sich im Aufbau.";
+    contact_us = "Kontaktieren Sie uns";
+    contact_person = "Kontaktperson";
+    contact_address = "Adresse";
+
 }
 
 export class Hr implements Translation {
@@ -329,4 +339,7 @@ export class Hr implements Translation {
     msg_ok = "Poruka je poslana. Hvala";
 
     under_construction = "Ova stranica je u izradi.";
+    contact_us = "Kontaktirajte nas";
+    contact_person = "Kontaktna osoba";
+    contact_address = "Adresa";
 }
