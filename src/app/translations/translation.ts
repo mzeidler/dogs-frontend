@@ -75,7 +75,7 @@ export interface Translation {
     msg_email: string;
     msg_text: string;
     msg_send: string;
-
+    msg_ok: string;
 }
 
 export class En implements Translation {
@@ -156,6 +156,8 @@ export class En implements Translation {
     msg_email = "Email";
     msg_text = "Message";
     msg_send = "Send message";
+
+    msg_ok = "The Message has been sent. Thank you";
 }
 
 export class De implements Translation {
@@ -236,6 +238,8 @@ export class De implements Translation {
     msg_email = "Email";
     msg_text = "Nachricht";
     msg_send = "Nachricht senden";    
+
+    msg_ok = "Die Nachricht wurde abgeschickt. Danke";
 }
 
 export class Hr implements Translation {
@@ -316,4 +320,5 @@ export class Hr implements Translation {
     msg_email = "Email";
     msg_text = "Poruka";
     msg_send = "Pošalji poruku"; 
+    msg_ok = "Poruka je poslana. Hvala";
 }
