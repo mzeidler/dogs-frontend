@@ -32,8 +32,8 @@
 .gallery {
     display: flex; 
     overflow-x: auto; 
-    border-width: 1px; 
-    border-color: grey; 
+    border-width: 1px 0px 0px 0px; 
+    border-color: lightgray;
     border-style: solid;
 }
 
