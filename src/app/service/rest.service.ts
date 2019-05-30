@@ -5,6 +5,7 @@ import { Observable, of, BehaviorSubject, Subject } from 'rxjs';
 import { User } from '../model/user';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Dog } from '../model/dog';
+import { Message } from '../model/message';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -117,4 +118,10 @@ export class RestService {
   deleteImage(id: number) {
     return this.http.delete(this.imageUrl + "/delete/" + id, httpOptions).subscribe();
   } 
+
+  message(message: Message) {
+    return this.http.post(this.dogUrl + "/message", message, httpOptions).pipe(
+      catchError(this.handleError<Dog>('message'))
+    );
+  }
 }
