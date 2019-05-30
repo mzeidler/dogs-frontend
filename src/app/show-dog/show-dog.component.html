@@ -3,10 +3,8 @@
   <!-- 1. LEFT -->
   <div fxFlex fxLayout="column" fxLayoutAlign="space-around">
 
-    <div fxFlex fxLayoutAlign="center center">
-      <div *ngIf="selectedId > 0">
-        <img src="{{rest.imageUrl}}/{{selectedId}}" class="bigimage imgshadow">
-      </div>
+    <div *ngIf="selectedId > 0" fxFlex fxLayoutAlign="center center">
+      <img src="{{rest.imageUrl}}/{{selectedId}}" class="bigimage imgshadow">
     </div>
 
     <!-- 1.2. Gallery -->
