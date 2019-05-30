@@ -76,6 +76,8 @@ export interface Translation {
     msg_text: string;
     msg_send: string;
     msg_ok: string;
+    msg_tel: string;
+    msg_name: string;
 
     under_construction: string;
     contact_us: string;
@@ -161,6 +163,8 @@ export class En implements Translation {
     msg_email = "Email";
     msg_text = "Message";
     msg_send = "Send message";
+    msg_tel = "Tel.";
+    msg_name = "Name";
 
     msg_ok = "The Message has been sent. Thank you";
 
@@ -248,6 +252,8 @@ export class De implements Translation {
     msg_email = "Email";
     msg_text = "Nachricht";
     msg_send = "Nachricht senden";    
+    msg_tel = "Tel.";
+    msg_name = "Name";
 
     msg_ok = "Die Nachricht wurde abgeschickt. Danke";
 
@@ -337,6 +343,8 @@ export class Hr implements Translation {
     msg_text = "Poruka";
     msg_send = "Pošalji poruku"; 
     msg_ok = "Poruka je poslana. Hvala";
+    msg_tel = "Tel.";
+    msg_name = "Ime i prezime";
 
     under_construction = "Ova stranica je u izradi.";
     contact_us = "Kontaktirajte nas";

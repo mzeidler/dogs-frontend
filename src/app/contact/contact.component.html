@@ -22,4 +22,25 @@
 
   </mat-grid-list>
 
+  <mat-card>
+
+      <mat-form-field style="width: 100%">
+          <input matInput [(ngModel)]="msg_name" placeholder="{{t.get.msg_name}}">
+      </mat-form-field>
+
+      <mat-form-field style="width: 100%">
+          <input matInput [(ngModel)]="msg_tel" placeholder="{{t.get.msg_tel}}">
+      </mat-form-field>
+
+      <mat-form-field style="width: 100%">
+        <input matInput [(ngModel)]="msg_email" placeholder="{{t.get.msg_email}}">
+      </mat-form-field>
+
+      <mat-form-field style="width: 100%">
+        <textarea matInput [(ngModel)]="msg_text" placeholder="{{t.get.msg_text}}"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button (click)="sendMessage()">{{t.get.msg_send}}</button>
+
+    </mat-card>
 </div>
