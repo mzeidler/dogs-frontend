@@ -7,3 +7,7 @@
 body {
     background-color: blanchedalmond;
 }
+
+.showdogdialog >  mat-dialog-container {
+    padding: 0;
+}

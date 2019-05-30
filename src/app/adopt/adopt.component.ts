@@ -118,6 +118,7 @@ export class AdoptComponent implements OnInit {
         maxWidth: '100vw',
         height: '100vh', 
         maxHeight: '100vh',
+        panelClass: 'showdogdialog',
         data: { 
           dog: {...dog}
         }
