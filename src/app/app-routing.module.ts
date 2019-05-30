@@ -13,10 +13,7 @@ import { DogsResolverService } from './resolvers/dogs-resolver.service';
 const routes: Routes = [
   { 
     path: '', 
-    component: AdoptComponent,
-    resolve: {
-      dogs: DogsResolverService
-    }
+    component: HomeComponent
   }, 
   { path: 'home', component: HomeComponent },
   { 
