@@ -46,8 +46,9 @@ export class TranslationService {
     let lang = localStorage.getItem("lang");
     switch(lang) {
       case 'De': this.setLang('Hr'); break;
-      case 'Hr': this.setLang('En'); break;
-      case 'En': this.setLang('De'); break;
+      case 'Hr': this.setLang('De'); break;
+      //case 'Hr': this.setLang('En'); break;
+      //case 'En': this.setLang('De'); break;
       default: this.setLang('De'); break;
     }
   }
