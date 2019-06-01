@@ -6,9 +6,7 @@ import { MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from '@angular/material-mo
 import { RestService } from '../service/rest.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Image } from '../model/image';
-import { SelectionModel } from '@angular/cdk/collections';
 import { CropImageComponent } from '../crop-image/crop-image.component';
-import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
 export interface Size {
   value: string;
@@ -26,9 +24,17 @@ export interface Size {
 })
 export class AddDogComponent implements OnInit {
 
+  options = [ 
+    ["bold", "italic", "underline"],
+    [],
+    ["justifyLeft", "justifyCenter", "justifyRight", "justifyFull", "indent", "outdent"],
+    [ ],
+    ["horizontalLine", "orderedList", "unorderedList"],
+    ["link"]  
+  ];
+
   selectedId = 0;
   selectedImage: Image;
-  public Editor = DecoupledEditor;
 
   sizes: Size[] = [
     {value: 'L', viewValue: this.t.get.size_l },
@@ -146,15 +152,4 @@ export class AddDogComponent implements OnInit {
     });
   }
 
-  public onReady(editor) {
-
-    editor.editing.view.change( writer => {
-      writer.setAttribute( 'spellcheck', 'false', editor.editing.view.document.getRoot() );
-    } );
-
-    editor.ui.getEditableElement().parentElement.insertBefore(
-        editor.ui.view.toolbar.element,
-        editor.ui.getEditableElement()
-    );
-  }
 }

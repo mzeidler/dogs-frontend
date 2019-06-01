@@ -40,9 +40,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { CropImageComponent } from './crop-image/crop-image.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
+import { NgxEditorModule } from 'ngx-editor';
 
 @NgModule({
   declarations: [
@@ -87,9 +87,9 @@ import {MatDividerModule} from '@angular/material/divider';
     MatTabsModule,
     MatButtonToggleModule,
     ImageCropperModule,
-    CKEditorModule,
     MatSelectModule,
-    MatDividerModule
+    MatDividerModule,
+    NgxEditorModule
   ],
   entryComponents: [
     LoginComponent,

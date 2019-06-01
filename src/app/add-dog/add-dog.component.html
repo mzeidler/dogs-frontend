@@ -86,8 +86,15 @@
         <img width="20px" src="assets/de.png" style="margin-left: 10px">
       </ng-template>
 
-      <p></p>
-      <ckeditor class="mat-body" [(ngModel)]="data.dog.de" [editor]="Editor" (ready)="onReady($event)"></ckeditor>
+      <app-ngx-editor
+      [height]="auto" 
+      [minHeight]="50" 
+      [spellcheck]="false" 
+      [enableToolbar]="true" 
+      [showToolbar]="true"       
+      [toolbar]="options"
+      [(ngModel)]="data.dog.de"></app-ngx-editor>   
+      
     </mat-tab>
 
     <mat-tab>
@@ -96,18 +103,14 @@
         <img width="20px" src="assets/hr.png" style="margin-left: 10px">
       </ng-template>
 
-      <p></p>
-      <ckeditor class="mat-body" [(ngModel)]="data.dog.hr" [editor]="Editor" (ready)="onReady($event)"></ckeditor>
-    </mat-tab>
-
-    <mat-tab>
-      <ng-template mat-tab-label>
-        {{t.get.tab_description}}
-        <img width="20px" src="assets/en.png" style="margin-left: 10px">
-      </ng-template>
-
-      <p></p>
-      <ckeditor class="mat-body" [(ngModel)]="data.dog.en" [editor]="Editor" (ready)="onReady($event)"></ckeditor>
+      <app-ngx-editor
+      [height]="auto" 
+      [minHeight]="50" 
+      [spellcheck]="false" 
+      [enableToolbar]="true" 
+      [showToolbar]="true"       
+      [toolbar]="options"
+      [(ngModel)]="data.dog.hr"></app-ngx-editor>   
     </mat-tab>
 
     <!-- PICTURES TAB -->
