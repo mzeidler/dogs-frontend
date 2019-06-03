@@ -9,6 +9,7 @@ export interface Translation {
     donate: string;
     contact: string;
     gallery: string;
+    messages: string;
     user: string;
     admin: string;
     login: string;
@@ -96,6 +97,7 @@ export class En implements Translation {
     donate = "Donate";
     contact = "Contact";
     gallery = "Gallery";
+    messages = "Messages";
     user = "User";
     admin = "Admin";
     home = "Home";
@@ -186,6 +188,7 @@ export class De implements Translation {
     donate = "Spenden";
     contact = "Kontakt";
     gallery = "Gallerie";
+    messages = "Nachrichten";
     user = "Benutzer";
     admin = "Administration";
     home = "Start";
@@ -277,6 +280,7 @@ export class Hr implements Translation {
     donate = "Doniraj";
     contact = "Kontakt";
     gallery = "Galerija";
+    messages = "Poruke";
     user = "Korisnik";
     admin = "Administracija";
     home = "Doma";

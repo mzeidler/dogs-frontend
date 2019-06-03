@@ -9,6 +9,7 @@
       <button class="mymargin" mat-button routerLink="/donate" routerLinkActive="active"><b>{{t.get.donate}}</b></button>
       <button class="mymargin" mat-button routerLink="/contact" routerLinkActive="active"><b>{{t.get.contact}}</b></button>
       <button class="mymargin" mat-button routerLink="/gallery" routerLinkActive="active"><b>{{t.get.gallery}}</b></button> 
+      <button *ngIf="rest.currentUserValue" class="mymargin" mat-button routerLink="/messages" routerLinkActive="active"><b>{{t.get.messages}}</b></button> 
       
       <button *ngIf="!rest.currentUserValue" style="float: right" mat-button (click)="login()"><b>{{t.get.login}}</b></button>
       <button *ngIf="rest.currentUserValue" style="float: right" mat-button (click)="logout()"><b>{{t.get.logout}}</b></button>

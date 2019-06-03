@@ -9,6 +9,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { DogsResolverService } from './resolvers/dogs-resolver.service';
+import { MessagesComponent } from './messages/messages.component';
 
 const routes: Routes = [
   { 
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'donate', component: DonateComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'gallery', component: GalleryComponent },
+  { path: 'messages', component: MessagesComponent },
   { path: 'user', component: UserComponent },
   { path: 'admin', component: AdminComponent },
   { path: '**', redirectTo: '' }

@@ -43,6 +43,7 @@ import { ImageCropperModule } from 'ngx-image-cropper';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import { NgxEditorModule } from 'ngx-editor';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { NgxEditorModule } from 'ngx-editor';
     ShowDogComponent,
     AgePipe,
     ImageSort,
-    CropImageComponent
+    CropImageComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
