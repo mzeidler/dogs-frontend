@@ -24,6 +24,8 @@ export interface Size {
 })
 export class AddDogComponent implements OnInit {
 
+  auto = "auto";
+  
   options = [ 
     ["bold", "italic", "underline"],
     [],
