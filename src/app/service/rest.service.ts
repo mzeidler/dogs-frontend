@@ -26,6 +26,8 @@ export class RestService {
 
   public imageUrl = `//${environment.resturl}:9002/api/image`;
 
+  public messageUrl = `//${environment.resturl}:9002/api/message`;
+
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
@@ -120,8 +122,14 @@ export class RestService {
   } 
 
   message(message: Message) {
-    return this.http.post(this.dogUrl + "/message", message, httpOptions).pipe(
+    return this.http.post(this.messageUrl, message, httpOptions).pipe(
       catchError(this.handleError<Dog>('message'))
+    );
+  }
+
+  getMessages(): Observable<Message[]> {
+    return this.http.get<Message[]>(this.messageUrl).pipe(
+      catchError(this.handleError('getMessages', []))
     );
   }
 }
