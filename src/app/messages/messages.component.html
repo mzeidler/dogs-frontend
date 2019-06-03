@@ -5,32 +5,32 @@
 <mat-table [dataSource]="messages" class="mat-elevation-z8">
 
   <ng-container matColumnDef="timestamp">
-    <mat-header-cell *matHeaderCellDef> Timestamp </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef>{{t.get.msgtbl_timestamp}}</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.timestamp}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="dogname">
-    <mat-header-cell *matHeaderCellDef> Dog </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef>{{t.get.msgtbl_dogname}}</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.dogname}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef>{{t.get.msgtbl_name}}</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="email">
-    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef>{{t.get.msgtbl_email}}</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="tel">
-    <mat-header-cell *matHeaderCellDef> Tel </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef>{{t.get.msgtbl_tel}}</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.tel}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="message">
-    <mat-header-cell *matHeaderCellDef> Message </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef>{{t.get.msgtbl_message}}</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.message}} </mat-cell>
   </ng-container>
 

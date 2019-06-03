@@ -85,6 +85,13 @@ export interface Translation {
     contact_person: string;
     contact_address: string;
     contact_message: string;
+
+    msgtbl_timestamp: string;
+    msgtbl_dogname: string;
+    msgtbl_name: string;
+    msgtbl_email: string;
+    msgtbl_tel: string;
+    msgtbl_message: string;
 }
 
 export class En implements Translation {
@@ -176,6 +183,15 @@ export class En implements Translation {
     contact_us = "Contact us";
     contact_person = "Contact person";
     contact_address = "Address";
+
+
+    msgtbl_timestamp = "Timestamp";
+    msgtbl_dogname = "Dog";
+    msgtbl_name = "Name";
+    msgtbl_email = "Email";
+    msgtbl_tel = "Tel";
+    msgtbl_message = "Message";
+
 }
 
 export class De implements Translation {
@@ -268,6 +284,12 @@ export class De implements Translation {
     contact_person = "Kontaktperson";
     contact_address = "Adresse";
 
+    msgtbl_timestamp = "Zeit";
+    msgtbl_dogname = "Hund";
+    msgtbl_name = "Name";
+    msgtbl_email = "Email";
+    msgtbl_tel = "Tel";
+    msgtbl_message = "Nachricht";
 }
 
 export class Hr implements Translation {
@@ -358,4 +380,11 @@ export class Hr implements Translation {
     contact_us = "Kontaktirajte nas";
     contact_person = "Kontaktna osoba";
     contact_address = "Adresa";
+
+    msgtbl_timestamp = "Vrijeme";
+    msgtbl_dogname = "Pas";
+    msgtbl_name = "Ime i prezime";
+    msgtbl_email = "Email";
+    msgtbl_tel = "Tel";
+    msgtbl_message = "Poruka";
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Message } from '../model/message';
 import { RestService } from '../service/rest.service';
 import { ActivatedRoute } from '@angular/router';
+import { TranslationService } from '../translations/translation.service';
 
 @Component({
   selector: 'app-messages',
@@ -14,7 +15,7 @@ export class MessagesComponent implements OnInit {
 
   displayedColumns: string[] = [ 'timestamp', 'dogname', 'name', 'email', 'tel', 'message'];
 
-  constructor(public rest: RestService, private route: ActivatedRoute) { }
+  constructor(public t: TranslationService, public rest: RestService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.messages = this.route.snapshot.data['messages'];

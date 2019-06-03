@@ -1,0 +1,24 @@
+
+.mat-column-timestamp {
+    flex: 0 0 10%;
+}
+
+.mat-column-dogname {
+    flex: 0 0 8%;
+}
+
+.mat-column-name {
+    flex: 0 0 12%;
+}
+
+.mat-column-email {
+    flex: 0 0 12%;
+}
+
+.mat-column-tel {
+    flex: 0 0 12%;
+}
+
+.mat-column-message {
+    flex: 0 0 46%;
+}
