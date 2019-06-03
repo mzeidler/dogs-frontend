@@ -1,23 +1,29 @@
 
-  <nav style="width: 100%">
+<nav class="navbar">
 
-      <img class="flagmargin" width="20px" src="{{t.get.lang_icon}}" (click)="t.changeLang()">
+  <img width="150px" src="assets/logo.png">
 
-      <button class="mymargin" mat-button routerLink="/home" routerLinkActive="active"><b>{{t.get.home}}</b></button>
-      <button class="mymargin" mat-button routerLink="/adopt" routerLinkActive="active"><b>{{t.get.adopt}}</b></button>      
-      <button class="mymargin" mat-button routerLink="/volunteer" routerLinkActive="active"><b>{{t.get.volunteer}}</b></button>
-      <button class="mymargin" mat-button routerLink="/donate" routerLinkActive="active"><b>{{t.get.donate}}</b></button>
-      <button class="mymargin" mat-button routerLink="/contact" routerLinkActive="active"><b>{{t.get.contact}}</b></button>
-      <button class="mymargin" mat-button routerLink="/gallery" routerLinkActive="active"><b>{{t.get.gallery}}</b></button> 
-      <button *ngIf="rest.currentUserValue" class="mymargin" mat-button routerLink="/messages" routerLinkActive="active"><b>{{t.get.messages}}</b></button> 
-      
-      <button *ngIf="!rest.currentUserValue" style="float: right" mat-button (click)="login()"><b>{{t.get.login}}</b></button>
-      <button *ngIf="rest.currentUserValue" style="float: right" mat-button (click)="logout()"><b>{{t.get.logout}}</b></button>
-  </nav>
+  <button class="mymargin" mat-button routerLink="/home" routerLinkActive="active"><b>{{t.get.home}}</b></button>
+  <button class="mymargin" mat-button routerLink="/adopt" routerLinkActive="active"><b>{{t.get.adopt}}</b></button>
+  <button class="mymargin" mat-button routerLink="/volunteer"
+    routerLinkActive="active"><b>{{t.get.volunteer}}</b></button>
+  <button class="mymargin" mat-button routerLink="/donate" routerLinkActive="active"><b>{{t.get.donate}}</b></button>
+  <button class="mymargin" mat-button routerLink="/contact" routerLinkActive="active"><b>{{t.get.contact}}</b></button>
+  <button class="mymargin" mat-button routerLink="/gallery" routerLinkActive="active"><b>{{t.get.gallery}}</b></button>
+  <button *ngIf="rest.currentUserValue" class="mymargin" mat-button routerLink="/messages"
+    routerLinkActive="active"><b>{{t.get.messages}}</b></button>
 
+  <button *ngIf="!rest.currentUserValue"  mat-button
+    (click)="login()"><b>{{t.get.login}}</b></button>
+  <button *ngIf="rest.currentUserValue" mat-button
+    (click)="logout()"><b>{{t.get.logout}}</b></button>
 
-<span class="mat-body" style="float: right" *ngIf="rest.currentUserValue">
-  {{rest.currentUserValue.firstName}} {{rest.currentUserValue.lastName}}
+</nav>
+
+<img class="flag" src="{{t.get.lang_icon}}" (click)="t.changeLang()">
+
+<span class="mat-body loggeduser" *ngIf="rest.currentUserValue">
+    {{t.get.loggin_in_as}} <b>{{rest.currentUserValue.firstName}} {{rest.currentUserValue.lastName}}</b>
 </span>
 
 <router-outlet></router-outlet>

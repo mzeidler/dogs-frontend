@@ -10,3 +10,23 @@
     vertical-align: middle;
     margin-right: 15px;
 }
+
+.navbar {
+    width: 100vw;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 1px;
+    background-color: burlywood;
+    margin-top: -8px;
+    margin-left: -8px;
+}
+
+.flag {
+    width: 20px;
+    margin-top: 8px;
+    margin-left: 4px;
+}
+
+.loggeduser {
+    margin-left: 20px;
+}

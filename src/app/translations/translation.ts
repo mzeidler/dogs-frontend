@@ -92,6 +92,8 @@ export interface Translation {
     msgtbl_email: string;
     msgtbl_tel: string;
     msgtbl_message: string;
+
+    loggin_in_as: string;
 }
 
 export class En implements Translation {
@@ -192,6 +194,7 @@ export class En implements Translation {
     msgtbl_tel = "Tel";
     msgtbl_message = "Message";
 
+    loggin_in_as = "Logged in as ";
 }
 
 export class De implements Translation {
@@ -290,6 +293,8 @@ export class De implements Translation {
     msgtbl_email = "Email";
     msgtbl_tel = "Tel";
     msgtbl_message = "Nachricht";
+
+    loggin_in_as = "Angemeldet als ";
 }
 
 export class Hr implements Translation {
@@ -387,4 +392,6 @@ export class Hr implements Translation {
     msgtbl_email = "Email";
     msgtbl_tel = "Tel";
     msgtbl_message = "Poruka";
+
+    loggin_in_as = "Prijavljeni ste kao ";
 }
