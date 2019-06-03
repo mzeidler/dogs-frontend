@@ -20,5 +20,9 @@
 }
 
 .mat-column-message {
-    flex: 0 0 46%;
+    flex: 0 0 41%;
+}
+
+.mat-column-delete {
+    flex: 0 0 5%;
 }

@@ -132,4 +132,9 @@ export class RestService {
       catchError(this.handleError('getMessages', []))
     );
   }
+
+  deleteMessage(id: number) {
+    return this.http.delete(this.messageUrl + "/" + id, httpOptions).subscribe();
+  } 
+
 }

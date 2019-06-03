@@ -13,7 +13,7 @@ export class MessagesComponent implements OnInit {
 
   messages: Message[];
 
-  displayedColumns: string[] = [ 'timestamp', 'dogname', 'name', 'email', 'tel', 'message'];
+  displayedColumns: string[] = [ 'timestamp', 'dogname', 'name', 'email', 'tel', 'message', 'delete'];
 
   constructor(public t: TranslationService, public rest: RestService, private route: ActivatedRoute) { }
 
@@ -25,4 +25,8 @@ export class MessagesComponent implements OnInit {
     this.rest.getMessages().subscribe(messages => this.messages = messages);
   }
 
+  deleteMessage(id: number) {
+    this.rest.deleteMessage(id);
+    this.messages = this.messages.filter(m => m.id != id);  
+  }
 }
