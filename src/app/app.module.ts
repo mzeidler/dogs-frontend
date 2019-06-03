@@ -44,6 +44,7 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import { NgxEditorModule } from 'ngx-editor';
 import { MessagesComponent } from './messages/messages.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { MessagesComponent } from './messages/messages.component';
     ImageCropperModule,
     MatSelectModule,
     MatDividerModule,
-    NgxEditorModule
+    NgxEditorModule,
+    MatTableModule
   ],
   entryComponents: [
     LoginComponent,

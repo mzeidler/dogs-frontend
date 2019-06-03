@@ -10,6 +10,7 @@ import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { DogsResolverService } from './resolvers/dogs-resolver.service';
 import { MessagesComponent } from './messages/messages.component';
+import { MessagesResolverService } from './resolvers/messages-resolver.service';
 
 const routes: Routes = [
   { 
@@ -28,7 +29,13 @@ const routes: Routes = [
   { path: 'donate', component: DonateComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'gallery', component: GalleryComponent },
-  { path: 'messages', component: MessagesComponent },
+  { 
+    path: 'messages', 
+    component: MessagesComponent,
+    resolve: {
+      messages: MessagesResolverService
+    }
+  },
   { path: 'user', component: UserComponent },
   { path: 'admin', component: AdminComponent },
   { path: '**', redirectTo: '' }
