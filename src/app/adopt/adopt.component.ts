@@ -90,6 +90,7 @@ export class AdoptComponent implements OnInit {
             this.dogs.forEach(d1 => {
               if (d1.id == d.id) {
                 d1.images = d.images;
+                d1.videos = d.videos;
               }
             });
 
@@ -103,6 +104,7 @@ export class AdoptComponent implements OnInit {
             this.dogs.forEach(d1 => {
               if (d1.id == d.id) {
                 d1.images = d.images;
+                d1.videos = d.videos;
               }
             });
 
@@ -133,6 +135,7 @@ export class AdoptComponent implements OnInit {
     
     let dog = <Dog>{};
     dog.images = [];
+    dog.videos = [];
 
     const dialogRef = this.dialog.open(AddDogComponent, {
       width: '950px', data: { 
