@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,6 +46,7 @@ import { NgxEditorModule } from 'ngx-editor';
 import { MessagesComponent } from './messages/messages.component';
 import {MatTableModule} from '@angular/material/table';
 import { AddVideoComponent } from './add-video/add-video.component';
+import { VideoSort } from './pipes/videosortpipe';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { AddVideoComponent } from './add-video/add-video.component';
     ShowDogComponent,
     AgePipe,
     ImageSort,
+    VideoSort,
     CropImageComponent,
     MessagesComponent,
     AddVideoComponent
@@ -108,6 +110,9 @@ import { AddVideoComponent } from './add-video/add-video.component';
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }

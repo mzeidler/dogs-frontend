@@ -8,6 +8,7 @@ import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Image } from '../model/image';
 import { CropImageComponent } from '../crop-image/crop-image.component';
 import { AddVideoComponent } from '../add-video/add-video.component';
+import { Video } from '../model/video';
 
 export interface Size {
   value: string;
@@ -39,6 +40,9 @@ export class AddDogComponent implements OnInit {
   selectedId = 0;
   selectedImage: Image;
 
+  selectedVideoId = 0;
+  selectedVideo: Video;
+
   sizes: Size[] = [
     {value: 'L', viewValue: this.t.get.size_l },
     {value: 'M', viewValue: this.t.get.size_m },
@@ -59,6 +63,11 @@ export class AddDogComponent implements OnInit {
   selectImage(image: Image) {
     this.selectedId = image.id;
     this.selectedImage = image;
+  }
+
+  selectVideo(video: Video) {
+    this.selectedVideoId = video.id;
+    this.selectedVideo = video;
   }
 
   setTitleImage(event: any):void {
@@ -155,11 +164,18 @@ export class AddDogComponent implements OnInit {
     });
   }
 
+  sortVideos() {
+    this.data.dog.videos.sort((a: Video, b: Video) => {
+      return b.sortid - a.sortid;
+    });
+  }
+
   addVideo() {
 
     const dialogRef = this.dialog.open(AddVideoComponent, {      
       width: '550px',
       data: { 
+        name: undefined,
         link: undefined
       }
     });
@@ -167,7 +183,21 @@ export class AddDogComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
 
       if (result) {
-        //
+
+        let dogid = 0;
+        if (this.data.dog.id) {
+          dogid = this.data.dog.id;
+        }
+
+        let video = <Video>{};
+        video.link = result.link;
+        video.name = result.name;
+        video.sortid = Math.max(...this.data.dog.videos.map(o => o.sortid), 0) + 1;
+
+        this.rest.addVideo(video, dogid).subscribe(v => {
+          this.data.dog.videos.push(v);
+          this.sortVideos();
+        });
       }
 
     });

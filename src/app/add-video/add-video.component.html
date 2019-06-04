@@ -3,8 +3,12 @@
 </div>
 
 <mat-form-field style="width: 100%">
-    <input matInput [(ngModel)]="data.link" placeholder="video link" >
+    <input matInput [(ngModel)]="data.name" placeholder="{{t.get.video_link_name}}" >
   </mat-form-field>
+
+<mat-form-field style="width: 100%">
+    <input matInput [(ngModel)]="data.link" placeholder="{{t.get.video_link_short}}" >
+</mat-form-field>
 
 <div mat-dialog-actions style="float: right">
   <button mat-button (click)="onNoClick()">{{t.get.cancel}}</button>

@@ -149,6 +149,12 @@
     <mat-tab label="{{t.get.tab_videos}}">
       <p></p>
 
+      <div *ngIf="data.dog.videos.length > 0"
+          style="display: flex; overflow-x: auto; border-width: 1px; border-color: grey; border-style: solid">
+          <div *ngFor="let video of data.dog.videos | videosort; let i = index">
+              <div class="myvideo" [ngClass]="{'myselectedvideo': video.id == selectedVideoId}" (click)="selectVideo(video)"><b>Video</b><br>{{video.name}}</div>
+          </div>
+      </div>      
 
       <button mat-icon-button>
         <mat-icon (click)="addVideo()" matTooltip="{{t.get.video_upload}}">add_circle_outline</mat-icon>
