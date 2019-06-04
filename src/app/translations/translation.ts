@@ -99,6 +99,7 @@ export interface Translation {
     msgtbl_message: string;
 
     loggin_in_as: string;
+    video_link: string;
 }
 
 export class En implements Translation {
@@ -205,6 +206,7 @@ export class En implements Translation {
     msgtbl_message = "Message";
 
     loggin_in_as = "Logged in as ";
+    video_link = "Add a video link";
 }
 
 export class De implements Translation {
@@ -310,6 +312,7 @@ export class De implements Translation {
     msgtbl_message = "Nachricht";
 
     loggin_in_as = "Angemeldet als ";
+    video_link = "Video link hinzufügen";
 }
 
 export class Hr implements Translation {
@@ -414,4 +417,5 @@ export class Hr implements Translation {
     msgtbl_message = "Poruka";
 
     loggin_in_as = "Prijavljeni ste kao ";
+    video_link = "Dodavanje video linka";
 }

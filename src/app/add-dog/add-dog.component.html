@@ -149,7 +149,10 @@
     <mat-tab label="{{t.get.tab_videos}}">
       <p></p>
 
-      Under Construction
+
+      <button mat-icon-button>
+        <mat-icon (click)="addVideo()" matTooltip="{{t.get.video_upload}}">add_circle_outline</mat-icon>
+      </button>
 
     </mat-tab>
   </mat-tab-group>

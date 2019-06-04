@@ -1,8 +1,12 @@
 <div mat-dialog-title>
-  Add a video
+  {{t.get.video_link}}
 </div>
+
+<mat-form-field style="width: 100%">
+    <input matInput [(ngModel)]="data.link" placeholder="video link" >
+  </mat-form-field>
 
 <div mat-dialog-actions style="float: right">
   <button mat-button (click)="onNoClick()">{{t.get.cancel}}</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>{{t.get.ok}}</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>{{t.get.save}}</button>
 </div>

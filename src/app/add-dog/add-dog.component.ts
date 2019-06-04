@@ -7,6 +7,7 @@ import { RestService } from '../service/rest.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Image } from '../model/image';
 import { CropImageComponent } from '../crop-image/crop-image.component';
+import { AddVideoComponent } from '../add-video/add-video.component';
 
 export interface Size {
   value: string;
@@ -154,4 +155,22 @@ export class AddDogComponent implements OnInit {
     });
   }
 
+  addVideo() {
+
+    const dialogRef = this.dialog.open(AddVideoComponent, {      
+      width: '550px',
+      data: { 
+        link: undefined
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      if (result) {
+        //
+      }
+
+    });
+
+  }
 }
