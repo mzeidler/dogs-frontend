@@ -6,6 +6,7 @@ import { User } from '../model/user';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Dog } from '../model/dog';
 import { Message } from '../model/message';
+import { Video } from '../model/video';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -27,6 +28,8 @@ export class RestService {
   public imageUrl = `//${environment.resturl}:9002/api/image`;
 
   public messageUrl = `//${environment.resturl}:9002/api/message`;
+
+  public videoUrl = `//${environment.resturl}:9002/api/video`;
 
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
@@ -135,6 +138,22 @@ export class RestService {
 
   deleteMessage(id: number) {
     return this.http.delete(this.messageUrl + "/" + id, httpOptions).subscribe();
+  } 
+
+  getVideo(id: number): Observable<Video> {
+    return this.http.get<Video>(`${this.videoUrl}/${id}`).pipe(
+      catchError(this.handleError<Video>(`getVideo id=${id}`))
+    );
+  }
+
+  addVideo(video: Video, dogid: number): Observable<Video> {
+    return this.http.post<Video>(this.videoUrl + "/" + dogid, video, httpOptions).pipe(
+      catchError(this.handleError<Video>('addVideo'))
+    );
+  }
+
+  deleteVideo(id: number) {
+    return this.http.delete(this.videoUrl + "/delete/" + id, httpOptions).subscribe();
   } 
 
 }
