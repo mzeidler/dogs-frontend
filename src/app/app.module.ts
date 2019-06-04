@@ -45,6 +45,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { NgxEditorModule } from 'ngx-editor';
 import { MessagesComponent } from './messages/messages.component';
 import {MatTableModule} from '@angular/material/table';
+import { AddVideoComponent } from './add-video/add-video.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import {MatTableModule} from '@angular/material/table';
     AgePipe,
     ImageSort,
     CropImageComponent,
-    MessagesComponent
+    MessagesComponent,
+    AddVideoComponent
   ],
   imports: [
     BrowserModule,
@@ -100,7 +102,8 @@ import {MatTableModule} from '@angular/material/table';
     AddDogComponent,
     DeleteDogComponent,
     ShowDogComponent,
-    CropImageComponent
+    CropImageComponent,
+    AddVideoComponent
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}
