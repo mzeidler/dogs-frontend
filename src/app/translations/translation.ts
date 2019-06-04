@@ -60,6 +60,11 @@ export interface Translation {
     picture_left: string;
     picture_right: string;
 
+    video_upload: string;
+    video_remove: string;
+    video_left: string;
+    video_right: string;    
+
     tab_description: string;
     tab_pictures: string;
     tab_videos: string; 
@@ -159,6 +164,11 @@ export class En implements Translation {
     picture_left = "move this picture to the left";
     picture_right = "move this picture to the right";
 
+    video_upload = "upload video";
+    video_remove = "remove video";
+    video_left = "move this video to the left";
+    video_right = "move this video to the right";    
+    
     tab_description = "Description";
     tab_pictures = "Pictures";
     tab_videos = "Videos";    
@@ -260,6 +270,11 @@ export class De implements Translation {
     picture_left = "Nach links verschieben";
     picture_right = "Nach rechts verschieben";
 
+    video_upload = "Video hinzufügen";
+    video_remove = "Video entfernen";
+    video_left = "Nach links verschieben";
+    video_right = "Nach rechts verschieben";  
+
     tab_description = "Beschreibung";
     tab_pictures = "Bilder";
     tab_videos = "Video";   
@@ -360,6 +375,11 @@ export class Hr implements Translation {
     picture_left = "pomakni ulijevo";
     picture_right = "pomakni udesno";
 
+    video_upload = "dodaj video";
+    video_remove = "obriši video";
+    video_left = "pomakni ulijevo";
+    video_right = "pomakni udesno";  
+    
     tab_description = "Opis";
     tab_pictures = "Slike";
     tab_videos = "Video";  
