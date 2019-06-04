@@ -109,6 +109,22 @@ export class AddDogComponent implements OnInit {
 
   }
 
+  moveVideoToLeft() {
+    if (this.data.dog.videos.length > 1) {
+
+      for (var _i = 1; _i < this.data.dog.videos.length; _i++) {
+        if (this.data.dog.videos[_i].id == this.selectedVideoId) {
+          let tmp = this.data.dog.videos[_i].sortid;
+          this.data.dog.videos[_i].sortid = this.data.dog.videos[_i - 1].sortid;
+          this.data.dog.videos[_i - 1].sortid = tmp;
+          break;
+        }
+      }
+
+      this.sortVideos();  
+    }
+  }
+
   moveToRight() {
     
     if (this.data.dog.images.length > 1) {
@@ -126,12 +142,38 @@ export class AddDogComponent implements OnInit {
     }
   }
 
+  moveVideoToRight() {
+    if (this.data.dog.videos.length > 1) {
+
+      for (var _i = 0; _i < this.data.dog.videos.length - 1; _i++) {
+        if (this.data.dog.videos[_i].id == this.selectedVideoId) {
+          let tmp = this.data.dog.videos[_i].sortid;
+          this.data.dog.videos[_i].sortid = this.data.dog.videos[_i + 1].sortid;
+          this.data.dog.videos[_i + 1].sortid = tmp;
+          break;
+        }
+      }
+
+      this.sortVideos();
+    }
+  }
+
   removePicture() {
     if (this.selectedId) {
       this.rest.deleteImage(this.selectedId);
       this.data.dog.images = this.data.dog.images.filter(i => i.id != this.selectedId);
+      this.selectedId = 0;
     }
   }
+
+
+  removeVideo() {
+    if (this.selectedVideoId) {
+      this.rest.deleteVideo(this.selectedVideoId);
+      this.data.dog.videos = this.data.dog.videos.filter(i => i.id != this.selectedVideoId);
+      this.selectedVideoId = 0;
+    }
+  }  
 
   onFileChanged(event) {
     this.progress.percentage = 0;

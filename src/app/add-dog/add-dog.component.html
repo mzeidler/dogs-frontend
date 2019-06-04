@@ -160,7 +160,19 @@
         <mat-icon (click)="addVideo()" matTooltip="{{t.get.video_upload}}">add_circle_outline</mat-icon>
       </button>
 
-    </mat-tab>
+      <button *ngIf="selectedVideoId > 0" mat-icon-button>
+          <mat-icon (click)="removeVideo()" matTooltip="{{t.get.video_remove}}">delete_forever</mat-icon>
+        </button>
+  
+        <button *ngIf="selectedVideoId > 0" mat-icon-button>
+          <mat-icon (click)="moveVideoToLeft()" matTooltip="{{t.get.video_left}}">arrow_back</mat-icon>
+        </button>
+  
+        <button *ngIf="selectedVideoId > 0" mat-icon-button>
+          <mat-icon (click)="moveVideoToRight()" matTooltip="{{t.get.video_right}}">arrow_forward</mat-icon>
+        </button>
+
+      </mat-tab>
   </mat-tab-group>
 
 </div>
