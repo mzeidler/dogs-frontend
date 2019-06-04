@@ -1,8 +1,6 @@
 export class Video {
     id: number;
     name: string;
-    size: number;
+    link: number;
     sortid: number;
-    height: number;
-    width: number;
 }
