@@ -30,3 +30,9 @@
 .loggeduser {
     margin-left: 20px;
 }
+
+.mybutton {
+    background-color: #8B4513;
+    margin-bottom: 3px;
+    font-size: medium;
+}
