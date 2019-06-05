@@ -233,7 +233,6 @@ export class AddDogComponent implements OnInit {
 
         let video = <Video>{};
         video.link = result.link;
-        video.name = result.name;
         video.sortid = Math.max(...this.data.dog.videos.map(o => o.sortid), 0) + 1;
 
         this.rest.addVideo(video, dogid).subscribe(v => {

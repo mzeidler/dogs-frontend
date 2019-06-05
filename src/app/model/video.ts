@@ -1,6 +1,6 @@
 export class Video {
     id: number;
-    name: string;
+    youtubeid: string;
     link: number;
     sortid: number;
 }

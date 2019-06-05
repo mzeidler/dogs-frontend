@@ -210,8 +210,8 @@ export class En implements Translation {
 
     loggin_in_as = "Logged in as ";
     video_link = "Add a video link";
-    video_link_short = "video link";
-    video_link_name = "video description";
+    video_link_short = "youtube video link";
+    video_link_name = "youtube id";
 }
 
 export class De implements Translation {
@@ -319,8 +319,8 @@ export class De implements Translation {
     loggin_in_as = "Angemeldet als ";
     video_link = "Video link hinzufügen";
 
-    video_link_short = "Video link";
-    video_link_name = "Video Beschreibung";    
+    video_link_short = "Youtube Video link";
+    video_link_name = "Youtube id";    
 }
 
 export class Hr implements Translation {
@@ -427,6 +427,6 @@ export class Hr implements Translation {
     loggin_in_as = "Prijavljeni ste kao ";
     video_link = "Dodavanje video linka";
 
-    video_link_short = "video link";
-    video_link_name = "opis videa";       
+    video_link_short = "youtube video link";
+    video_link_name = "youtube id";       
 }
