@@ -4,6 +4,8 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatSnackBar } from '@angular/material';
 import { RestService } from '../service/rest.service';
 import { Image } from '../model/image';
 import { Message } from '../model/message';
+import { Video } from '../model/video';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-show-dog',
@@ -16,8 +18,10 @@ export class ShowDogComponent implements OnInit {
   msg_text: string;
 
   selectedId = 0;
+  selectedVideoId = 0;
+  youtubeid: string;
 
-  constructor(private rest: RestService, private snackBar: MatSnackBar, public t: TranslationService, public dialogRef: MatDialogRef<ShowDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private sanitizer: DomSanitizer, private rest: RestService, private snackBar: MatSnackBar, public t: TranslationService, public dialogRef: MatDialogRef<ShowDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
     if (this.data.dog.images && this.data.dog.images.length > 0) {
@@ -28,6 +32,7 @@ export class ShowDogComponent implements OnInit {
 
       this.selectImage(this.data.dog.images[0]);
     }
+
   }
 
   onNoClick(): void {
@@ -36,6 +41,17 @@ export class ShowDogComponent implements OnInit {
   
   selectImage(image: Image) {
     this.selectedId = image.id;
+    this.selectedVideoId = 0;
+  }
+
+  getYouTubeVideo() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.youtubeid);
+  }
+
+  selectVideo(video: Video) {
+    this.selectedVideoId = video.id;
+    this.youtubeid = video.youtubeid;
+    this.selectedId = 0;
   }
 
   sendMessage() {

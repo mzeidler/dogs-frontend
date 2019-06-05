@@ -7,13 +7,26 @@
       <img src="{{rest.imageUrl}}/{{selectedId}}" class="bigimage imgshadow">
     </div>
 
+    <div *ngIf="selectedVideoId > 0" fxFlex fxLayoutAlign="center center">
+        <iframe width="888" height="500" [src]="getYouTubeVideo()" frameborder="1" allowfullscreen></iframe>
+    </div>
+
     <!-- 1.2. Gallery -->
-    <div *ngIf="data.dog.images.length > 0" class="gallery">
+    <div *ngIf="data.dog.images.length > 0 || data.dog.videos.length > 0" class="gallery">
+
       <div *ngFor="let image of data.dog.images | imagesort; let i = index">
         <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage imgshadow"
           [ngClass]="{'myselected imgshadow': image.id == selectedId}" (click)="selectImage(image)">
       </div>
+
+      <div *ngFor="let video of data.dog.videos | videosort; let i = index">
+        <div class="myvideo film">
+            <img class="frame" (click)="selectVideo(video)" src="https://img.youtube.com/vi/{{video.youtubeid}}/mqdefault.jpg"/>
+        </div>
+      </div>  
+
     </div>
+
 
   </div>
 
