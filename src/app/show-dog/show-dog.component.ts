@@ -24,13 +24,31 @@ export class ShowDogComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer, private rest: RestService, private snackBar: MatSnackBar, public t: TranslationService, public dialogRef: MatDialogRef<ShowDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    let hasImages = false;
+    let hasVideos = false;
+
     if (this.data.dog.images && this.data.dog.images.length > 0) {
 
       this.data.dog.images.sort((a: Image, b: Image) => {
         return b.sortid - a.sortid;
       });
 
+      hasImages = true;      
+    }
+
+    if (this.data.dog.videos && this.data.dog.videos.length > 0) {
+
+      this.data.dog.videos.sort((a: Video, b: Video) => {
+        return b.sortid - a.sortid;
+      });
+
+      hasVideos = true;      
+    }
+
+    if (hasImages) {
       this.selectImage(this.data.dog.images[0]);
+    } else if (hasVideos) {
+      this.selectVideo(this.data.dog.videos[0]);
     }
 
   }
