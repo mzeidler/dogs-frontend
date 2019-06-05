@@ -20,9 +20,9 @@
       </div>
 
       <div *ngFor="let video of data.dog.videos | videosort; let i = index">
-        <div class="myvideo film">
-            <img class="frame" (click)="selectVideo(video)" src="https://img.youtube.com/vi/{{video.youtubeid}}/mqdefault.jpg"/>
-        </div>
+          <div class="myvideo film" [ngClass]="{'filmborder': video.id == selectedVideoId}">
+              <img class="frame" (click)="selectVideo(video)" src="https://img.youtube.com/vi/{{video.youtubeid}}/mqdefault.jpg"/>
+          </div>
       </div>  
 
     </div>
