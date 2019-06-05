@@ -224,7 +224,7 @@ export class AddDogComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
 
-      if (result) {
+      if (result && result.link) {
 
         let dogid = 0;
         if (this.data.dog.id) {
