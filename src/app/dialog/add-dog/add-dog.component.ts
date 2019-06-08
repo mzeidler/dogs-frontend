@@ -9,6 +9,7 @@ import { Image } from '../../model/image';
 import { CropImageComponent } from '../crop-image/crop-image.component';
 import { AddVideoComponent } from '../add-video/add-video.component';
 import { Video } from '../../model/video';
+import { CommonService } from 'src/app/service/common/common.service';
 
 export interface Size {
   value: string;
@@ -51,7 +52,13 @@ export class AddDogComponent implements OnInit {
 
   progress: { percentage: number } = { percentage: 0 }
 
-  constructor(public dialog: MatDialog, public rest: RestService, public t: TranslationService, public dialogRef: MatDialogRef<AddDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(
+    public dialog: MatDialog, 
+    public rest: RestService, 
+    public t: TranslationService, 
+    public common: CommonService,
+    public dialogRef: MatDialogRef<AddDogComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }
@@ -104,7 +111,7 @@ export class AddDogComponent implements OnInit {
         }
       }
 
-      this.sortImages();  
+      this.common.sort(this.data.dog.images);
     }
 
   }
@@ -121,7 +128,7 @@ export class AddDogComponent implements OnInit {
         }
       }
 
-      this.sortVideos();  
+      this.common.sort(this.data.dog.videos);
     }
   }
 
@@ -138,7 +145,7 @@ export class AddDogComponent implements OnInit {
         }
       }
 
-      this.sortImages();
+      this.common.sort(this.data.dog.images);
     }
   }
 
@@ -154,7 +161,7 @@ export class AddDogComponent implements OnInit {
         }
       }
 
-      this.sortVideos();
+      this.common.sort(this.data.dog.videos);
     }
   }
 
@@ -194,22 +201,10 @@ export class AddDogComponent implements OnInit {
         //image.url = this.rest.imageUrl + "/" + image.id;
         //this.images.push(image);
         this.data.dog.images.push(image);
-        this.sortImages();
+        this.common.sort(this.data.dog.images);
       }
     })
     this.progress.percentage = 0;
-  }
-
-  sortImages() {
-    this.data.dog.images.sort((a: Image, b: Image) => {
-      return b.sortid - a.sortid;
-    });
-  }
-
-  sortVideos() {
-    this.data.dog.videos.sort((a: Video, b: Video) => {
-      return b.sortid - a.sortid;
-    });
   }
 
   addVideo() {
@@ -237,7 +232,7 @@ export class AddDogComponent implements OnInit {
 
         this.rest.addVideo(video, dogid).subscribe(v => {
           this.data.dog.videos.push(v);
-          this.sortVideos();
+          this.common.sort(this.data.dog.videos);
         });
       }
 
