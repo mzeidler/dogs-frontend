@@ -33,7 +33,7 @@ import { MatMomentDateModule, MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { DeleteDogComponent } from './dialog/delete-dog/delete-dog.component';
-import { ShowDogComponent } from './show-dog/show-dog.component';
+import { ShowDogComponent } from './dialog/show-dog/show-dog.component';
 import { AgePipe } from './pipes/agepipe';
 import { ImageSort } from './pipes/imagesortpipe';
 import { MatTabsModule } from '@angular/material/tabs';
