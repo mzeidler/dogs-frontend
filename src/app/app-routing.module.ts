@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AdoptComponent } from './adopt/adopt.component';
-import { VolunteerComponent } from './volunteer/volunteer.component';
+import { VolunteerComponent } from './page/volunteer/volunteer.component';
 import { DonateComponent } from './page/donate/donate.component';
 import { ContactComponent } from './page/contact/contact.component';
 import { GalleryComponent } from './page/gallery/gallery.component';
 import { DogsResolverService } from './resolvers/dogs-resolver.service';
-import { MessagesComponent } from './messages/messages.component';
+import { MessagesComponent } from './page/messages/messages.component';
 import { MessagesResolverService } from './resolvers/messages-resolver.service';
 
 const routes: Routes = [
