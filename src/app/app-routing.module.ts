@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AdoptComponent } from './adopt/adopt.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { DonateComponent } from './donate/donate.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './page/contact/contact.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { DogsResolverService } from './resolvers/dogs-resolver.service';
 import { MessagesComponent } from './messages/messages.component';

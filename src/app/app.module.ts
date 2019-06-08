@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AdoptComponent } from './adopt/adopt.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './page/contact/contact.component';
 import { DonateComponent } from './donate/donate.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { LoginComponent } from './dialog/login/login.component';
