@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { TranslationService } from '../../translations/translation.service';
+import { TranslationService } from '../../service/translations/translation.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({

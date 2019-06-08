@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { TranslationService } from '../../translations/translation.service';
+import { TranslationService } from '../../service/translations/translation.service';
 import { RestService } from '../../service/rest/rest.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { AddDogComponent } from '../../dialog/add-dog/add-dog.component';

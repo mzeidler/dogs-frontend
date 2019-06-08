@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { TranslationService } from '../../translations/translation.service';
+import { TranslationService } from '../../service/translations/translation.service';
 import { MAT_DIALOG_DATA, MatDialogRef, MatSnackBar } from '@angular/material';
 import { RestService } from '../../service/rest/rest.service';
 import { Image } from '../../model/image';
