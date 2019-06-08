@@ -6,7 +6,6 @@ import { VolunteerComponent } from './volunteer/volunteer.component';
 import { DonateComponent } from './donate/donate.component';
 import { ContactComponent } from './contact/contact.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { UserComponent } from './user/user.component';
 import { DogsResolverService } from './resolvers/dogs-resolver.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessagesResolverService } from './resolvers/messages-resolver.service';
@@ -35,7 +34,6 @@ const routes: Routes = [
       messages: MessagesResolverService
     }
   },
-  { path: 'user', component: UserComponent }, 
   { path: '**', redirectTo: '' }
 ];
 
