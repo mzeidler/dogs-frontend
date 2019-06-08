@@ -45,7 +45,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { NgxEditorModule } from 'ngx-editor';
 import { MessagesComponent } from './messages/messages.component';
 import {MatTableModule} from '@angular/material/table';
-import { AddVideoComponent } from './add-video/add-video.component';
+import { AddVideoComponent } from './dialog/add-video/add-video.component';
 import { VideoSort } from './pipes/videosortpipe';
 
 @NgModule({

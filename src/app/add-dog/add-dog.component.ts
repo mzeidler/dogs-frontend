@@ -7,7 +7,7 @@ import { RestService } from '../service/rest.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Image } from '../model/image';
 import { CropImageComponent } from '../dialog/crop-image/crop-image.component';
-import { AddVideoComponent } from '../add-video/add-video.component';
+import { AddVideoComponent } from '../dialog/add-video/add-video.component';
 import { Video } from '../model/video';
 
 export interface Size {
