@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslationService } from '../translations/translation.service';
+import { TranslationService } from '../../translations/translation.service';
 
 @Component({
   selector: 'app-gallery',
