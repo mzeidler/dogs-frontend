@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AdoptComponent } from './adopt/adopt.component';
+import { HomeComponent } from './page/home/home.component';
+import { AdoptComponent } from './page/adopt/adopt.component';
 import { VolunteerComponent } from './page/volunteer/volunteer.component';
 import { DonateComponent } from './page/donate/donate.component';
 import { ContactComponent } from './page/contact/contact.component';

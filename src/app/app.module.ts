@@ -3,8 +3,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AdoptComponent } from './adopt/adopt.component';
+import { HomeComponent } from './page/home/home.component';
+import { AdoptComponent } from './page/adopt/adopt.component';
 import { VolunteerComponent } from './page/volunteer/volunteer.component';
 import { ContactComponent } from './page/contact/contact.component';
 import { DonateComponent } from './page/donate/donate.component';
