@@ -11,7 +11,6 @@ import { DonateComponent } from './donate/donate.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { LoginComponent } from './dialog/login/login.component';
 import { UserComponent } from './user/user.component';
-import { AdminComponent } from './admin/admin.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -59,7 +58,6 @@ import { VideoSort } from './pipes/videosortpipe';
     GalleryComponent,
     LoginComponent,
     UserComponent,
-    AdminComponent,
     AddDogComponent,
     DeleteDogComponent,
     ShowDogComponent,
