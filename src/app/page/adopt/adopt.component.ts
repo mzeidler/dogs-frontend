@@ -10,7 +10,7 @@ import { Image } from '../../model/image';
 import { ActivatedRoute } from '@angular/router';
 import { DeleteDogComponent } from '../../dialog/delete-dog/delete-dog.component';
 import { ShowDogComponent } from '../../dialog/show-dog/show-dog.component';
-import { DogsResolverService } from '../../resolvers/dogs-resolver.service';
+import { DogsResolverService } from '../../service/dogs-resolver/dogs-resolver.service';
 
 @Component({
   selector: 'app-adopt',

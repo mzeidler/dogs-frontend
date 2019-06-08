@@ -6,9 +6,9 @@ import { VolunteerComponent } from './page/volunteer/volunteer.component';
 import { DonateComponent } from './page/donate/donate.component';
 import { ContactComponent } from './page/contact/contact.component';
 import { GalleryComponent } from './page/gallery/gallery.component';
-import { DogsResolverService } from './resolvers/dogs-resolver.service';
+import { DogsResolverService } from './service/dogs-resolver/dogs-resolver.service';
 import { MessagesComponent } from './page/messages/messages.component';
-import { MessagesResolverService } from './resolvers/messages-resolver.service';
+import { MessagesResolverService } from './service/messages-resolver/messages-resolver.service';
 
 const routes: Routes = [
   { 
