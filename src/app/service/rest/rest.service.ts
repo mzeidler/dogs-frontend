@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpEvent, HttpRequest } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { Observable, of, BehaviorSubject, Subject } from 'rxjs';
-import { User } from '../model/user';
+import { User } from '../../model/user';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Dog } from '../model/dog';
-import { Message } from '../model/message';
-import { Video } from '../model/video';
+import { Dog } from '../../model/dog';
+import { Message } from '../../model/message';
+import { Video } from '../../model/video';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })

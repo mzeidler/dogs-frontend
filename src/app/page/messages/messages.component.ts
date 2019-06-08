@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from '../../model/message';
-import { RestService } from '../../service/rest.service';
+import { RestService } from '../../service/rest/rest.service';
 import { ActivatedRoute } from '@angular/router';
 import { TranslationService } from '../../translations/translation.service';
 

@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
 import { TranslationService } from '../../translations/translation.service';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
-import { RestService } from '../../service/rest.service';
+import { RestService } from '../../service/rest/rest.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Image } from '../../model/image';
 import { CropImageComponent } from '../crop-image/crop-image.component';

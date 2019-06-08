@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { RestService } from '../service/rest.service';
+import { RestService } from '../service/rest/rest.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
