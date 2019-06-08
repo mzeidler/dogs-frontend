@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { TranslationService } from '../translations/translation.service';
+import { TranslationService } from '../../translations/translation.service';
 
 @Component({
   selector: 'app-delete-dog',

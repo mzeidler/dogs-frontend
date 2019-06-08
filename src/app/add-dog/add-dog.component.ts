@@ -6,7 +6,7 @@ import { MomentDateAdapter, MAT_MOMENT_DATE_FORMATS } from '@angular/material-mo
 import { RestService } from '../service/rest.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Image } from '../model/image';
-import { CropImageComponent } from '../crop-image/crop-image.component';
+import { CropImageComponent } from '../dialog/crop-image/crop-image.component';
 import { AddVideoComponent } from '../add-video/add-video.component';
 import { Video } from '../model/video';
 

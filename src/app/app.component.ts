@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslationService } from './translations/translation.service';
 import { MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './dialog/login/login.component';
 import { RestService } from './service/rest.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 

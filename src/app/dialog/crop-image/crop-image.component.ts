@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { TranslationService } from '../translations/translation.service';
+import { TranslationService } from '../../translations/translation.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DeleteDogComponent } from '../delete-dog/delete-dog.component';
-import { RestService } from '../service/rest.service';
+import { RestService } from '../../service/rest.service';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { TranslationService } from '../translations/translation.service';
+import { TranslationService } from '../../translations/translation.service';
 
 @Component({
   selector: 'app-login',
