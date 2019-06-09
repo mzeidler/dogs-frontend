@@ -9,8 +9,14 @@ export class CommonService {
   constructor() { }
 
   sort(array: Sortable[]) {
-    array.sort((a: Sortable, b: Sortable) => {
-      return b.sortid - a.sortid;
-    });
+    if (this.hasItems(array)) {
+      array.sort((a: Sortable, b: Sortable) => {
+        return b.sortid - a.sortid;
+      });
+    }
+  }
+
+  hasItems(array: any[]) {
+    return array && array.length > 0;
   }
 }

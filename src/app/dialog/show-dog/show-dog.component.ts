@@ -6,6 +6,7 @@ import { Image } from '../../model/image';
 import { Message } from '../../model/message';
 import { Video } from '../../model/video';
 import { DomSanitizer } from '@angular/platform-browser';
+import { CommonService } from 'src/app/service/common/common.service';
 
 @Component({
   selector: 'app-show-dog',
@@ -21,33 +22,22 @@ export class ShowDogComponent implements OnInit {
   selectedVideoId = 0;
   youtubeid: string;
 
-  constructor(private sanitizer: DomSanitizer, private rest: RestService, private snackBar: MatSnackBar, public t: TranslationService, public dialogRef: MatDialogRef<ShowDogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(
+    private sanitizer: DomSanitizer, 
+    private common: CommonService,
+    private rest: RestService, 
+    private snackBar: MatSnackBar, 
+    public t: TranslationService, 
+    public dialogRef: MatDialogRef<ShowDogComponent>, 
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
-    let hasImages = false;
-    let hasVideos = false;
+    this.common.sort(this.data.dog.images);
+    this.common.sort(this.data.dog.videos);
 
-    if (this.data.dog.images && this.data.dog.images.length > 0) {
-
-      this.data.dog.images.sort((a: Image, b: Image) => {
-        return b.sortid - a.sortid;
-      });
-
-      hasImages = true;      
-    }
-
-    if (this.data.dog.videos && this.data.dog.videos.length > 0) {
-
-      this.data.dog.videos.sort((a: Video, b: Video) => {
-        return b.sortid - a.sortid;
-      });
-
-      hasVideos = true;      
-    }
-
-    if (hasImages) {
+    if (this.common.hasItems(this.data.dog.images)) {
       this.selectImage(this.data.dog.images[0]);
-    } else if (hasVideos) {
+    } else if (this.common.hasItems(this.data.dog.videos)) {
       this.selectVideo(this.data.dog.videos[0]);
     }
 
