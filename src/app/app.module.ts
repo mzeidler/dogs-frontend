@@ -45,6 +45,7 @@ import { MatTableModule } from '@angular/material/table';
 import { AddVideoComponent } from './dialog/add-video/add-video.component';
 import { VideoSort } from './pipes/videosortpipe';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { DogFilter } from './pipes/dogfilter';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     VideoSort,
     CropImageComponent,
     MessagesComponent,
-    AddVideoComponent
+    AddVideoComponent,
+    DogFilter
   ],
   imports: [
     BrowserModule,

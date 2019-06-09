@@ -23,6 +23,7 @@ export class AdoptComponent implements OnInit {
 
   dogs: Dog[];
   filter: Filter;
+  updateFilter: Date;
 
   constructor(
     public dialog: MatDialog, 
@@ -35,6 +36,10 @@ export class AdoptComponent implements OnInit {
   ngOnInit() {
     this.dogs = this.route.snapshot.data['dogs'];
     this.newFilter();
+  }
+
+  update() {
+    this.updateFilter = new Date();
   }
 
   newFilter() {
