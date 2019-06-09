@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DeleteDogComponent } from '../../dialog/delete-dog/delete-dog.component';
 import { ShowDogComponent } from '../../dialog/show-dog/show-dog.component';
 import { DogsResolverService } from '../../service/dogs-resolver/dogs-resolver.service';
+import { CommonService } from 'src/app/service/common/common.service';
 
 @Component({
   selector: 'app-adopt',
@@ -21,7 +22,12 @@ export class AdoptComponent implements OnInit {
 
   dogs: Dog[];
 
-  constructor(public dialog: MatDialog, public t: TranslationService, public rest: RestService, private route: ActivatedRoute) { 
+  constructor(
+    public dialog: MatDialog, 
+    public t: TranslationService, 
+    public rest: RestService, 
+    public common: CommonService,
+    private route: ActivatedRoute) { 
   }
 
   ngOnInit() {
@@ -59,7 +65,7 @@ export class AdoptComponent implements OnInit {
         width: '950px', data: { 
           dog: {...dog},
           new: false,
-          day: moment(this.convertToDate(dog.born)),
+          day: moment(this.common.convertToDate(dog.born)),
         }
       });
 
@@ -69,7 +75,7 @@ export class AdoptComponent implements OnInit {
           dog.name = result.dog.name;
 
           if (result.day && !isNaN(result.day)) {
-            dog.born = this.convertToString(result.day.toDate());          
+            dog.born = this.common.convertToString(result.day.toDate());          
           }
 
           dog.description = result.dog.description;
@@ -149,7 +155,7 @@ export class AdoptComponent implements OnInit {
       if (result) {
         dog = result.dog;
         if (result.day) {
-          dog.born = this.convertToString(result.day.toDate());          
+          dog.born = this.common.convertToString(result.day.toDate());          
         }
         this.rest.addDog(dog).subscribe(d => {
           this.dogs.push(d);
@@ -159,14 +165,4 @@ export class AdoptComponent implements OnInit {
     });   
   }
 
-  convertToString(date: Date): string {
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
-    return  year + "-" + (month < 10 ? "0" : "") + month + "-" + (day < 10 ? "0" : "") + day;
-  }
-
-  convertToDate(date: string): Date {
-    return new Date(date + "T00:00:00")
-  }
 }
