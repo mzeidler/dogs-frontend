@@ -19,4 +19,37 @@ export class CommonService {
   hasItems(array: any[]) {
     return array && array.length > 0;
   }
+
+  moveLeft(array: Sortable[], id: number) {
+    if (array.length > 1) {
+
+      for (var _i = 1; _i < array.length; _i++) {
+        if (array[_i].id == id) {
+          let tmp = array[_i].sortid;
+          array[_i].sortid = array[_i - 1].sortid;
+          array[_i - 1].sortid = tmp;
+          break;
+        }
+      }
+
+      this.sort(array);
+    }
+  }
+
+  moveRight(array: Sortable[], id: number) {
+    if (array.length > 1) {
+
+      for (var _i = 0; _i < array.length - 1; _i++) {
+        if (array[_i].id == id) {
+          let tmp = array[_i].sortid;
+          array[_i].sortid = array[_i + 1].sortid;
+          array[_i + 1].sortid = tmp;
+          break;
+        }
+      }
+
+      this.sort(array);
+    }
+  }
+
 }

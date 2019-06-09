@@ -99,70 +99,19 @@ export class AddDogComponent implements OnInit {
   }
 
   moveToLeft() {
-
-    if (this.data.dog.images.length > 1) {
-
-      for (var _i = 1; _i < this.data.dog.images.length; _i++) {
-        if (this.data.dog.images[_i].id == this.selectedId) {
-          let tmp = this.data.dog.images[_i].sortid;
-          this.data.dog.images[_i].sortid = this.data.dog.images[_i - 1].sortid;
-          this.data.dog.images[_i - 1].sortid = tmp;
-          break;
-        }
-      }
-
-      this.common.sort(this.data.dog.images);
-    }
-
+    this.common.moveLeft(this.data.dog.images, this.selectedId);
   }
 
   moveVideoToLeft() {
-    if (this.data.dog.videos.length > 1) {
-
-      for (var _i = 1; _i < this.data.dog.videos.length; _i++) {
-        if (this.data.dog.videos[_i].id == this.selectedVideoId) {
-          let tmp = this.data.dog.videos[_i].sortid;
-          this.data.dog.videos[_i].sortid = this.data.dog.videos[_i - 1].sortid;
-          this.data.dog.videos[_i - 1].sortid = tmp;
-          break;
-        }
-      }
-
-      this.common.sort(this.data.dog.videos);
-    }
+    this.common.moveLeft(this.data.dog.videos, this.selectedVideoId);
   }
 
   moveToRight() {
-    
-    if (this.data.dog.images.length > 1) {
-
-      for (var _i = 0; _i < this.data.dog.images.length - 1; _i++) {
-        if (this.data.dog.images[_i].id == this.selectedId) {
-          let tmp = this.data.dog.images[_i].sortid;
-          this.data.dog.images[_i].sortid = this.data.dog.images[_i + 1].sortid;
-          this.data.dog.images[_i + 1].sortid = tmp;
-          break;
-        }
-      }
-
-      this.common.sort(this.data.dog.images);
-    }
+    this.common.moveRight(this.data.dog.images, this.selectedId);
   }
 
   moveVideoToRight() {
-    if (this.data.dog.videos.length > 1) {
-
-      for (var _i = 0; _i < this.data.dog.videos.length - 1; _i++) {
-        if (this.data.dog.videos[_i].id == this.selectedVideoId) {
-          let tmp = this.data.dog.videos[_i].sortid;
-          this.data.dog.videos[_i].sortid = this.data.dog.videos[_i + 1].sortid;
-          this.data.dog.videos[_i + 1].sortid = tmp;
-          break;
-        }
-      }
-
-      this.common.sort(this.data.dog.videos);
-    }
+    this.common.moveRight(this.data.dog.videos, this.selectedVideoId);
   }
 
   removePicture() {
