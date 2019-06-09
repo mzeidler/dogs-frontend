@@ -57,7 +57,8 @@ export class AdoptComponent implements OnInit {
 
   public filterDescription(): string {
 
-    if (this.filter.gender_m && this.filter.gender_f && this.filter.size_l && this.filter.size_m && this.filter.size_s && this.filter.age_1 && this.filter.age_5 && this.filter.age_10) {
+    if ((this.filter.gender_m && this.filter.gender_f && this.filter.size_l && this.filter.size_m && this.filter.size_s && this.filter.age_1 && this.filter.age_5 && this.filter.age_10) ||
+    (!this.filter.gender_m && !this.filter.gender_f && !this.filter.size_l && !this.filter.size_m && !this.filter.size_s && !this.filter.age_1 && !this.filter.age_5 && !this.filter.age_10)) {
         return this.t.get.filter_showall;
     }
 
