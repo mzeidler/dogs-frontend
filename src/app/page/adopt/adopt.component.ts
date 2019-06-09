@@ -78,21 +78,21 @@ export class AdoptComponent implements OnInit {
 
     let s = [];
 
-    if (genderArray.length == 0) {
-      //s.push(this.t.get.gender + "?");
-    } else if (genderArray.length < 2) {
+    if (genderArray.length == 2) {
+      s.push(this.t.get.filter_gender_all);
+    } else if (genderArray.length > 0 && genderArray.length < 2) {
       s.push(genderArray[0]);
     }
 
-    if (sizeArray.length == 0) {
-      //s.push(this.t.get.size + "?");
-    } else if (sizeArray.length < 3) {
+    if (sizeArray.length == 3) {
+      s.push(this.t.get.filter_size_all);
+    } else if (sizeArray.length > 0 && sizeArray.length < 3) {
       s.push(sizeArray.join(" " + this.t.get.or + " "));
     }
 
-    if (ageArray.length == 0) {
-      //s.push(this.t.get.age + "?");
-    } else if (ageArray.length < 3) {
+    if (ageArray.length == 3) {
+      s.push(this.t.get.filter_age_all);
+    } else if (ageArray.length > 0 && ageArray.length < 3) {
       s.push(ageArray.join(" " + this.t.get.or + " "));
     }
 

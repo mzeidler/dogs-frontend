@@ -110,6 +110,9 @@ export interface Translation {
     filter_older_than_m: string;
     filter_younger_than_m: string;    
     or: string;
+    filter_gender_all: string;
+    filter_size_all: string;
+    filter_age_all: string;
 }
 
 export class En implements Translation {
@@ -228,7 +231,11 @@ export class En implements Translation {
     filter_younger_than_m = "younger than";
 
     filter_older_than_f = "older than";
-    filter_younger_than_f = "younger than";    
+    filter_younger_than_f = "younger than";   
+    
+    filter_gender_all = "both gender";
+    filter_size_all = "all sizes";;
+    filter_age_all = "all ages";    
 }
 
 export class De implements Translation {
@@ -348,6 +355,10 @@ export class De implements Translation {
 
     filter_older_than_m = "älter als";
     filter_younger_than_m = "jünger als";
+
+    filter_gender_all = "beide Geschlechter";
+    filter_size_all = "alle Größen";
+    filter_age_all = "alle Alter"; 
 }
 
 export class Hr implements Translation {
@@ -466,4 +477,8 @@ export class Hr implements Translation {
 
     filter_older_than_m = "stariji od";
     filter_younger_than_m = "mlađi od";
+
+    filter_gender_all = "oba spola";
+    filter_size_all = "sve veličine";
+    filter_age_all = "sve starosti"; 
 }
