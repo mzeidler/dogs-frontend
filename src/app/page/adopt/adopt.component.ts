@@ -39,6 +39,7 @@ export class AdoptComponent implements OnInit {
   }
 
   update() {
+    // redundant because pipe is impure: refactor if performance problem
     this.updateFilter = new Date();
   }
 

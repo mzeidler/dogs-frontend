@@ -104,6 +104,7 @@ export interface Translation {
     video_link_name: string;
 
     filter_showall: string;
+    filter_reset: string;
     or: string;
 }
 
@@ -216,6 +217,7 @@ export class En implements Translation {
     video_link_name = "youtube id";
 
     filter_showall = "Show all";
+    filter_reset = "reset filter";
     or = "or";
 }
 
@@ -328,6 +330,7 @@ export class De implements Translation {
     video_link_name = "Youtube id";    
 
     filter_showall = "Alle anzeigen";
+    filter_reset = "Filter zurücksetzen";
     or = "oder";
 }
 
@@ -439,5 +442,6 @@ export class Hr implements Translation {
     video_link_name = "youtube id";       
 
     filter_showall = "Prikaži sve";
+    filter_reset = "resetiraj filter";
     or = "ili";
 }
