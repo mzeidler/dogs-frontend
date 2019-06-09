@@ -37,9 +37,9 @@
 
     <div style="float: left; margin-left: 80px">
       <p><b>{{t.get.age}}</b></p>
-      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.age_1">< 1 {{t.get.years}}</mat-checkbox></p>
+      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.age_1">{{t.get.filter_younger_than_m}} 1 {{t.get.year}}</mat-checkbox></p>
       <p><mat-checkbox (click)="update()" [(ngModel)]="filter.age_5">1 - 5 {{t.get.years}}</mat-checkbox></p>
-      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.age_10">> 5 {{t.get.years}}</mat-checkbox></p>
+      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.age_10">{{t.get.filter_older_than_m}} 5 {{t.get.years}}</mat-checkbox></p>
     </div>
 
   </mat-expansion-panel>

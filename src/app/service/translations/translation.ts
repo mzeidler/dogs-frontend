@@ -105,6 +105,10 @@ export interface Translation {
 
     filter_showall: string;
     filter_reset: string;
+    filter_older_than_f: string;
+    filter_younger_than_f: string;
+    filter_older_than_m: string;
+    filter_younger_than_m: string;    
     or: string;
 }
 
@@ -219,6 +223,12 @@ export class En implements Translation {
     filter_showall = "Show all";
     filter_reset = "reset filter";
     or = "or";
+
+    filter_older_than_m = "older than";
+    filter_younger_than_m = "younger than";
+
+    filter_older_than_f = "older than";
+    filter_younger_than_f = "younger than";    
 }
 
 export class De implements Translation {
@@ -332,6 +342,12 @@ export class De implements Translation {
     filter_showall = "Alle anzeigen";
     filter_reset = "Filter zurücksetzen";
     or = "oder";
+
+    filter_older_than_f = "älter als";
+    filter_younger_than_f = "jünger als";
+
+    filter_older_than_m = "älter als";
+    filter_younger_than_m = "jünger als";
 }
 
 export class Hr implements Translation {
@@ -444,4 +460,10 @@ export class Hr implements Translation {
     filter_showall = "Prikaži sve";
     filter_reset = "resetiraj filter";
     or = "ili";
+
+    filter_older_than_f = "stariji od";
+    filter_younger_than_f = "mlađi od";
+
+    filter_older_than_m = "stariji od";
+    filter_younger_than_m = "mlađi od";
 }

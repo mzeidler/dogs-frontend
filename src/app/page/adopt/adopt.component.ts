@@ -45,14 +45,14 @@ export class AdoptComponent implements OnInit {
 
   newFilter() {
     this.filter = <Filter>{};
-    this.filter.gender_f = true;
-    this.filter.gender_m = true;
-    this.filter.size_l = true;
-    this.filter.size_m = true;
-    this.filter.size_s = true;
-    this.filter.age_1 = true;
-    this.filter.age_5 = true;
-    this.filter.age_10 = true;
+    this.filter.gender_f = false;
+    this.filter.gender_m = false;
+    this.filter.size_l = false;
+    this.filter.size_m = false;
+    this.filter.size_s = false;
+    this.filter.age_1 = false;
+    this.filter.age_5 = false;
+    this.filter.age_10 = false;
   }
 
   public filterDescription(): string {
@@ -71,26 +71,26 @@ export class AdoptComponent implements OnInit {
     if (this.filter.size_l) sizeArray.push(this.t.get.size_l);
 
     let ageArray = [];
-    if (this.filter.age_1) ageArray.push("< 1 " + this.t.get.years);
+    if (this.filter.age_1) ageArray.push(this.t.get.filter_younger_than_m + " 1 " + this.t.get.year);
     if (this.filter.age_5) ageArray.push("1 - 5 " + this.t.get.years);
-    if (this.filter.age_10) ageArray.push("> 5 " + this.t.get.years);
+    if (this.filter.age_10) ageArray.push(this.t.get.filter_older_than_m + " 5 " + this.t.get.years);
 
     let s = [];
 
     if (genderArray.length == 0) {
-      s.push(this.t.get.gender + "?");
+      //s.push(this.t.get.gender + "?");
     } else if (genderArray.length < 2) {
       s.push(genderArray[0]);
     }
 
     if (sizeArray.length == 0) {
-      s.push(this.t.get.size + "?");
+      //s.push(this.t.get.size + "?");
     } else if (sizeArray.length < 3) {
       s.push(sizeArray.join(" " + this.t.get.or + " "));
     }
 
     if (ageArray.length == 0) {
-      s.push(this.t.get.age + "?");
+      //s.push(this.t.get.age + "?");
     } else if (ageArray.length < 3) {
       s.push(ageArray.join(" " + this.t.get.or + " "));
     }
