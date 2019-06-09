@@ -38,6 +38,11 @@ export class AdoptComponent implements OnInit {
     this.rest.getDogs().subscribe(dogs => this.dogs = dogs);
   }
 
+
+
+  //*************************************************************
+  // DELETE DOG
+  //*************************************************************
   deleteDog(dog: Dog) {
     
     const dialogRef = this.dialog.open(DeleteDogComponent, {
@@ -47,20 +52,20 @@ export class AdoptComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-
       if (result) {
         this.rest.deleteDog(dog);
         this.dogs = this.dogs.filter(d => d.id != dog.id);  
       }
-
     }); 
   
   }
 
+  //*************************************************************
+  // SELECT DOG
+  //*************************************************************
   selectDog(dog: Dog) {
 
     if (this.rest.currentUserValue) {
-
       const dialogRef = this.dialog.open(AddDogComponent, {
         width: '950px', data: { 
           dog: {...dog},
@@ -137,6 +142,9 @@ export class AdoptComponent implements OnInit {
   }
 
 
+  //*************************************************************
+  // ADD DOG
+  //*************************************************************
   addDog() {
     
     let dog = <Dog>{};
