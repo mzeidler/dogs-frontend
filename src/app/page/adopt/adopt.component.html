@@ -24,7 +24,7 @@
 
     <div style="float: left; margin-left: 60px">
       <p><b>{{t.get.gender}}</b></p>
-      <p><mat-checkbox (click)="update()" [color]="blue" [(ngModel)]="filter.gender_m">{{t.get.male}}</mat-checkbox></p>
+      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.gender_m">{{t.get.male}}</mat-checkbox></p>
       <p><mat-checkbox (click)="update()" [(ngModel)]="filter.gender_f">{{t.get.female}}</mat-checkbox></p>
     </div>
 
