@@ -1,28 +1,38 @@
 
 <p *ngIf="rest.currentUserValue">
   <button mat-icon-button>
-    <mat-icon aria-label="Add" (click)="addDog()" matTooltip="{{t.get.add_dog}}">add_circle_outline</mat-icon>
+    <mat-icon (click)="addDog()" matTooltip="{{t.get.add_dog}}">add_circle_outline</mat-icon>
   </button>
   <button mat-icon-button>
-    <mat-icon aria-label="Refresh" (click)="getDogs()" matTooltip="Refresh">autorenew</mat-icon>
+    <mat-icon (click)="getDogs()" matTooltip="Refresh">autorenew</mat-icon>
   </button>
 </p>
 
-<div style="margin-left: 50px; margin-top: 35px">
-  <div *ngFor="let dog of dogs" style="float:left; max-width: 270px">
+<div class="adopt-container">
+  <div *ngFor="let dog of dogs" class="adopt-single-container">
 
-    <mat-card style="max-width: 210px; margin: 15px">
+    <mat-card class="adopt-single-card">
 
+      <!-- Name -->
       <p style="float: left"><b>{{dog.name ? dog.name : "?"}}</b></p>
+
+      <!-- Delete Button -->
       <mat-icon style="float: right;cursor: pointer;" *ngIf="rest.currentUserValue" matTooltip="{{t.get.delete}}" (click)="deleteDog(dog)">delete_forever</mat-icon>
+
+      <!-- Gender Icon -->
       <img *ngIf="dog.gender === 'M'" style="float:right" src="assets/male.png" matTooltip="{{t.get.male}}">
       <img *ngIf="dog.gender === 'F'" style="float:right" src="assets/female.png" matTooltip="{{t.get.female}}">
       <mat-icon *ngIf="!dog.gender" style="float:right" matTooltip="{{t.get.no_gender}}">help_outline</mat-icon>
 
+      <!-- Image -->
       <img mat-card-image src="{{dog.titleimage ? dog.titleimage : 'assets/dog2.jpg'}}" style="cursor: pointer" (click)="selectDog(dog)">
-
+      
       <mat-card-content>
+
+        <!-- Age -->
         <b>{{t.get.age}}:</b>&nbsp;{{dog.born | agepipe }}
+
+        <!-- Size -->
         <img *ngIf="dog.size === 'S'" style="float: right; margin-top: -5px" src="assets/dog_s.png" matTooltip="{{t.get.size}}: {{t.get.size_s}}">
         <img *ngIf="dog.size === 'M'" style="float: right; margin-top: -15px" src="assets/dog_m.png" matTooltip="{{t.get.size}}: {{t.get.size_m}}">
         <img *ngIf="dog.size === 'L'" style="float: right; margin-top: -17px" src="assets/dog_l.png" matTooltip="{{t.get.size}}: {{t.get.size_l}}">

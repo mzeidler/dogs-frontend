@@ -1,0 +1,15 @@
+
+.adopt-container {
+    margin-left: 50px; 
+    margin-top: 35px;
+}
+
+.adopt-single-container {
+    float:left;
+    max-width: 270px;
+}
+
+.adopt-single-card {
+    max-width: 210px; 
+    margin: 15px;
+}
