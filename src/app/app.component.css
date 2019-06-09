@@ -23,8 +23,7 @@
 
 .flag {
     width: 20px;
-    margin-top: 8px;
-    margin-left: 4px;
+    float: left;
 }
 
 .loggeduser {
