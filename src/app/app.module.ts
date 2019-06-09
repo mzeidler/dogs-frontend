@@ -44,6 +44,7 @@ import { MessagesComponent } from './page/messages/messages.component';
 import { MatTableModule } from '@angular/material/table';
 import { AddVideoComponent } from './dialog/add-video/add-video.component';
 import { VideoSort } from './pipes/videosortpipe';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { VideoSort } from './pipes/videosortpipe';
     MatSelectModule,
     MatDividerModule,
     NgxEditorModule,
-    MatTableModule
+    MatTableModule,
+    MatExpansionModule
   ],
   entryComponents: [
     LoginComponent,

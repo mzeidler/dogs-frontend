@@ -12,6 +12,7 @@ import { DeleteDogComponent } from '../../dialog/delete-dog/delete-dog.component
 import { ShowDogComponent } from '../../dialog/show-dog/show-dog.component';
 import { DogsResolverService } from '../../service/dogs-resolver/dogs-resolver.service';
 import { CommonService } from 'src/app/service/common/common.service';
+import { Filter } from 'src/app/model/filter';
 
 @Component({
   selector: 'app-adopt',
@@ -21,6 +22,7 @@ import { CommonService } from 'src/app/service/common/common.service';
 export class AdoptComponent implements OnInit {
 
   dogs: Dog[];
+  filter: Filter;
 
   constructor(
     public dialog: MatDialog, 
@@ -32,7 +34,63 @@ export class AdoptComponent implements OnInit {
 
   ngOnInit() {
     this.dogs = this.route.snapshot.data['dogs'];
+    this.newFilter();
   }
+
+  newFilter() {
+    this.filter = <Filter>{};
+    this.filter.gender_f = true;
+    this.filter.gender_m = true;
+    this.filter.size_l = true;
+    this.filter.size_m = true;
+    this.filter.size_s = true;
+    this.filter.age_1 = true;
+    this.filter.age_5 = true;
+    this.filter.age_10 = true;
+  }
+
+  public filterDescription(): string {
+
+    if (this.filter.gender_m && this.filter.gender_f && this.filter.size_l && this.filter.size_m && this.filter.size_s && this.filter.age_1 && this.filter.age_5 && this.filter.age_10) {
+        return this.t.get.filter_showall;
+    }
+
+    let genderArray = [];
+    if (this.filter.gender_m) genderArray.push(this.t.get.male);
+    if (this.filter.gender_f) genderArray.push(this.t.get.female);
+
+    let sizeArray = [];
+    if (this.filter.size_s) sizeArray.push(this.t.get.size_s);
+    if (this.filter.size_m) sizeArray.push(this.t.get.size_m);
+    if (this.filter.size_l) sizeArray.push(this.t.get.size_l);
+
+    let ageArray = [];
+    if (this.filter.age_1) ageArray.push("< 1 " + this.t.get.years);
+    if (this.filter.age_5) ageArray.push("1 - 5 " + this.t.get.years);
+    if (this.filter.age_10) ageArray.push("> 5 " + this.t.get.years);
+
+    let s = [];
+
+    if (genderArray.length == 0) {
+      s.push(this.t.get.gender + "?");
+    } else if (genderArray.length < 2) {
+      s.push(genderArray[0]);
+    }
+
+    if (sizeArray.length == 0) {
+      s.push(this.t.get.size + "?");
+    } else if (sizeArray.length < 3) {
+      s.push(sizeArray.join(" " + this.t.get.or + " "));
+    }
+
+    if (ageArray.length == 0) {
+      s.push(this.t.get.age + "?");
+    } else if (ageArray.length < 3) {
+      s.push(ageArray.join(" " + this.t.get.or + " "));
+    }
+
+    return s.join(", ");
+}
 
   getDogs(): void {
     this.rest.getDogs().subscribe(dogs => this.dogs = dogs);

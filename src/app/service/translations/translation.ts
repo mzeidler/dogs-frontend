@@ -103,6 +103,8 @@ export interface Translation {
     video_link_short: string;
     video_link_name: string;
 
+    filter_showall: string;
+    or: string;
 }
 
 export class En implements Translation {
@@ -212,6 +214,9 @@ export class En implements Translation {
     video_link = "Add a video link";
     video_link_short = "youtube video link";
     video_link_name = "youtube id";
+
+    filter_showall = "Show all";
+    or = "or";
 }
 
 export class De implements Translation {
@@ -321,6 +326,9 @@ export class De implements Translation {
 
     video_link_short = "Youtube Video link";
     video_link_name = "Youtube id";    
+
+    filter_showall = "Alle anzeigen";
+    or = "oder";
 }
 
 export class Hr implements Translation {
@@ -429,4 +437,7 @@ export class Hr implements Translation {
 
     video_link_short = "youtube video link";
     video_link_name = "youtube id";       
+
+    filter_showall = "Prikaži sve";
+    or = "ili";
 }

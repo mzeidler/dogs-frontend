@@ -1,7 +1,7 @@
 
 .adopt-container {
     margin-left: 50px; 
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
 .adopt-single-container {
@@ -12,4 +12,9 @@
 .adopt-single-card {
     max-width: 210px; 
     margin: 15px;
+}
+
+.filter-panel {
+    margin-left: 65px;
+    width: 600px;
 }
