@@ -124,7 +124,7 @@ export class En implements Translation {
     volunteer = "Volunteer";
     donate = "Donate";
     contact = "Contact";
-    gallery = "Gallery";
+    gallery = "Dog shelter";
     messages = "Messages";
     user = "User";
     admin = "Admin";
@@ -247,7 +247,7 @@ export class De implements Translation {
     volunteer = "Freiwillige Helfer";
     donate = "Spenden";
     contact = "Kontakt";
-    gallery = "Gallerie";
+    gallery = "Tierheim";
     messages = "Nachrichten";
     user = "Benutzer";
     admin = "Administration";
@@ -367,10 +367,10 @@ export class Hr implements Translation {
 
     // buttons
     adopt = "Udomi";
-    volunteer = "Volonteri";
+    volunteer = "Pomozite nam";
     donate = "Doniraj";
     contact = "Kontakt";
-    gallery = "Galerija";
+    gallery = "Sklonište";
     messages = "Poruke";
     user = "Korisnik";
     admin = "Administracija";
