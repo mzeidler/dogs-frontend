@@ -62,4 +62,14 @@ export class CommonService {
   convertToDate(date: string): Date {
     return new Date(date + "T00:00:00")
   }
+
+  public ageInYears(born: string): number {
+    if (born) {
+      let now = new Date();
+      let date = this.convertToDate(born);
+      var diff = Math.abs(now.getTime() - date.getTime());
+      return diff / (1000 * 3600 * 24 * 365);
+    }
+    return 0;       
+  }
 }
