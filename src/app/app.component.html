@@ -21,7 +21,8 @@
 </nav>
 
 <p>
-  <img class="flag" src="{{t.get.lang_icon}}" (click)="t.changeLang()">
+  <img class="flag" src="assets/de.png" (click)="t.setLang('De')">&nbsp;
+  <img class="flag" src="assets/hr.png" (click)="t.setLang('Hr')">
 
   <span class="mat-body loggeduser" *ngIf="rest.currentUserValue">
     {{t.get.loggin_in_as}} <b>{{rest.currentUserValue.firstName}} {{rest.currentUserValue.lastName}}</b>
