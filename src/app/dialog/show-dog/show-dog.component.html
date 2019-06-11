@@ -1,8 +1,9 @@
-<div style="height: 100%; background-color: blanchedalmond;" fxLayout="row" fxLayoutAlign="stretch">
+<div style="height: 100vh; background-color: blanchedalmond;" fxLayout="row">
 
   <!-- 1. LEFT -->
-  <div fxFlex fxLayout="column" fxLayoutAlign="space-around">
+  <div fxFlex fxLayout="column" fxLayoutAlign="stretch center">
 
+    <!-- MIDDLE AERA -->
     <div *ngIf="selectedId > 0" fxFlex fxLayoutAlign="center center">
       <img src="{{rest.imageUrl}}/{{selectedId}}" class="bigimage imgshadow">
     </div>
@@ -11,22 +12,31 @@
         <iframe width="888" height="500" [src]="getYouTubeVideo()" frameborder="1" allowfullscreen></iframe>
     </div>
 
-    <!-- 1.2. Gallery -->
-    <div *ngIf="data.dog.images.length > 0 || data.dog.videos.length > 0" class="gallery">
+    <!-- CONTAINERS -->
+    <div *ngIf="data.dog.images.length > 0 || data.dog.videos.length > 0"  fxLayout="row" fxLayoutAlign="center">
 
-      <div *ngFor="let image of data.dog.images | imagesort; let i = index">
-        <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage imgshadow"
-          [ngClass]="{'myselected imgshadow': image.id == selectedId}" (click)="selectImage(image)">
+      <!-- TODO: left button -->
+
+      <div class="gallery">
+        <div fxLayout="row">
+          <div *ngFor="let image of data.dog.images | imagesort; let i = index">
+            <img src="{{rest.imageUrl}}/{{image.id}}" class="myimage imgshadow"
+              [ngClass]="{'myselected imgshadow': image.id == selectedId}" (click)="selectImage(image)">
+          </div>
+
+          <div *ngFor="let video of data.dog.videos | videosort; let i = index">
+              <div class="myvideo film" [ngClass]="{'filmborder': video.id == selectedVideoId}">
+                  <img class="frame" (click)="selectVideo(video)" src="https://img.youtube.com/vi/{{video.youtubeid}}/mqdefault.jpg"/>
+              </div>
+          </div>  
+        </div>
       </div>
 
-      <div *ngFor="let video of data.dog.videos | videosort; let i = index">
-          <div class="myvideo film" [ngClass]="{'filmborder': video.id == selectedVideoId}">
-              <img class="frame" (click)="selectVideo(video)" src="https://img.youtube.com/vi/{{video.youtubeid}}/mqdefault.jpg"/>
-          </div>
-      </div>  
+      <!-- TODO: right button -->
 
     </div>
 
+    <br>
 
   </div>
 

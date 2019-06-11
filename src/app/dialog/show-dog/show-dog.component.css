@@ -26,12 +26,12 @@
 
 
 .gallery {
-    display: flex; 
-    flex-wrap: wrap;
     overflow-x: auto; 
-    border-width: 1px 0px 0px 0px; 
-    border-color: lightgray;
+    border-width: 1px 1px 1px 1px; 
+    border-color: darkgray;
     border-style: solid;
+    max-width: 1100px; 
+    width: 1100px;
 }
 
 .myimage {
