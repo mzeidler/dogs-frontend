@@ -1,33 +1,33 @@
 
-<nav class="navbar">
+<div class="navbar" fxLayout="row">
 
-    <div style="float: left">
-      <img width="150px" src="assets/logo.png">
-    </div>
+      <div>
+        <img width="150px" src="assets/logo.png">
+      </div>
 
-    <div>
-      <img src="assets/wau-express-trans.png"><br>
+      <div fxFlex>
+          <img src="assets/wau-express-trans.png"><br>
 
-      <button class="mymargin mybutton" mat-button routerLink="/home" routerLinkActive="active">{{t.get.home}}</button>
-      <button class="mymargin mybutton" mat-button routerLink="/adopt" routerLinkActive="active">{{t.get.adopt}}</button>
-      <button class="mymargin mybutton" mat-button routerLink="/volunteer" routerLinkActive="active">{{t.get.volunteer}}</button>
-      <button class="mymargin mybutton" mat-button routerLink="/contact" routerLinkActive="active">{{t.get.contact}}</button>
-      <button class="mymargin mybutton" mat-button routerLink="/gallery" routerLinkActive="active">{{t.get.gallery}}</button>
-      <button *ngIf="rest.currentUserValue" class="mymargin mybutton" mat-button routerLink="/messages" routerLinkActive="active">{{t.get.messages}}</button>
-      <button *ngIf="!rest.currentUserValue"  mat-button class="mymargin mybutton" (click)="login()">{{t.get.login}}</button>
-      <button *ngIf="rest.currentUserValue" mat-button class="mymargin mybutton" (click)="logout()">{{t.get.logout}}</button>
-  </div>
+          <button class="mymargin mybutton" mat-button routerLink="/home" routerLinkActive="active">{{t.get.home}}</button>
+          <button class="mymargin mybutton" mat-button routerLink="/adopt" routerLinkActive="active">{{t.get.adopt}}</button>
+          <button class="mymargin mybutton" mat-button routerLink="/volunteer" routerLinkActive="active">{{t.get.volunteer}}</button>
+          <button class="mymargin mybutton" mat-button routerLink="/contact" routerLinkActive="active">{{t.get.contact}}</button>
+          <button class="mymargin mybutton" mat-button routerLink="/gallery" routerLinkActive="active">{{t.get.gallery}}</button>
+          <button *ngIf="rest.currentUserValue" class="mymargin mybutton" mat-button routerLink="/messages" routerLinkActive="active">{{t.get.messages}}</button>
+          <button *ngIf="!rest.currentUserValue"  mat-button class="mymargin mybutton" (click)="login()">{{t.get.login}}</button>
+          <button *ngIf="rest.currentUserValue" mat-button class="mymargin mybutton" (click)="logout()">{{t.get.logout}}</button>
+      </div>
+      
+      <div>
+        <span class="mat-body loggeduser" *ngIf="rest.currentUserValue">
+              {{t.get.loggin_in_as}} <b>{{rest.currentUserValue.firstName}} {{rest.currentUserValue.lastName}}</b>
+        </span>
+  
+        <img class="flag" src="assets/de.png" (click)="t.setLang('De')">
+        <img class="flag" src="assets/hr.png" (click)="t.setLang('Hr')">
 
-</nav>
+      </div>
 
-<p>
-  <img class="flag" src="assets/de.png" (click)="t.setLang('De')">&nbsp;
-  <img class="flag" src="assets/hr.png" (click)="t.setLang('Hr')">
-
-  <span class="mat-body loggeduser" *ngIf="rest.currentUserValue">
-    {{t.get.loggin_in_as}} <b>{{rest.currentUserValue.firstName}} {{rest.currentUserValue.lastName}}</b>
-  </span>
-</p>
+</div>
 
 <router-outlet></router-outlet>
-

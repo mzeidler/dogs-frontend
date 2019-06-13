@@ -1,83 +1,97 @@
 
-<p *ngIf="rest.currentUserValue">
-  <button mat-icon-button>
-    <mat-icon (click)="addDog()" matTooltip="{{t.get.add_dog}}">add_circle_outline</mat-icon>
-  </button>
-  <button mat-icon-button>
-    <mat-icon (click)="getDogs()" matTooltip="Refresh">autorenew</mat-icon>
-  </button>
-</p>
 
-<mat-accordion >
-  <mat-expansion-panel class="filter-panel">
+<div fxLayout="row">
 
-    <mat-expansion-panel-header>
-          <mat-panel-title><mat-icon matTooltip="Filter">search</mat-icon></mat-panel-title>
-          <mat-panel-description>{{filterDescription()}}</mat-panel-description>
-    </mat-expansion-panel-header>
+  <div fxFlex="3">
 
-    <div style="float: left">
-      <button mat-icon-button>
-        <mat-icon (click)="newFilter()" matTooltip="{{t.get.filter_reset}}">autorenew</mat-icon>
-      </button>      
+      <div *ngIf="rest.currentUserValue" align="center">
+          <button mat-icon-button>
+            <mat-icon (click)="addDog()" matTooltip="{{t.get.add_dog}}">add_circle_outline</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon (click)="getDogs()" matTooltip="Refresh">autorenew</mat-icon>
+          </button>
+      </div>
+
+  </div>
+  
+  <div fxFlex fxLayout="column" style="height: 80vh">
+  
+    <div>
+        <mat-accordion>
+            <mat-expansion-panel class="filter-panel">
+          
+              <mat-expansion-panel-header>
+                    <mat-panel-title><mat-icon matTooltip="Filter">search</mat-icon></mat-panel-title>
+                    <mat-panel-description>{{filterDescription()}}</mat-panel-description>
+              </mat-expansion-panel-header>
+          
+              <div style="float: left">
+                <button mat-icon-button>
+                  <mat-icon (click)="newFilter()" matTooltip="{{t.get.filter_reset}}">autorenew</mat-icon>
+                </button>      
+              </div>
+          
+              <div style="float: left; margin-left: 60px">
+                <p><b>{{t.get.gender}}</b></p>
+                <p><mat-checkbox (click)="update()" [(ngModel)]="filter.gender_m">{{t.get.male}}</mat-checkbox></p>
+                <p><mat-checkbox (click)="update()" [(ngModel)]="filter.gender_f">{{t.get.female}}</mat-checkbox></p>
+              </div>
+          
+              <div style="float: left; margin-left: 80px">
+                <p><b>{{t.get.size}}</b></p>
+                <p><mat-checkbox (click)="update()" [(ngModel)]="filter.size_l">{{t.get.size_l}}</mat-checkbox></p>
+                <p><mat-checkbox (click)="update()" [(ngModel)]="filter.size_m">{{t.get.size_m}}</mat-checkbox></p>
+                <p><mat-checkbox (click)="update()" [(ngModel)]="filter.size_s">{{t.get.size_s}}</mat-checkbox></p>
+              </div>
+          
+              <div style="float: left; margin-left: 80px">
+                <p><b>{{t.get.age}}</b></p>
+                <p><mat-checkbox (click)="update()" [(ngModel)]="filter.age_1">{{t.get.filter_younger_than_m}} 1 {{t.get.year}}</mat-checkbox></p>
+                <p><mat-checkbox (click)="update()" [(ngModel)]="filter.age_5">1 - 5 {{t.get.years}}</mat-checkbox></p>
+                <p><mat-checkbox (click)="update()" [(ngModel)]="filter.age_10">{{t.get.filter_older_than_m}} 5 {{t.get.years}}</mat-checkbox></p>
+              </div>
+          
+            </mat-expansion-panel>
+          </mat-accordion>
     </div>
 
-    <div style="float: left; margin-left: 60px">
-      <p><b>{{t.get.gender}}</b></p>
-      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.gender_m">{{t.get.male}}</mat-checkbox></p>
-      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.gender_f">{{t.get.female}}</mat-checkbox></p>
-    </div>
+    <div fxFlex class="adopt-container" fxLayout="row wrap">
+        <div *ngFor="let dog of dogs | dogfilter:filter" class="adopt-single-container">
 
-    <div style="float: left; margin-left: 80px">
-      <p><b>{{t.get.size}}</b></p>
-      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.size_l">{{t.get.size_l}}</mat-checkbox></p>
-      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.size_m">{{t.get.size_m}}</mat-checkbox></p>
-      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.size_s">{{t.get.size_s}}</mat-checkbox></p>
-    </div>
-
-    <div style="float: left; margin-left: 80px">
-      <p><b>{{t.get.age}}</b></p>
-      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.age_1">{{t.get.filter_younger_than_m}} 1 {{t.get.year}}</mat-checkbox></p>
-      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.age_5">1 - 5 {{t.get.years}}</mat-checkbox></p>
-      <p><mat-checkbox (click)="update()" [(ngModel)]="filter.age_10">{{t.get.filter_older_than_m}} 5 {{t.get.years}}</mat-checkbox></p>
-    </div>
-
-  </mat-expansion-panel>
-</mat-accordion>
-
-<div class="adopt-container">
-  <div *ngFor="let dog of dogs | dogfilter:filter" class="adopt-single-container">
-
-    <mat-card class="adopt-single-card">
-
-      <!-- Name -->
-      <p style="float: left"><b>{{dog.name ? dog.name : "?"}}</b></p>
-
-      <!-- Delete Button -->
-      <mat-icon style="float: right;cursor: pointer;" *ngIf="rest.currentUserValue" matTooltip="{{t.get.delete}}" (click)="deleteDog(dog)">delete_forever</mat-icon>
-
-      <!-- Gender Icon -->
-      <img *ngIf="dog.gender === 'M'" style="float:right" src="assets/male.png" matTooltip="{{t.get.male}}">
-      <img *ngIf="dog.gender === 'F'" style="float:right" src="assets/female.png" matTooltip="{{t.get.female}}">
-      <mat-icon *ngIf="!dog.gender" style="float:right" matTooltip="{{t.get.no_gender}}">help_outline</mat-icon>
-
-      <!-- Image -->
-      <img mat-card-image src="{{dog.titleimage ? dog.titleimage : 'assets/dog2.jpg'}}" style="cursor: pointer" (click)="selectDog(dog)">
-      
-      <mat-card-content>
-
-        <!-- Age -->
-        <b>{{t.get.age}}:</b>&nbsp;{{dog.born | agepipe }}
-
-        <!-- Size -->
-        <img *ngIf="dog.size === 'S'" style="float: right; margin-top: -5px" src="assets/dog_s.png" matTooltip="{{t.get.size}}: {{t.get.size_s}}">
-        <img *ngIf="dog.size === 'M'" style="float: right; margin-top: -15px" src="assets/dog_m.png" matTooltip="{{t.get.size}}: {{t.get.size_m}}">
-        <img *ngIf="dog.size === 'L'" style="float: right; margin-top: -17px" src="assets/dog_l.png" matTooltip="{{t.get.size}}: {{t.get.size_l}}">
+            <mat-card class="adopt-single-card">
         
-      </mat-card-content>
-
-    </mat-card>
-
+              <!-- Name -->
+              <p style="float: left"><b>{{dog.name ? dog.name : "?"}}</b></p>
+        
+              <!-- Delete Button -->
+              <mat-icon style="float: right;cursor: pointer;" *ngIf="rest.currentUserValue" matTooltip="{{t.get.delete}}" (click)="deleteDog(dog)">delete_forever</mat-icon>
+        
+              <!-- Gender Icon -->
+              <img *ngIf="dog.gender === 'M'" style="float:right" src="assets/male.png" matTooltip="{{t.get.male}}">
+              <img *ngIf="dog.gender === 'F'" style="float:right" src="assets/female.png" matTooltip="{{t.get.female}}">
+              <mat-icon *ngIf="!dog.gender" style="float:right" matTooltip="{{t.get.no_gender}}">help_outline</mat-icon>
+        
+              <!-- Image -->
+              <img mat-card-image src="{{dog.titleimage ? dog.titleimage : 'assets/dog2.jpg'}}" style="cursor: pointer" (click)="selectDog(dog)">
+              
+              <mat-card-content>
+        
+                <!-- Age -->
+                <b>{{t.get.age}}:</b>&nbsp;{{dog.born | agepipe }}
+        
+                <!-- Size -->
+                <img *ngIf="dog.size === 'S'" style="float: right; margin-top: -5px" src="assets/dog_s.png" matTooltip="{{t.get.size}}: {{t.get.size_s}}">
+                <img *ngIf="dog.size === 'M'" style="float: right; margin-top: -15px" src="assets/dog_m.png" matTooltip="{{t.get.size}}: {{t.get.size_m}}">
+                <img *ngIf="dog.size === 'L'" style="float: right; margin-top: -17px" src="assets/dog_l.png" matTooltip="{{t.get.size}}: {{t.get.size_l}}">
+                
+              </mat-card-content>
+        
+            </mat-card>
+        
+          </div>
+    </div>
+  
   </div>
 
 </div>

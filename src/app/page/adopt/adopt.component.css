@@ -1,20 +1,21 @@
 
 .adopt-container {
-    margin-left: 50px; 
-    margin-top: 25px;
+    overflow-y: scroll;
 }
 
 .adopt-single-container {
-    float:left;
+
     max-width: 270px;
 }
 
 .adopt-single-card {
     max-width: 210px; 
-    margin: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+    margin-right: 30px;
 }
 
 .filter-panel {
-    margin-left: 65px;
     width: 600px;
 }
