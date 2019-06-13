@@ -30,4 +30,9 @@
 
 </div>
 
-<router-outlet></router-outlet>
+<div *ngIf="loading" class="waiting">
+    <img width="100" src="assets/waiting.png">
+    <p class="mat-body">{{t.get.please_wait}}</p>
+</div>
+
+<router-outlet *ngIf="!loading"></router-outlet>

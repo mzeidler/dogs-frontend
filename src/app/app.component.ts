@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from './dialog/login/login.component';
 import { RestService } from './service/rest/rest.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, Event } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,35 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AppComponent {
   title = 'dogs-frontend';
 
+  loading = false;
+
   constructor(
+    private router: Router,
     public t: TranslationService, 
     public rest: RestService,
     private snackBar: MatSnackBar,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog) { 
+
+      this.router.events.subscribe((event: Event) => {
+        switch (true) {
+          case event instanceof NavigationStart: {
+            this.loading = true;
+            break;
+          }
+  
+          case event instanceof NavigationEnd:
+          case event instanceof NavigationCancel:
+          case event instanceof NavigationError: {
+            this.loading = false;
+            break;
+          }
+          default: {
+            break;
+          }
+        }
+      });
+
+    }
 
   login() {
 

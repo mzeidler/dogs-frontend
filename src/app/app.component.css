@@ -38,3 +38,9 @@
     margin-bottom: 3px;
     font-size: medium;
 }
+
+.waiting {
+    text-align: center;
+    position: relative;
+    top: 150px;
+}

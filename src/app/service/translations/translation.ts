@@ -113,6 +113,7 @@ export interface Translation {
     filter_gender_all: string;
     filter_size_all: string;
     filter_age_all: string;
+    please_wait: string;
 }
 
 export class En implements Translation {
@@ -235,7 +236,8 @@ export class En implements Translation {
     
     filter_gender_all = "both gender";
     filter_size_all = "all sizes";;
-    filter_age_all = "all ages";    
+    filter_age_all = "all ages";   
+    please_wait = "Please wait..."; 
 }
 
 export class De implements Translation {
@@ -359,6 +361,7 @@ export class De implements Translation {
     filter_gender_all = "beide Geschlechter";
     filter_size_all = "alle Größen";
     filter_age_all = "alle Alter"; 
+    please_wait = "Bitte warten..."; 
 }
 
 export class Hr implements Translation {
@@ -481,4 +484,5 @@ export class Hr implements Translation {
     filter_gender_all = "oba spola";
     filter_size_all = "sve veličine";
     filter_age_all = "sve starosti"; 
+    please_wait = "Molimo pričekajte trenutak..."; 
 }
