@@ -40,6 +40,7 @@ export class AdoptComponent implements OnInit {
 
   update() {
     // redundant because pipe is impure: refactor if performance problem
+    // let dog of dogs | dogfilter:filter:updateFilter
     this.updateFilter = new Date();
   }
 
