@@ -46,6 +46,7 @@ import { AddVideoComponent } from './dialog/add-video/add-video.component';
 import { VideoSort } from './pipes/videosortpipe';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { DogFilter } from './pipes/dogfilter';
+import { AddStoryComponent } from './dialog/add-story/add-story.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { DogFilter } from './pipes/dogfilter';
     CropImageComponent,
     MessagesComponent,
     AddVideoComponent,
-    DogFilter
+    DogFilter,
+    AddStoryComponent
   ],
   imports: [
     BrowserModule,

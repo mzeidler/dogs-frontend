@@ -1,3 +1,12 @@
 <div class="mat-body">
     {{t.get.under_construction}}
-    </div>
+</div>
+
+<div *ngIf="rest.currentUserValue" align="center">
+    <button mat-icon-button>
+      <mat-icon (click)="addStory()" matTooltip="{{t.get.add_story}}">add_circle_outline</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon (click)="getStories()" matTooltip="Refresh">autorenew</mat-icon>
+    </button>
+</div>
