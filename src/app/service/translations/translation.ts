@@ -117,6 +117,7 @@ export interface Translation {
 
     // Stories
     add_story: string;
+    add_story_shelter: string;
 }
 
 export class En implements Translation {
@@ -243,6 +244,7 @@ export class En implements Translation {
     please_wait = "Please wait..."; 
 
     add_story = "Add a story";
+    add_story_shelter = "Add a shelter story";
 }
 
 export class De implements Translation {
@@ -369,6 +371,7 @@ export class De implements Translation {
     please_wait = "Bitte warten..."; 
 
     add_story = "Geschichte hinzufügen";
+    add_story_shelter = "Geschichte aus dem Tierheim hinzufügen";
 }
 
 export class Hr implements Translation {
@@ -494,4 +497,5 @@ export class Hr implements Translation {
     please_wait = "Molimo pričekajte trenutak..."; 
 
     add_story = "Dodaj priču";
+    add_story_shelter = "Dodaj priču iz skloništa";
 }

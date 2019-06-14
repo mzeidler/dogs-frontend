@@ -106,7 +106,8 @@ import { AddStoryComponent } from './dialog/add-story/add-story.component';
     DeleteDogComponent,
     ShowDogComponent,
     CropImageComponent,
-    AddVideoComponent
+    AddVideoComponent,
+    AddStoryComponent
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}
