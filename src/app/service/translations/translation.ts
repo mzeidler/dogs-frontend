@@ -68,6 +68,7 @@ export interface Translation {
     tab_description: string;
     tab_pictures: string;
     tab_videos: string; 
+    tab_configuration: string;
 
     crop_image_title: string;
     crop_image_upload: string;
@@ -118,6 +119,10 @@ export interface Translation {
     // Stories
     add_story: string;
     add_story_shelter: string;
+    add_story_title1: string;
+    add_story_title2: string;
+    add_story_title3: string;
+    add_story_opened: string;
 }
 
 export class En implements Translation {
@@ -191,6 +196,7 @@ export class En implements Translation {
     tab_description = "Description";
     tab_pictures = "Pictures";
     tab_videos = "Videos";    
+    tab_configuration = "Configuration";
 
     crop_image_title = "Title picture";
     crop_image_upload = "Upload picture";
@@ -245,6 +251,11 @@ export class En implements Translation {
 
     add_story = "Add a story";
     add_story_shelter = "Add a shelter story";
+
+    add_story_title1 = "Title left";
+    add_story_title2 = "Title middle";
+    add_story_title3 = "Title right";
+    add_story_opened = "Show story automatically";
 }
 
 export class De implements Translation {
@@ -318,6 +329,7 @@ export class De implements Translation {
     tab_description = "Beschreibung";
     tab_pictures = "Bilder";
     tab_videos = "Video";   
+    tab_configuration = "Konfiguration";
 
     crop_image_title = "Titelbild";
     crop_image_upload = "Bild hochladen";
@@ -372,6 +384,11 @@ export class De implements Translation {
 
     add_story = "Geschichte hinzufügen";
     add_story_shelter = "Geschichte aus dem Tierheim hinzufügen";
+
+    add_story_title1 = "Titel links";
+    add_story_title2 = "Titel mittel";
+    add_story_title3 = "Titel rechts";
+    add_story_opened = "Geschichte automatisch anzeigen";
 }
 
 export class Hr implements Translation {
@@ -445,6 +462,7 @@ export class Hr implements Translation {
     tab_description = "Opis";
     tab_pictures = "Slike";
     tab_videos = "Video";  
+    tab_configuration = "Konfiguracija";
 
     crop_image_title = "Odabir naslovne slike";
     crop_image_upload = "Odaberi sliku";
@@ -498,4 +516,9 @@ export class Hr implements Translation {
 
     add_story = "Dodaj priču";
     add_story_shelter = "Dodaj priču iz skloništa";
+
+    add_story_title1 = "Naslov lijevo";
+    add_story_title2 = "Naslov sredina";
+    add_story_title3 = "Naslov desno";
+    add_story_opened = "Prikaži ovu priču automatski";
 }
