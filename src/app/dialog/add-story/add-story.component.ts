@@ -12,6 +12,15 @@ import { AddDogComponent } from '../add-dog/add-dog.component';
 })
 export class AddStoryComponent implements OnInit {
 
+  options = [ 
+    ["bold", "italic", "underline"],
+    [],
+    ["justifyLeft", "justifyCenter", "justifyRight", "justifyFull", "indent", "outdent"],
+    [ ],
+    ["horizontalLine", "orderedList", "unorderedList"],
+    ["link"]  
+  ];
+    
   constructor(
     public dialog: MatDialog, 
     public rest: RestService, 

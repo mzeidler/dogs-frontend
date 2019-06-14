@@ -28,9 +28,9 @@ export class GalleryComponent implements OnInit {
     story.videos = [];
 
     const dialogRef = this.dialog.open(AddStoryComponent, {
-      width: '950px', data: { 
+      width: '950px', height: '600px', data: { 
         title: this.t.get.add_story_shelter,
-        dog: {...story},
+        story: {...story},
         new: true
       }
     });
