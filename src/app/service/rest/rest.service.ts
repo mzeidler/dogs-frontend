@@ -7,6 +7,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Dog } from '../../model/dog';
 import { Message } from '../../model/message';
 import { Video } from '../../model/video';
+import { Story } from 'src/app/model/story';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -30,6 +31,8 @@ export class RestService {
   public messageUrl = `//${environment.resturl}:9002/api/message`;
 
   public videoUrl = `//${environment.resturl}:9002/api/video`;
+
+  private storyUrl = `//${environment.resturl}:9002/api/story`;
 
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
@@ -151,9 +154,31 @@ export class RestService {
       catchError(this.handleError<Video>('addVideo'))
     );
   }
-
+ 
   deleteVideo(id: number) {
     return this.http.delete(this.videoUrl + "/delete/" + id, httpOptions).subscribe();
+  } 
+
+  getStories(type: string): Observable<Story[]> {
+    return this.http.get<Story[]>(this.storyUrl + "/" + type).pipe(
+      catchError(this.handleError('getStories', []))
+    );
+  }
+
+  getStory(id: number): Observable<Story> {
+    return this.http.get<Story>(`${this.storyUrl}/${id}`).pipe(
+      catchError(this.handleError<Story>(`getStory id=${id}`))
+    );
+  }
+
+  saveStory(story: Story): Observable<Story> {
+    return this.http.post<Story>(this.storyUrl + "/save", story, httpOptions).pipe(
+      catchError(this.handleError<Story>('saveStory'))
+    );
+  }
+
+  deleteStory(id: number) {
+    return this.http.delete(this.storyUrl + "/delete/" + id, httpOptions).subscribe();
   } 
 
 }
