@@ -2,6 +2,94 @@
   {{data.title}}
 </div>
 
+<mat-tab-group style="height: 81%">
+
+  <mat-tab style="height:100%">
+
+      <ng-template mat-tab-label>
+          <img width="20px" src="assets/de.png" style="margin-left: 10px">
+      </ng-template>
+
+        <div fxLayout="row" fxLayoutAlign="space-between">
+
+            <mat-form-field style="width: 270px">
+                <input matInput [(ngModel)]="data.story.title1de" placeholder="{{t.get.add_story_title1}}">
+            </mat-form-field>
+
+            <mat-form-field style="width: 270px">
+                <input matInput [(ngModel)]="data.story.title2de" placeholder="{{t.get.add_story_title2}}">
+            </mat-form-field>
+      
+            <mat-form-field style="width: 270px">
+                <input matInput [(ngModel)]="data.story.title3de" placeholder="{{t.get.add_story_title3}}">
+            </mat-form-field>   
+
+        </div>
+
+        <app-ngx-editor
+        [height]="300" 
+        [minHeight]="300" 
+        [spellcheck]="false" 
+        [enableToolbar]="true" 
+        [showToolbar]="true"       
+        [toolbar]="options"
+        [(ngModel)]="data.story.de"></app-ngx-editor>  
+
+  </mat-tab>
+
+
+  <mat-tab>
+
+      <ng-template mat-tab-label>
+          <img width="20px" src="assets/hr.png" style="margin-left: 10px">
+      </ng-template>
+      
+      <div fxLayout="row" fxLayoutAlign="space-between">
+
+          <mat-form-field style="width: 270px">
+              <input matInput [(ngModel)]="data.story.title1hr" placeholder="{{t.get.add_story_title1}}">
+          </mat-form-field>
+  
+          <mat-form-field style="width: 270px">
+              <input matInput [(ngModel)]="data.story.title2hr" placeholder="{{t.get.add_story_title2}}">
+          </mat-form-field>
+        
+          <mat-form-field style="width: 270px">
+              <input matInput [(ngModel)]="data.story.title3hr" placeholder="{{t.get.add_story_title3}}">
+          </mat-form-field>   
+  
+      </div>
+
+      <app-ngx-editor
+      [height]="300" 
+      [minHeight]="300" 
+      [spellcheck]="false" 
+      [enableToolbar]="true" 
+      [showToolbar]="true"       
+      [toolbar]="options"
+      [(ngModel)]="data.story.hr"></app-ngx-editor>   
+
+  </mat-tab>
+
+  <mat-tab label="{{t.get.tab_pictures}}">
+      
+  </mat-tab>
+
+  <mat-tab label="{{t.get.tab_videos}}">
+      
+  </mat-tab>
+
+  <mat-tab label="{{t.get.tab_configuration}}">
+      <div style="margin: 20px">
+        <mat-checkbox [(ngModel)]="data.story.opened">{{t.get.add_story_opened}}</mat-checkbox>
+      </div>
+      
+  </mat-tab>  
+  
+
+</mat-tab-group>
+
+
 <div mat-dialog-actions style="float: right">
   <button mat-button (click)="onNoClick()">{{t.get.cancel}}</button>
   <button mat-button [mat-dialog-close]="data" cdkFocusInitial>{{t.get.save}}</button>
