@@ -13,7 +13,7 @@
 
   <div fxFlex>
     <mat-accordion>
-      <mat-expansion-panel *ngFor="let story of stories" style="margin-bottom: 20px; background-color: blanchedalmond;">
+      <mat-expansion-panel [expanded]="story.opened" *ngFor="let story of stories" style="margin-bottom: 20px; background-color: blanchedalmond;">
         <mat-expansion-panel-header
           style="background-color: burlywood; border-width: 1px; border-color: black; border-style: solid ">
           <mat-panel-title>
@@ -27,7 +27,16 @@
           <p *ngIf="t.de()" style="margin-right: 20px">{{story.title3de}}</p>
           <p *ngIf="t.hr()" style="margin-right: 20px">{{story.title3hr}}</p>
         </mat-expansion-panel-header>
+        
+        <p *ngIf="rest.currentUserValue" style="float: right">
+            <mat-icon style="cursor: pointer" (click)="upStory(story)">arrow_upward</mat-icon>
+            <mat-icon style="cursor: pointer" (click)="downStory(story)">arrow_downward</mat-icon>
+            <mat-icon style="cursor: pointer" (click)="editStory(story)">edit</mat-icon>
+            <mat-icon style="cursor: pointer" (click)="deleteStory(story)">delete_forever</mat-icon>
+        </p>
         <p></p>
+
+
         <div *ngIf="t.de()" [innerHTML]="story.de"></div>
         <div *ngIf="t.hr()" [innerHTML]="story.hr"></div>
       </mat-expansion-panel>

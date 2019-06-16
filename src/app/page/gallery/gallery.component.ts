@@ -50,5 +50,21 @@ export class GalleryComponent implements OnInit {
     }); 
   }
 
+  upStory(story: Story) {
+
+  }
+
+  downStory(story: Story) {
+
+
+  }
+
+  deleteStory(story: Story) {
+
+  }
+
+  editStory(story: Story) {
+
+  }
 
 }

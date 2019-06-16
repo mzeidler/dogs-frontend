@@ -123,6 +123,11 @@ export interface Translation {
     add_story_title2: string;
     add_story_title3: string;
     add_story_opened: string;
+
+    story_up: string;
+    story_down: string;
+    story_edit: string;
+    story_delete: string;
 }
 
 export class En implements Translation {
@@ -256,6 +261,11 @@ export class En implements Translation {
     add_story_title2 = "Title middle";
     add_story_title3 = "Title right";
     add_story_opened = "Show story automatically";
+
+    story_up = "Move story up";
+    story_down = "Move story down";
+    story_edit = "Edit story";
+    story_delete = "Delete story";    
 }
 
 export class De implements Translation {
@@ -389,6 +399,11 @@ export class De implements Translation {
     add_story_title2 = "Titel mittel";
     add_story_title3 = "Titel rechts";
     add_story_opened = "Geschichte automatisch anzeigen";
+
+    story_up = "Geschichte nach oben";
+    story_down = "Geschichte nach unten";
+    story_edit = "Geschichte bearbeiten";
+    story_delete = "Geschichte löschen";
 }
 
 export class Hr implements Translation {
@@ -521,4 +536,9 @@ export class Hr implements Translation {
     add_story_title2 = "Naslov sredina";
     add_story_title3 = "Naslov desno";
     add_story_opened = "Prikaži ovu priču automatski";
+
+    story_up = "Pomakni priču prema gore";
+    story_down = "Pomakni priču prema dolje";
+    story_edit = "Uredi priču";
+    story_delete = "Obriši priču";
 }
