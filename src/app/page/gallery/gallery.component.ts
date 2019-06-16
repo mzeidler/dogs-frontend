@@ -3,8 +3,8 @@ import { TranslationService } from '../../service/translations/translation.servi
 import { RestService } from 'src/app/service/rest/rest.service';
 import { Story } from 'src/app/model/story';
 import { MatDialog } from '@angular/material';
-import { AddDogComponent } from 'src/app/dialog/add-dog/add-dog.component';
 import { AddStoryComponent } from 'src/app/dialog/add-story/add-story.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-gallery',
@@ -15,9 +15,14 @@ export class GalleryComponent implements OnInit {
 
   stories: Story[];
 
-  constructor(public t: TranslationService, public rest: RestService, public dialog: MatDialog) { }
+  constructor(public t: TranslationService, public rest: RestService, public dialog: MatDialog, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.stories = this.route.snapshot.data['shelterStories'];
+  }
+
+  getStories(): void {
+    this.rest.getStories("SHELTER").subscribe(stories => this.stories = stories);
   }
 
   addStory() {
@@ -45,8 +50,5 @@ export class GalleryComponent implements OnInit {
     }); 
   }
 
-  getStories() {
-    console.log("Get Stories");
-  }
 
 }
