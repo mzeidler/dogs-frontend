@@ -5,6 +5,7 @@ import { Story } from 'src/app/model/story';
 import { MatDialog } from '@angular/material';
 import { AddStoryComponent } from 'src/app/dialog/add-story/add-story.component';
 import { ActivatedRoute } from '@angular/router';
+import { DeleteStoryComponent } from 'src/app/dialog/delete-story/delete-story.component';
 
 @Component({
   selector: 'app-gallery',
@@ -60,6 +61,19 @@ export class GalleryComponent implements OnInit {
   }
 
   deleteStory(story: Story) {
+
+    const dialogRef = this.dialog.open(DeleteStoryComponent, {
+      width: '430px', data: { 
+        title: 'Obriši priču'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.rest.deleteStory(story.id);
+        this.stories = this.stories.filter(s => s.id != story.id);  
+      }
+    }); 
 
   }
 
