@@ -120,6 +120,8 @@ export interface Translation {
     // Stories
     add_story: string;
     add_story_shelter: string;
+    edit_story_shelter: string;
+
     add_story_title1: string;
     add_story_title2: string;
     add_story_title3: string;
@@ -258,6 +260,7 @@ export class En implements Translation {
 
     add_story = "Add a story";
     add_story_shelter = "Add a shelter story";
+    edit_story_shelter = "Edit a shelter story";
 
     add_story_title1 = "Title left";
     add_story_title2 = "Title middle";
@@ -397,6 +400,7 @@ export class De implements Translation {
 
     add_story = "Geschichte hinzufügen";
     add_story_shelter = "Geschichte aus dem Tierheim hinzufügen";
+    edit_story_shelter = "Geschichte aus dem Tierheim bearbeiten";
 
     add_story_title1 = "Titel links";
     add_story_title2 = "Titel mittel";
@@ -535,6 +539,7 @@ export class Hr implements Translation {
 
     add_story = "Dodaj priču";
     add_story_shelter = "Dodaj priču iz skloništa";
+    edit_story_shelter = "Uredi priču iz skloništa";
 
     add_story_title1 = "Naslov lijevo";
     add_story_title2 = "Naslov sredina";

@@ -79,6 +79,39 @@ export class GalleryComponent implements OnInit {
 
   editStory(story: Story) {
 
+    const dialogRef = this.dialog.open(AddStoryComponent, {
+      width: '950px', height: '600px', data: { 
+        title: this.t.get.edit_story_shelter,
+        story: {...story},
+        new: false
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+
+        story.title1de = result.story.title1de;
+        story.title2de = result.story.title2de;
+        story.title3de = result.story.title3de;
+        story.title1hr = result.story.title1hr;
+        story.title2hr = result.story.title2hr;
+        story.title3hr = result.story.title3hr;
+        story.de = result.story.de;
+        story.hr = result.story.hr;
+        story.opened = result.story.opened;
+        // TODO: story.sortid
+        // TODO: story.images
+        // TODO: story.videos
+
+        this.rest.saveStory(story).subscribe(s => {
+          // TODO: Update Images
+        });
+
+      }
+    });
+
+
+
   }
 
 }
