@@ -37,7 +37,10 @@ export class GalleryComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // TODO: Implement
+        story = result.story;
+        this.rest.saveStory(story).subscribe(s => {
+          this.stories.push(s);
+        });
       }
     }); 
   }
