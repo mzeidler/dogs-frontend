@@ -9,6 +9,7 @@ import { GalleryComponent } from './page/gallery/gallery.component';
 import { DogsResolverService } from './service/dogs-resolver/dogs-resolver.service';
 import { MessagesComponent } from './page/messages/messages.component';
 import { MessagesResolverService } from './service/messages-resolver/messages-resolver.service';
+import { ShelterStoryResolverService } from './service/shelter-story-resolver/shelter-story-resolver.service';
 
 const routes: Routes = [
   { 
@@ -26,7 +27,13 @@ const routes: Routes = [
   { path: 'volunteer', component: VolunteerComponent },
   { path: 'donate', component: DonateComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'gallery', component: GalleryComponent },
+  { 
+    path: 'gallery', 
+    component: GalleryComponent,
+    resolve: {
+      shelterStories: ShelterStoryResolverService
+    }
+  },
   { 
     path: 'messages', 
     component: MessagesComponent,
