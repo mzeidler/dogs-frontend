@@ -160,7 +160,7 @@ export class RestService {
   } 
 
   getStories(type: string): Observable<Story[]> {
-    return this.http.get<Story[]>(this.storyUrl + "/" + type).pipe(
+    return this.http.get<Story[]>(this.storyUrl + "/type/" + type, httpOptions).pipe(
       catchError(this.handleError('getStories', []))
     );
   }
