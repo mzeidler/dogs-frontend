@@ -47,6 +47,7 @@ import { VideoSort } from './pipes/videosortpipe';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { DogFilter } from './pipes/dogfilter';
 import { AddStoryComponent } from './dialog/add-story/add-story.component';
+import { DeleteStoryComponent } from './dialog/delete-story/delete-story.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { AddStoryComponent } from './dialog/add-story/add-story.component';
     MessagesComponent,
     AddVideoComponent,
     DogFilter,
-    AddStoryComponent
+    AddStoryComponent,
+    DeleteStoryComponent
   ],
   imports: [
     BrowserModule,
@@ -107,7 +109,8 @@ import { AddStoryComponent } from './dialog/add-story/add-story.component';
     ShowDogComponent,
     CropImageComponent,
     AddVideoComponent,
-    AddStoryComponent
+    AddStoryComponent,
+    DeleteStoryComponent
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}

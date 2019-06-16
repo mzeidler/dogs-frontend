@@ -1,0 +1,8 @@
+<div mat-dialog-title>
+    {{t.get.delete_dog}}
+  </div>
+  
+  <div mat-dialog-actions style="float: right">
+    <button mat-button (click)="onNoClick()">{{t.get.no}}</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>{{t.get.yes}}</button>
+  </div>

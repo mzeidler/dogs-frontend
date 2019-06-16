@@ -45,6 +45,7 @@ export interface Translation {
 
     delete: string;
     delete_dog: string;
+    delete_story: string;
 
     age: string;
 
@@ -178,6 +179,7 @@ export class En implements Translation {
     delete = "delete";
 
     delete_dog = "Do you want to remove this Dog?";
+    delete_story = "Do you want to remove this Story?";
 
     age = "Age";
 
@@ -316,6 +318,7 @@ export class De implements Translation {
     delete = "entfernen";
 
     delete_dog = "Möchten Sie diesen Hund entfernen?";
+    delete_story = "Möchten Sie diese Geschichte entfernen?";
 
     age = "Alter";
 
@@ -454,6 +457,7 @@ export class Hr implements Translation {
     delete = "obriši";
 
     delete_dog = "Da li želite obrisati ovog psa?";
+    delete_story = "Da li želite obrisati ovu priču?";
 
     age = "Dob";
 
