@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material';
 import { AddStoryComponent } from 'src/app/dialog/add-story/add-story.component';
 import { ActivatedRoute } from '@angular/router';
 import { DeleteStoryComponent } from 'src/app/dialog/delete-story/delete-story.component';
+import { CommonService } from 'src/app/service/common/common.service';
 
 @Component({
   selector: 'app-gallery',
@@ -16,7 +17,7 @@ export class GalleryComponent implements OnInit {
 
   stories: Story[];
 
-  constructor(public t: TranslationService, public rest: RestService, public dialog: MatDialog, private route: ActivatedRoute) { }
+  constructor(public t: TranslationService, public rest: RestService, public dialog: MatDialog, private route: ActivatedRoute, public common: CommonService) { }
 
   ngOnInit() {
     this.stories = this.route.snapshot.data['shelterStories'];
@@ -54,12 +55,13 @@ export class GalleryComponent implements OnInit {
   }
 
   upStory(story: Story) {
-
+    this.common.moveLeft(this.stories, story.id);
+    this.rest.sortStories(this.stories).subscribe();
   }
 
   downStory(story: Story) {
-
-
+    this.common.moveRight(this.stories, story.id);
+    this.rest.sortStories(this.stories).subscribe();
   }
 
   deleteStory(story: Story) {

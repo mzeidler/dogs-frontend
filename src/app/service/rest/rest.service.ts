@@ -181,4 +181,10 @@ export class RestService {
     return this.http.delete(this.storyUrl + "/delete/" + id, httpOptions).subscribe();
   } 
 
+  sortStories(stories: Story[]) {
+    return this.http.post(this.storyUrl + "/sort", stories, httpOptions).pipe(
+      catchError(this.handleError('sortStories'))
+    );
+  }
+
 }
