@@ -44,6 +44,8 @@ export class GalleryComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         story = result.story;
+        let sortid = Math.max(...this.stories.map(o => o.sortid), 0) + 1;
+        story.sortid = sortid;
         this.rest.saveStory(story).subscribe(s => {
           this.stories.push(s);
         });
