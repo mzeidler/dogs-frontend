@@ -13,7 +13,7 @@
 
   <div fxFlex>
     <mat-accordion>
-      <mat-expansion-panel [expanded]="story.opened" *ngFor="let story of stories" style="margin-bottom: 20px; background-color: blanchedalmond;">
+      <mat-expansion-panel [expanded]="story.opened" *ngFor="let story of stories | storysort" style="margin-bottom: 20px; background-color: blanchedalmond;">
         <mat-expansion-panel-header
           style="background-color: burlywood; border-width: 1px; border-color: black; border-style: solid ">
           <mat-panel-title>

@@ -48,6 +48,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { DogFilter } from './pipes/dogfilter';
 import { AddStoryComponent } from './dialog/add-story/add-story.component';
 import { DeleteStoryComponent } from './dialog/delete-story/delete-story.component';
+import { StorySort } from './pipes/storysort';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { DeleteStoryComponent } from './dialog/delete-story/delete-story.compone
     AgePipe,
     ImageSort,
     VideoSort,
+    StorySort,
     CropImageComponent,
     MessagesComponent,
     AddVideoComponent,
