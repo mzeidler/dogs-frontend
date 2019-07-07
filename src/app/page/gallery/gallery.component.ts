@@ -103,12 +103,17 @@ export class GalleryComponent implements OnInit {
         story.de = result.story.de;
         story.hr = result.story.hr;
         story.opened = result.story.opened;
-        // TODO: story.sortid
-        // TODO: story.images
-        // TODO: story.videos
 
         this.rest.saveStory(story).subscribe(s => {
-          // TODO: Update Images
+
+            // update story images
+            this.stories.forEach(s1 => {
+              if (s1.id == s1.id) {
+                s1.images = s.images;
+                s1.videos = s.videos;
+              }
+            });
+
         });
 
       }

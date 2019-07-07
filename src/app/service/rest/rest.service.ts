@@ -59,12 +59,12 @@ export class RestService {
     };
   }
 
-  pushFileToStorage(file: File, dogId: number, sortid: number): Observable<HttpEvent<{}>> {
+  uploadDogImage(file: File, dogId: number, sortid: number): Observable<HttpEvent<{}>> {
     let formdata: FormData = new FormData();
 
     formdata.append('file', file);
 
-    const req = new HttpRequest('POST', this.uploadUrl + "/" + dogId + "/" + sortid, formdata, {
+    const req = new HttpRequest('POST', this.uploadUrl + "/dog/" + dogId + "/" + sortid, formdata, {
       reportProgress: true,
       responseType: 'text'
     });
@@ -72,6 +72,18 @@ export class RestService {
     return this.http.request(req);
   }
 
+  uploadStoryImage(file: File, storyId: number, sortid: number): Observable<HttpEvent<{}>> {
+    let formdata: FormData = new FormData();
+
+    formdata.append('file', file);
+
+    const req = new HttpRequest('POST', this.uploadUrl + "/story/" + storyId + "/" + sortid, formdata, {
+      reportProgress: true,
+      responseType: 'text'
+    });
+
+    return this.http.request(req);
+  }
 
   login(username: string, password: string): Observable<boolean> {
 

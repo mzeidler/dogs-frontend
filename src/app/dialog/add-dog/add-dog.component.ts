@@ -142,7 +142,7 @@ export class AddDogComponent implements OnInit {
 
     let sortid = Math.max(...this.data.dog.images.map(o => o.sortid), 0) + 1;
 
-    this.rest.pushFileToStorage(currentFileUpload, dogId, sortid).subscribe(event => {
+    this.rest.uploadDogImage(currentFileUpload, dogId, sortid).subscribe(event => {
       if (event.type === HttpEventType.UploadProgress) {
         this.progress.percentage = Math.round(100 * event.loaded / event.total);
       } else if (event instanceof HttpResponse) {
