@@ -7,6 +7,7 @@ import { AddDogComponent } from '../add-dog/add-dog.component';
 import { Image } from '../../model/image';
 import { Video } from '../../model/video';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
+import { AddVideoComponent } from '../add-video/add-video.component';
 
 @Component({
   selector: 'app-add-story',
@@ -115,4 +116,38 @@ export class AddStoryComponent implements OnInit {
     })
     this.progress.percentage = 0;
   }
+
+  addVideo() {
+
+    const dialogRef = this.dialog.open(AddVideoComponent, {      
+      width: '550px',
+      data: { 
+        name: undefined,
+        link: undefined
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      if (result && result.link) {
+
+        //************************************* */
+        let storyId = 0;
+        if (this.data.story.id) {
+          storyId = this.data.story.id;
+        }
+
+        let video = <Video>{};
+        video.link = result.link;
+        video.sortid = Math.max(...this.data.story.videos.map(o => o.sortid), 0) + 1;
+
+        this.rest.addStoryVideo(video, storyId).subscribe(v => {
+          this.data.story.videos.push(v);
+          this.common.sort(this.data.story.videos);
+        });
+      }
+
+    });
+
+  }  
 }

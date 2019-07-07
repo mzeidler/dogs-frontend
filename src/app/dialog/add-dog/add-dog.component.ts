@@ -179,7 +179,7 @@ export class AddDogComponent implements OnInit {
         video.link = result.link;
         video.sortid = Math.max(...this.data.dog.videos.map(o => o.sortid), 0) + 1;
 
-        this.rest.addVideo(video, dogid).subscribe(v => {
+        this.rest.addDogVideo(video, dogid).subscribe(v => {
           this.data.dog.videos.push(v);
           this.common.sort(this.data.dog.videos);
         });

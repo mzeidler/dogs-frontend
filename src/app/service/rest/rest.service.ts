@@ -161,9 +161,15 @@ export class RestService {
     );
   }
 
-  addVideo(video: Video, dogid: number): Observable<Video> {
-    return this.http.post<Video>(this.videoUrl + "/" + dogid, video, httpOptions).pipe(
-      catchError(this.handleError<Video>('addVideo'))
+  addDogVideo(video: Video, dogid: number): Observable<Video> {
+    return this.http.post<Video>(this.videoUrl + "/dog/" + dogid, video, httpOptions).pipe(
+      catchError(this.handleError<Video>('addDogVideo'))
+    );
+  }
+
+  addStoryVideo(video: Video, storyid: number): Observable<Video> {
+    return this.http.post<Video>(this.videoUrl + "/story/" + storyid, video, httpOptions).pipe(
+      catchError(this.handleError<Video>('addStoryVideo'))
     );
   }
  

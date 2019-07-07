@@ -73,7 +73,6 @@
 
   <!-- PICTURES TAB -->
   <mat-tab label="{{t.get.tab_pictures}}">
-      <!--******************************************************************************-->
       <p></p>
 
       <div *ngIf="data.story.images && data.story.images.length > 0"
@@ -101,13 +100,39 @@
       <button *ngIf="selectedId > 0" mat-icon-button>
         <mat-icon (click)="moveToRight()" matTooltip="{{t.get.picture_right}}">arrow_forward</mat-icon>
       </button>
-      <!--******************************************************************************-->
 
   </mat-tab>
 
   <!-- VIDEO TAB-->
   <mat-tab label="{{t.get.tab_videos}}">
-      
+
+    <p></p>
+
+    <div *ngIf="data.story.videos && data.story.videos.length > 0"
+        style="display: flex; overflow-x: auto; border-width: 1px; border-color: grey; border-style: solid">
+        <div *ngFor="let video of data.story.videos | videosort; let i = index">
+          <div class="myvideo film" [ngClass]="{'myselectedvideo': video.id == selectedVideoId}">
+            <img class="frame" (click)="selectVideo(video)" src="https://img.youtube.com/vi/{{video.youtubeid}}/mqdefault.jpg"/>
+          </div>
+        </div>
+    </div>      
+
+    <button mat-icon-button>
+      <mat-icon (click)="addVideo()" matTooltip="{{t.get.video_upload}}">add_circle_outline</mat-icon>
+    </button>
+
+    <button *ngIf="selectedVideoId > 0" mat-icon-button>
+        <mat-icon (click)="removeVideo()" matTooltip="{{t.get.video_remove}}">delete_forever</mat-icon>
+      </button>
+
+      <button *ngIf="selectedVideoId > 0" mat-icon-button>
+        <mat-icon (click)="moveVideoToLeft()" matTooltip="{{t.get.video_left}}">arrow_back</mat-icon>
+      </button>
+
+      <button *ngIf="selectedVideoId > 0" mat-icon-button>
+        <mat-icon (click)="moveVideoToRight()" matTooltip="{{t.get.video_right}}">arrow_forward</mat-icon>
+      </button>
+
   </mat-tab>
 
   <mat-tab label="{{t.get.tab_configuration}}">
