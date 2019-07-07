@@ -1,0 +1,78 @@
+.imgshadow {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+
+.gallery {
+    overflow-x: auto; 
+    border-width: 1px 1px 1px 1px; 
+    border-color: darkgray;
+    border-style: solid;
+    max-width: 1100px; 
+    width: 1100px;
+}
+
+.myimage {
+    height: 150px;
+    margin: 5px;
+    border-width: 1px; 
+    border-color: black; 
+    border-style: solid;
+    cursor: pointer;
+    
+}
+
+.myselected {
+    height: 150px;
+    margin: 5px;
+    border-width: 1px; 
+    border-color: black; 
+    border-style: dashed;
+    cursor: pointer;
+}
+
+.bigimage {
+    max-height: 600px;
+    margin: 5px;
+    border-width: 1px; 
+    border-color: black; 
+    border-style: solid;
+}
+
+.messages {
+    width: 88%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 20px;
+    font-size: small;
+}
+
+.film {
+	padding-top:10px;
+	padding-left:5px;
+	background-image: url("/assets/frame.png");
+    height: 140px;
+    width: 170px;
+}
+
+.frame {
+	height: 107px;
+    margin-top: 12px;	
+    width: 163px;
+}
+
+.myvideo {
+    height: 140px;
+    max-height: 140px;
+    margin: 5px;
+    border-width: 1px; 
+    border-color: black; 
+    border-style: solid;
+    cursor: pointer;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.filmborder {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.5), 0 6px 30px 5px rgba(0, 0, 0, 0.5), 0 8px 10px -5px rgba(0, 0, 0, 0.5);
+}

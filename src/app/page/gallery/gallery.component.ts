@@ -7,6 +7,9 @@ import { AddStoryComponent } from 'src/app/dialog/add-story/add-story.component'
 import { ActivatedRoute } from '@angular/router';
 import { DeleteStoryComponent } from 'src/app/dialog/delete-story/delete-story.component';
 import { CommonService } from 'src/app/service/common/common.service';
+import { Image } from '../../model/image';
+import { Video } from '../../model/video';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-gallery',
@@ -17,7 +20,11 @@ export class GalleryComponent implements OnInit {
 
   stories: Story[];
 
-  constructor(public t: TranslationService, public rest: RestService, public dialog: MatDialog, private route: ActivatedRoute, public common: CommonService) { }
+  selectedId = 0;
+  selectedVideoId = 0;
+  youtubeid: string;
+  
+  constructor(private sanitizer: DomSanitizer, public t: TranslationService, public rest: RestService, public dialog: MatDialog, private route: ActivatedRoute, public common: CommonService) { }
 
   ngOnInit() {
     this.stories = this.route.snapshot.data['shelterStories'];
@@ -119,8 +126,20 @@ export class GalleryComponent implements OnInit {
       }
     });
 
-
-
   }
 
+  selectImage(image: Image) {
+    this.selectedId = image.id;
+    this.selectedVideoId = 0;
+  }
+
+  getYouTubeVideo() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.youtubeid);
+  }
+
+  selectVideo(video: Video) {
+    this.selectedVideoId = video.id;
+    this.youtubeid = video.youtubeid;
+    this.selectedId = 0;
+  }
 }
