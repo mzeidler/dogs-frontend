@@ -108,7 +108,7 @@ export class GalleryComponent implements OnInit {
 
             // update story images
             this.stories.forEach(s1 => {
-              if (s1.id == s1.id) {
+              if (s1.id == s.id) {
                 s1.images = s.images;
                 s1.videos = s.videos;
               }
