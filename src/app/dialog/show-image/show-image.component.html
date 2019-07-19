@@ -1,0 +1,8 @@
+
+<div *ngIf="data.curimg">
+  <img src="{{rest.imageUrl}}/{{data.curimg.id}}" class="showimage imgshadow">
+</div>
+
+<div *ngIf="data.curvid">
+  <iframe width="888" height="500" [src]="getYouTubeVideo(data.curvid.youtubeid)" frameborder="1" allowfullscreen></iframe>
+</div>

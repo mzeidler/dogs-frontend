@@ -10,6 +10,7 @@ import { CommonService } from 'src/app/service/common/common.service';
 import { Image } from '../../model/image';
 import { Video } from '../../model/video';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ShowImageComponent } from 'src/app/dialog/show-image/show-image.component';
 
 @Component({
   selector: 'app-gallery',
@@ -141,5 +142,28 @@ export class GalleryComponent implements OnInit {
     this.selectedVideoId = video.id;
     this.youtubeid = video.youtubeid;
     this.selectedId = 0;
+  }
+
+
+  showImage(image: Image) {
+
+    const dialogRef = this.dialog.open(ShowImageComponent, {
+      data: { 
+        curimg: image,
+        curvid: null
+      }
+    });
+
+  }
+
+  showVideo(video: Video) {
+
+    const dialogRef = this.dialog.open(ShowImageComponent, {
+      data: { 
+        curimg: null,
+        curvid: video
+      }
+    });
+
   }
 }
