@@ -145,23 +145,25 @@ export class GalleryComponent implements OnInit {
   }
 
 
-  showImage(image: Image) {
+  showImage(story: Story, imgIndex: number) {
 
     const dialogRef = this.dialog.open(ShowImageComponent, {
       data: { 
-        curimg: image,
-        curvid: null
+        story: story,
+        imgIndex: imgIndex,
+        vidIndex: -1
       }
     });
 
   }
 
-  showVideo(video: Video) {
+  showVideo(story: Story, vidIndex: number) {
 
     const dialogRef = this.dialog.open(ShowImageComponent, {
       data: { 
-        curimg: null,
-        curvid: video
+        story: story,
+        imgIndex: -1,
+        vidIndex: vidIndex
       }
     });
 

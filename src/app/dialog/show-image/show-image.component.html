@@ -1,8 +1,31 @@
 
-<div *ngIf="data.curimg">
-  <img src="{{rest.imageUrl}}/{{data.curimg.id}}" class="showimage imgshadow">
+
+<div class="mat-body floatleft">
+  {{index + 1}}/{{media.length}}
 </div>
 
-<div *ngIf="data.curvid">
-  <iframe width="888" height="500" [src]="getYouTubeVideo(data.curvid.youtubeid)" frameborder="1" allowfullscreen></iframe>
+
+<div class="closeButton">
+
+  <button *ngIf="index > 0" mat-icon-button (click)="selectLeft()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+
+  <button *ngIf="index < (media.length - 1)" mat-icon-button (click)="selectRight()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+
+  <button mat-icon-button (click)="onNoClick()" cdkFocusInitial>
+    <mat-icon>close</mat-icon>
+  </button>
+    
+</div>
+
+
+<div *ngIf="currentImage">
+  <img src="{{rest.imageUrl}}/{{currentImage.id}}" class="showimage imgshadow">
+</div>
+
+<div *ngIf="currentVideo">
+  <iframe width="888" height="500" [src]="getYouTubeVideo(currentVideo.youtubeid)" frameborder="1" allowfullscreen></iframe>
 </div>
