@@ -131,6 +131,12 @@ export interface Translation {
     story_down: string;
     story_edit: string;
     story_delete: string;
+
+    contact_tel_desc: string;
+    contact_name: string;
+    contact_tel: string;
+    contact_adr: string;
+    contact_email: string;
 }
 
 export class En implements Translation {
@@ -230,7 +236,6 @@ export class En implements Translation {
     contact_person = "Contact person";
     contact_address = "Address";
 
-
     msgtbl_timestamp = "Timestamp";
     msgtbl_dogname = "Dog";
     msgtbl_name = "Name";
@@ -271,6 +276,12 @@ export class En implements Translation {
     story_down = "Move story down";
     story_edit = "Edit story";
     story_delete = "Delete story";    
+
+    contact_tel_desc = "";
+    contact_name = "";
+    contact_tel = "";
+    contact_adr = "";
+    contact_email = "";
 }
 
 export class De implements Translation {
@@ -411,6 +422,12 @@ export class De implements Translation {
     story_down = "Geschichte nach unten";
     story_edit = "Geschichte bearbeiten";
     story_delete = "Geschichte löschen";
+
+    contact_tel_desc = "Tel. (WhatsUp)";
+    contact_name = "Martina Szalay Zeidler";
+    contact_tel = "+49 173 673 7687";
+    contact_adr = "93057 Regensburg";
+    contact_email = "Martina.Szalay.Zeidler@gmail.com";
 }
 
 export class Hr implements Translation {
@@ -550,4 +567,10 @@ export class Hr implements Translation {
     story_down = "Pomakni priču prema dolje";
     story_edit = "Uredi priču";
     story_delete = "Obriši priču";
+
+    contact_tel_desc = "Tel. (Viber, WhatsUp)";
+    contact_name = "Elizabeta Eldić";
+    contact_tel = "+385 92 3306092";
+    contact_adr = null;
+    contact_email = null;
 }

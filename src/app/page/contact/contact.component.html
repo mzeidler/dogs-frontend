@@ -5,16 +5,16 @@
   <mat-grid-list cols="2" rowHeight="25">
 
     <mat-grid-tile><b>{{t.get.contact_person}}</b></mat-grid-tile>
-    <mat-grid-tile>Martina Szalay Zeidler</mat-grid-tile>
+    <mat-grid-tile>{{t.get.contact_name}}</mat-grid-tile>
 
-    <mat-grid-tile [rowspan]="3"><b>{{t.get.contact_address}}</b></mat-grid-tile>
-    <mat-grid-tile [rowspan]="3">93057 Regensburg<br>Deutschland</mat-grid-tile>
+    <mat-grid-tile *ngIf="t.get.contact_adr"><b>{{t.get.contact_address}}</b></mat-grid-tile>
+    <mat-grid-tile *ngIf="t.get.contact_adr">{{t.get.contact_adr}}</mat-grid-tile>
 
-    <mat-grid-tile><b>Email</b></mat-grid-tile>
-    <mat-grid-tile>Martina.Szalay.Zeidler@gmail.com</mat-grid-tile>
+    <mat-grid-tile *ngIf="t.get.contact_email"><b>Email</b></mat-grid-tile>
+    <mat-grid-tile *ngIf="t.get.contact_email">{{t.get.contact_email}}</mat-grid-tile>
 
-    <mat-grid-tile><b>Tel. (WhatsUp)</b></mat-grid-tile>
-    <mat-grid-tile>+49 173 673 7687</mat-grid-tile>
+    <mat-grid-tile><b>{{t.get.contact_tel_desc}}</b></mat-grid-tile>
+    <mat-grid-tile>{{t.get.contact_tel}}</mat-grid-tile>
 
   </mat-grid-list>
 
