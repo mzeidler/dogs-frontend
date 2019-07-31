@@ -50,6 +50,7 @@ import { AddStoryComponent } from './dialog/add-story/add-story.component';
 import { DeleteStoryComponent } from './dialog/delete-story/delete-story.component';
 import { StorySort } from './pipes/storysort';
 import { ShowImageComponent } from './dialog/show-image/show-image.component';
+import { AdoptedComponent } from './page/adopted/adopted.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { ShowImageComponent } from './dialog/show-image/show-image.component';
     DogFilter,
     AddStoryComponent,
     DeleteStoryComponent,
-    ShowImageComponent
+    ShowImageComponent,
+    AdoptedComponent
   ],
   imports: [
     BrowserModule,

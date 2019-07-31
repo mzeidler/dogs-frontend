@@ -137,6 +137,8 @@ export interface Translation {
     contact_tel: string;
     contact_adr: string;
     contact_email: string;
+
+    adopted: string;
 }
 
 export class En implements Translation {
@@ -282,6 +284,8 @@ export class En implements Translation {
     contact_tel = "";
     contact_adr = "";
     contact_email = "";
+
+    adopted = "Found a home";
 }
 
 export class De implements Translation {
@@ -428,6 +432,8 @@ export class De implements Translation {
     contact_tel = "+49 173 673 7687";
     contact_adr = "93057 Regensburg";
     contact_email = "Martina.Szalay.Zeidler@gmail.com";
+
+    adopted = "Zuhause gefunden";
 }
 
 export class Hr implements Translation {
@@ -573,4 +579,6 @@ export class Hr implements Translation {
     contact_tel = "+385 92 3306092";
     contact_adr = null;
     contact_email = null;
+
+    adopted = "Udomljeni psi";
 }

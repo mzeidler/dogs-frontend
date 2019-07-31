@@ -10,6 +10,7 @@ import { DogsResolverService } from './service/dogs-resolver/dogs-resolver.servi
 import { MessagesComponent } from './page/messages/messages.component';
 import { MessagesResolverService } from './service/messages-resolver/messages-resolver.service';
 import { ShelterStoryResolverService } from './service/shelter-story-resolver/shelter-story-resolver.service';
+import { AdoptedComponent } from './page/adopted/adopted.component';
 
 const routes: Routes = [
   { 
@@ -17,6 +18,7 @@ const routes: Routes = [
     component: HomeComponent
   }, 
   { path: 'home', component: HomeComponent },
+  { path: 'adopted', component: AdoptedComponent },
   { 
     path: 'adopt', 
     component: AdoptComponent,
